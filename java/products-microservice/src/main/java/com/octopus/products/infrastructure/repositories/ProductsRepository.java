@@ -79,31 +79,10 @@ public class ProductsRepository {
             final String pageOffset,
             final String pageLimit) {
 
-        final HibernateCriteriaBuilder builder = (HibernateCriteriaBuilder) em.getCriteriaBuilder();
-
-        // Get total results: https://hibernate.atlassian.net/browse/HHH-15434
-        final CriteriaQuery<Tuple> countQueryRoot = createQuery(builder, partitions, filter, Tuple.class);
-
-        var countQuery = builder.createQuery(Long.class);
-        var subQuery = countQuery.subquery(Tuple.class);
-
-        SqmSubQuery<Tuple> sqmSubQuery = (SqmSubQuery<Tuple>) subQuery;
-        var sqmOriginalQuery = (SqmSelectStatement<Tuple>) countQueryRoot;
-        var sqmOriginalQuerySpec = sqmOriginalQuery.getQuerySpec();
-        SqmQuerySpec<Tuple> sqmSubQuerySpec = sqmOriginalQuerySpec.copy(SqmCopyContext.simpleContext());
-
-        sqmSubQuery.setQueryPart(sqmSubQuerySpec);
-        Root<?> subQuerySelectRoot = subQuery.getRoots().iterator().next();
-        sqmSubQuery.multiselect(subQuerySelectRoot.get("id").alias("id"));
-
-        countQuery.from(sqmSubQuery);
-        countQuery.select(builder.count(builder.literal(1)));
-
-        final Long count = em.createQuery(countQuery).getSingleResult();
-
+        final Long count = countResults(createQuery(partitions, filter, Tuple.class));
 
         // Deal with paging
-        final CriteriaQuery<Product> queryRoot = createQuery(builder, partitions, filter, Product.class);
+        final CriteriaQuery<Product> queryRoot = createQuery(partitions, filter, Product.class);
         final TypedQuery<Product> query = em.createQuery(queryRoot);
         final int pageLimitParsed = NumberUtils.toInt(pageLimit, Constants.DEFAULT_PAGE_LIMIT);
         final int pageOffsetParsed = NumberUtils.toInt(pageOffset, Constants.DEFAULT_PAGE_OFFSET);
@@ -117,10 +96,37 @@ public class ProductsRepository {
         return new FilteredResultWrapper(results, count);
     }
 
-    private <T> CriteriaQuery<T> createQuery(final CriteriaBuilder builder,
-                                           @NonNull final List<String> partitions,
+    /**
+     * This function is lifted from <a href="https://hibernate.atlassian.net/browse/HHH-15434">here</a>
+     * @param query The query shose rults you wish to count
+     * @return The number of results
+     */
+    private Long countResults(final CriteriaQuery<Tuple> query) {
+        final HibernateCriteriaBuilder builder = (HibernateCriteriaBuilder) em.getCriteriaBuilder();
+
+        var countQuery = builder.createQuery(Long.class);
+        var subQuery = countQuery.subquery(Tuple.class);
+
+        SqmSubQuery<Tuple> sqmSubQuery = (SqmSubQuery<Tuple>) subQuery;
+        var sqmOriginalQuery = (SqmSelectStatement<Tuple>) query;
+        var sqmOriginalQuerySpec = sqmOriginalQuery.getQuerySpec();
+        SqmQuerySpec<Tuple> sqmSubQuerySpec = sqmOriginalQuerySpec.copy(SqmCopyContext.simpleContext());
+
+        sqmSubQuery.setQueryPart(sqmSubQuerySpec);
+        Root<?> subQuerySelectRoot = subQuery.getRoots().iterator().next();
+        sqmSubQuery.multiselect(subQuerySelectRoot.get("id").alias("id"));
+
+        countQuery.from(sqmSubQuery);
+        countQuery.select(builder.count(builder.literal(1)));
+
+        return em.createQuery(countQuery).getSingleResult();
+    }
+
+    private <T> CriteriaQuery<T> createQuery(@NonNull final List<String> partitions,
                                            final String filter,
                                            Class<T> clazz) {
+        final HibernateCriteriaBuilder builder = (HibernateCriteriaBuilder) em.getCriteriaBuilder();
+
         final CriteriaQuery<T> criteria = builder.createQuery(clazz);
         final Root<Product> root = criteria.from(Product.class);
         criteria.orderBy(builder.desc(root.get("id")));
