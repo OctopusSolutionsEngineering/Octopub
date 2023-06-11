@@ -98,22 +98,22 @@ public class ProductsRepository {
 
     /**
      * This function is lifted from <a href="https://hibernate.atlassian.net/browse/HHH-15434">here</a>
-     * @param query The query shose rults you wish to count
+     * @param query The query whose results you wish to count
      * @return The number of results
      */
     private Long countResults(final CriteriaQuery<Tuple> query) {
         final HibernateCriteriaBuilder builder = (HibernateCriteriaBuilder) em.getCriteriaBuilder();
 
-        var countQuery = builder.createQuery(Long.class);
-        var subQuery = countQuery.subquery(Tuple.class);
+        final var countQuery = builder.createQuery(Long.class);
+        final var subQuery = countQuery.subquery(Tuple.class);
 
-        SqmSubQuery<Tuple> sqmSubQuery = (SqmSubQuery<Tuple>) subQuery;
-        var sqmOriginalQuery = (SqmSelectStatement<Tuple>) query;
-        var sqmOriginalQuerySpec = sqmOriginalQuery.getQuerySpec();
-        SqmQuerySpec<Tuple> sqmSubQuerySpec = sqmOriginalQuerySpec.copy(SqmCopyContext.simpleContext());
+        final SqmSubQuery<Tuple> sqmSubQuery = (SqmSubQuery<Tuple>) subQuery;
+        final var sqmOriginalQuery = (SqmSelectStatement<Tuple>) query;
+        final var sqmOriginalQuerySpec = sqmOriginalQuery.getQuerySpec();
+        final SqmQuerySpec<Tuple> sqmSubQuerySpec = sqmOriginalQuerySpec.copy(SqmCopyContext.simpleContext());
 
         sqmSubQuery.setQueryPart(sqmSubQuerySpec);
-        Root<?> subQuerySelectRoot = subQuery.getRoots().iterator().next();
+        final Root<?> subQuerySelectRoot = subQuery.getRoots().iterator().next();
         sqmSubQuery.multiselect(subQuerySelectRoot.get("id").alias("id"));
 
         countQuery.from(sqmSubQuery);
