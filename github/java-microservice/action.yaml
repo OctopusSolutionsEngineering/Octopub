@@ -141,6 +141,11 @@ runs:
       shell: bash
       working-directory: java
 
+    - name: Install RSQL JPA
+      run: ./mvnw --batch-mode install -DskipTests
+      shell: bash
+      working-directory: java/rsql-jpa
+
     - name: Test Backend
       run: ./mvnw --batch-mode test
       shell: bash
