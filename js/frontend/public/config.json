@@ -6,7 +6,7 @@
   "productHealthEndpoint": "/health/products",
   "auditEndpoint": "/api/audits",
   "auditHealthEndpoint": "/health/audits",
-  "overrideTheme": "",
+  "overrideTheme": "green",
   "frontendVersion": "v0.1.0",
   "customPrimaryColor": "#000000",
   "customSecondaryColor": "#262626",
