@@ -42,4 +42,4 @@ spec:
           service:
             name:  octopub-frontend-cluster-ip
             port:
-              name: http-web
+              name: http-port
