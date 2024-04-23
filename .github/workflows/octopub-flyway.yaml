@@ -33,7 +33,7 @@ jobs:
         run: |
           Write-Host "Creating settings.xml file"
           $fileContent = 
-            @"
+          @"
             <settings>
             <servers>
                 <server>
@@ -58,7 +58,7 @@ jobs:
                 </server>
             </servers>
             </settings>
-            "@
+          "@
 
             Set-Content -Path "settings.xml" -Value $fileContent
       - name: Write pom.xml
