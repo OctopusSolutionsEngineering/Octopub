@@ -27,3 +27,17 @@ jobs:
         with:
             files: mysql
             dest: octopub.mysql.flyway.${{ env.PACKAGE_VERSION }}.zip
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            aws-region: ap-southeast-2
+
+      - name: Upload artifact
+        uses: usualdesigner/s3-artifact-upload@main
+        with:
+            bucket-name: octopus-sales-public-maven-repo
+            file: octopub.mysql.flyway.${{ env.PACKAGE_VERSION }}.zip
+
