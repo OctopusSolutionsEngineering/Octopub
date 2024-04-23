@@ -22,11 +22,11 @@ jobs:
       - name: Set Version
         run: echo "PACKAGE_VERSION=$(date +'%Y.%m.%d').$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
 
-#      - name: Zip files
-#        uses: vimtor/action-zip@v1.2
-#        with:
-#            files: mysql
-#            dest: octopub.mysql.flyway.${{ env.PACKAGE_VERSION }}.zip
+      - name: Zip files
+        uses: vimtor/action-zip@v1.2
+        with:
+            files: mysql
+            dest: octopub.mysql.flyway.${{ env.PACKAGE_VERSION }}.zip
 
       - name: Create settings.xml
         shell: pwsh
