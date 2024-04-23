@@ -103,7 +103,7 @@ jobs:
             distribution: 'temurin'
             architecture: x64
       - name: Run maven build
-        run: mvn deploy:deploy-file --settings settings.xml -DgroupId=com.octopus -DartifactId=octopub.mysql.flyway -Dversion=${{ env.PACKAGE_VERSION }} -Dpackaging=zip -Dfile=octopub.mysql.flyway.${{ env.PACKAGE_VERSION }}.zip -DrepositoryId=octopus-sales-public-snapshot -Durl=ap-southeast-2
+        run: mvn deploy:deploy-file --settings settings.xml -DgroupId=com.octopus -DartifactId=octopub.mysql.flyway -Dversion=${{ env.PACKAGE_VERSION }} -Dpackaging=zip -Dfile=octopub.mysql.flyway.${{ env.PACKAGE_VERSION }}.zip -DrepositoryId=octopus-sales-public-snapshot -Durl=s3://octopus-sales-public-maven-repo/snapshot
       
 
 #      - name: Configure AWS credentials
