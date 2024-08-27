@@ -1,5 +1,7 @@
 name: Build Frontend
 permissions:
+  attestations: write
+  id-token: write
   contents: write
   packages: write
 'on':

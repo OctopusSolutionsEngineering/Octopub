@@ -203,10 +203,9 @@ runs:
     - name: Build, tag, and push image to Dockerhub
       run: |
         #docker buildx build -f Dockerfile -t octopussamples/octopub-frontend:${{ steps.determine_version.outputs.semVer }} -t octopussamples/octopub-frontend:latest --platform=linux/amd64,linux/arm64 --push .
-        docker buildx build -f Dockerfile -t octopussamples/octopub-frontend:${{ env.PACKAGE_VERSION }} -t octopussamples/octopub-frontend:latest --platform=linux/amd64,linux/arm64 --push .
+        docker buildx build -f Dockerfile -t octopussamples/octopub-frontend:${{ env.PACKAGE_VERSION }} -t octopussamples/octopub-frontend:latest --platform=linux/amd64,linux/arm64 --push --attest type=provenance,mode=max .
       shell: bash
       working-directory: js/frontend
-
 
     - name: Login to GHCR
       uses: docker/login-action@v3
@@ -243,6 +242,11 @@ runs:
           "-Durl=s3://octopus-sales-public-maven-repo/snapshot"
       shell: bash
 
+    - name: Attest Build Provenance for static web package
+      uses: actions/attest-build-provenance@897ed5eab6ed058a474202017ada7f40bfa52940 # v1.0.0
+      with:
+        subject-path: "js/frontend/octopub-frontend.${{ env.PACKAGE_VERSION }}.zip"
+
     - name: Install Cypress modules
       run: npm install
       shell: bash
@@ -275,3 +279,8 @@ runs:
           "-Durl=s3://octopus-sales-public-maven-repo/snapshot"
       shell: bash
 
+    - name: Attest Build Provenance for static web package
+      uses: actions/attest-build-provenance@897ed5eab6ed058a474202017ada7f40bfa52940 # v1.0.0
+      with:
+        subject-path: "js/octopub-frontend-cypress.${{ env.PACKAGE_VERSION }}.zip"
+  
