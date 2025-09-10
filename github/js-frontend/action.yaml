@@ -290,7 +290,7 @@ runs:
         OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
         OCTOPUS_SPACE: Target - Argo
       with:
-        packages: octopussamples/octopub-${{ inputs.service_directory }}
+        packages: octopussamples/octopub-frontend
         version: ${{ env.PACKAGE_VERSION }}
         overwrite_mode: OverwriteExisting
 
@@ -301,6 +301,6 @@ runs:
         OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
         OCTOPUS_SPACE: Target - Kubernetes
       with:
-        packages: octopussamples/octopub-${{ inputs.service_directory }}
+        packages: octopussamples/octopub-frontend
         version: ${{ env.PACKAGE_VERSION }}
         overwrite_mode: OverwriteExisting
