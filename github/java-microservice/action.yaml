@@ -665,8 +665,8 @@ runs:
     - name: Push build information to Octopus Deploy 🐙
       uses: OctopusDeploy/push-build-information-action@v3
       env:
-        OCTOPUS_URL: ${{ secrets.OCTOPUS_SAMPLES_URL }}
-        OCTOPUS_API_KEY: ${{ secrets.OCTOPUS_SAMPLES_API_KEY }}
+        OCTOPUS_URL: ${{ inputs.samples_url }}
+        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
         OCTOPUS_SPACE: Target - Argo
       with:
         packages: octopussamples/octopub-${{ inputs.service_directory }}

@@ -53,6 +53,8 @@ jobs:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           service_directory: audit-microservice
+          samples_url: ${{ secrets.OCTOPUS_SAMPLES_URL }}
+          samples_apikey: ${{ secrets.OCTOPUS_SAMPLES_API_KEY }}
 
       - name: Build Audits Helm Chart
         uses: ./github/helm

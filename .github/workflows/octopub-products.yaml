@@ -60,6 +60,8 @@ jobs:
           docker_build: false
           systemd_build: false
           run_tests: false
+          samples_url: ${{ secrets.OCTOPUS_SAMPLES_URL }}
+          samples_apikey: ${{ secrets.OCTOPUS_SAMPLES_API_KEY }}          
   build:
     runs-on: ubuntu-latest
     steps:
