@@ -22,6 +22,13 @@ inputs:
   dockerhub_password:
     description: 'The dockerhub password'
     required: true
+  samples_url:
+    description: 'The octopus samples server'
+    required: true
+  samples_apikey:
+    description: 'The octopus samples apikey'
+    required: true
+
 
 runs:
   using: "composite"
@@ -275,3 +282,25 @@ runs:
           "-DrepositoryId=octopus-sales-public-snapshot" \
           "-Durl=s3://octopus-sales-public-maven-repo/snapshot"
       shell: bash
+
+    - name: Push build information to Octopus Deploy 🐙
+      uses: OctopusDeploy/push-build-information-action@v3
+      env:
+        OCTOPUS_URL: ${{ inputs.samples_url }}
+        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
+        OCTOPUS_SPACE: Target - Argo
+      with:
+        packages: octopussamples/octopub-${{ inputs.service_directory }}
+        version: ${{ env.PACKAGE_VERSION }}
+        overwrite_mode: OverwriteExisting
+
+    - name: Push build information to Octopus Deploy 🐙
+      uses: OctopusDeploy/push-build-information-action@v3
+      env:
+        OCTOPUS_URL: ${{ inputs.samples_url }}
+        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
+        OCTOPUS_SPACE: Target - Kubernetes
+      with:
+        packages: octopussamples/octopub-${{ inputs.service_directory }}
+        version: ${{ env.PACKAGE_VERSION }}
+        overwrite_mode: OverwriteExisting

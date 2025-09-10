@@ -678,3 +678,14 @@ runs:
         packages: octopussamples/octopub-${{ inputs.service_directory }}
         version: ${{ env.PACKAGE_VERSION }}
         overwrite_mode: OverwriteExisting
+
+    - name: Push build information to Octopus Deploy 🐙
+      uses: OctopusDeploy/push-build-information-action@v3
+      env:
+        OCTOPUS_URL: ${{ inputs.samples_url }}
+        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
+        OCTOPUS_SPACE: Target - Kubernetes
+      with:
+        packages: octopussamples/octopub-${{ inputs.service_directory }}
+        version: ${{ env.PACKAGE_VERSION }}
+        overwrite_mode: OverwriteExisting
