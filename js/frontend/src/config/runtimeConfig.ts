@@ -13,4 +13,5 @@ export interface RuntimeSettings {
     customSecondaryColor: string;
     customBackgroundColor: string;
     customPaperColor: string;
+    mockBackend: boolean;
 }
