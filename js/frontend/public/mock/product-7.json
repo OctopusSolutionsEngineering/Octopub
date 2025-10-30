@@ -1,0 +1,13 @@
+{
+  "data": {
+    "type": "products",
+    "id": "7",
+    "attributes": {
+      "dataPartition": "main",
+      "name": "Measuring Continuous Delivery and DevOps",
+      "web": "https://www.dropbox.com/s/8to2n5l6w70lzui/measuring-cd-and-devops.pdf?dl=1",
+      "image": "https://user-images.githubusercontent.com/160104/200216425-ea9c0f8c-d9ae-4a94-bee9-4a01c37d9a59.png",
+      "description": "Our white paper, Measuring Continuous Delivery and DevOps, helps you measure the impact of software delivery improvements."
+    }
+  }
+}

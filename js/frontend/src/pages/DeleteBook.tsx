@@ -21,6 +21,11 @@ const DeleteBook: FC<{}> = (): ReactElement => {
     context.setAllBookId("");
 
     useEffect(() => {
+        if (context.settings.mockBackend) {
+            setError("Can not delete books when backend is mocked");
+            return;
+        }
+
         getJsonApi<Product | Errors>(context.settings.productEndpoint + "/" + bookId, context.partition)
             .then(data => {
                 const fixedData = convertToObject(data);

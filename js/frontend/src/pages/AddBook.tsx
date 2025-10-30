@@ -108,6 +108,11 @@ const AddBook: FC<{}> = (): ReactElement => {
     }
 
     function saveBook() {
+        if (context.settings.mockBackend) {
+            setError("Can not create books when backend is mocked");
+            return;
+        }
+
         setDisabled(true);
         postJsonApi(JSON.stringify(book, (key, value) => {
                 if (value !== null) return value

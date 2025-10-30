@@ -19,6 +19,14 @@ const Home: FC = (): ReactElement => {
     context.setAllBookId("");
 
     useEffect(() => {
+        if (context.settings.mockBackend) {
+            fetch('/mock/products.json')
+                .then(response => response.json())
+                .then(data => setBooks(convertToObject<Products>(data)))
+                .catch(() => setError("Failed to retrieve the list of books from the mock backend."));
+            return;
+        }
+
         getJsonApi<Products>(context.settings.productEndpoint, context.partition)
             .then(data => setBooks(convertToObject(data)))
             .catch(() => setError("Failed to retrieve the list of books."

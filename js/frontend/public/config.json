@@ -11,5 +11,6 @@
   "customPrimaryColor": "#000000",
   "customSecondaryColor": "#262626",
   "customBackgroundColor": "#fafafa",
-  "customPaperColor": "#dd5900"
+  "customPaperColor": "#dd5900",
+  "mockBackend": false
 }

@@ -21,6 +21,13 @@ const Book: FC<{}> = (): ReactElement => {
     const [book, setBook] = useState<Product | null>(null);
 
     useEffect(() => {
+        if (context.settings.mockBackend) {
+            fetch('/mock/product-' + bookId + '.json')
+                .then(response => response.json())
+                .then(data => setBook(convertToObject<Product>(data)));
+            return;
+        }
+
         getJsonApi<Product>(context.settings.productEndpoint + "/" + bookId, context.partition)
             .then(data => setBook(convertToObject(data)))
     }, [bookId, setBook, context.settings.productEndpoint, context.partition]);

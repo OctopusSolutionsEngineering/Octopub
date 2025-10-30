@@ -1,0 +1,13 @@
+{
+  "data": {
+    "type": "products",
+    "id": "6",
+    "attributes": {
+      "dataPartition": "main",
+      "name": "How to map your deployment pipeline",
+      "web": "https://www.dropbox.com/s/2ln1ij7fuqca6hh/map-deployment-pipeline.pdf?dl=1",
+      "image": "https://user-images.githubusercontent.com/160104/200216377-aa2f7d34-ebf0-414f-ab98-a96a27a691b7.png",
+      "description": "Our white paper, How to map your deployment pipeline, addresses the challenges of adopting DevOps for any size team using any tech stack."
+    }
+  }
+}

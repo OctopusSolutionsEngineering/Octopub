@@ -1,0 +1,13 @@
+{
+  "data": {
+    "type": "products",
+    "id": "2",
+    "attributes": {
+      "dataPartition": "main",
+      "name": "An introduction to DevOps",
+      "web": "https://octopus.com/blog/introduction-to-devops",
+      "image": "https://i.octopus.com/blog/2022-q2/introduction-to-devops/blogimage-introductiontodevops-2022.png",
+      "description": "In this post, we take a surface-level look at the parts that make up DevOps. We explore the concepts, tools, unique roles, plus explain where Octopus fits in."
+    }
+  }
+}

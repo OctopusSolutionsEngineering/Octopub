@@ -1,0 +1,14 @@
+{
+  "data": {
+    "type": "products",
+    "id": "1",
+    "attributes": {
+      "dataPartition": "main",
+      "name": "The 10 Pillars of Pragmatic Kubernetes Deployments",
+      "pdf": "https://github.com/OctopusDeploy/TenPillarsK8s/releases/latest/download/tenpillarsk8s.pdf",
+      "epub": "https://github.com/OctopusDeploy/TenPillarsK8s/releases/latest/download/tenpillarsk8s.epub",
+      "image": "https://raw.githubusercontent.com/OctopusDeploy/TenPillarsK8s/main/KubernetesPDFcover.png",
+      "description": "Learn how to apply the 10 pillars of pragmatic deployments to your Kubernetes infrastructure with practical tips for configuring Octopus and managing your Kubernetes cluster."
+    }
+  }
+}

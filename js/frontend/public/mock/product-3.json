@@ -1,0 +1,13 @@
+{
+  "data": {
+    "type": "products",
+    "id": "3",
+    "attributes": {
+      "dataPartition": "main",
+      "name": "An introduction to build servers and Continuous Integration",
+      "web": "https://octopus.com/blog/introduction-to-build-servers",
+      "image": "https://i.octopus.com/blog/2022-01/introduction-to-build-servers/blogimage-buildservers.png",
+      "description": "Most development teams understand the importance of version control to coordinate code commits, and build servers to compile and package their software, but Continuous Integration (CI) is a big topic. Over the next few months, we’re going into detail about Continuous Integration and how two of the most popular build servers, Jenkins and GitHub Actions, can help with your CI processes."
+    }
+  }
+}

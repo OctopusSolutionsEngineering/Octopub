@@ -1,0 +1,13 @@
+{
+  "data": {
+    "type": "products",
+    "id": "4",
+    "attributes": {
+      "dataPartition": "main",
+      "name": "What is GitOps?",
+      "web": "https://octopus.com/blog/what-is-gitops",
+      "image": "https://i.octopus.com/blog/2022-q2/what-is-gitops/blogimage-whatisgitops-2022.png",
+      "description": " in this post we look at: The history of GitOps, GitOps goals and ideals, The limitations of GitOps, The tools that support GitOps, The practical implications of adopting GitOps in your own organization"
+    }
+  }
+}

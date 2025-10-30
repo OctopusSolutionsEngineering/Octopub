@@ -1,0 +1,13 @@
+{
+  "data": {
+    "type": "products",
+    "id": "5",
+    "attributes": {
+      "dataPartition": "main",
+      "name": "The importance of Continuous Delivery",
+      "web": "https://www.dropbox.com/s/ca80kc8hb64ttya/importance-of-cd.pdf?dl=1",
+      "image": "https://user-images.githubusercontent.com/160104/200215794-ee00c136-09e5-44a1-948f-3f2b07465be4.png",
+      "description": "In this white paper, you learn Continuous Delivery principles that will help you meet and exceed your goals."
+    }
+  }
+}
