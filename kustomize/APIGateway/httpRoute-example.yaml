@@ -1,0 +1,31 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: octopub-route
+spec:
+  parentRefs:
+    - name: http-gw
+  hostnames:
+    - <Hostname or IP>     # to be replaced with your EXTERNAL-IP of LoadBalancer resource
+  rules:
+  - matches:
+    - path:
+        value: /
+        type: PathPrefix  
+    backendRefs:
+      - name: octopub-frontend-cluster-ip
+        port: 8080
+  - matches:
+     - path:
+         value: /api/audits
+         type: PathPrefix
+    backendRefs:
+      - name: octopub-audit-cluster-ip
+        port: 10000
+  - matches:
+    - path:
+        value: /api/products
+        type: PathPrefix
+    backendRefs:
+      - name: octopub-productservice-cluster-ip
+        port: 8083

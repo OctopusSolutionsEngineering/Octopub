@@ -62,6 +62,12 @@ inputs:
     description: 'Whether to run tests'
     required: true
     default: true
+  samples_url:
+    description: 'The octopus samples server'
+    required: true
+  samples_apikey:
+    description: 'The octopus samples apikey'
+    required: true
 
 runs:
   using: "composite"
@@ -662,3 +668,28 @@ runs:
         version: ${{ env.PACKAGE_VERSION }}
         overwrite_mode: OverwriteExisting
 
+    - name: Push build information to Octopus Deploy 🐙
+      uses: OctopusDeploy/push-build-information-action@v3
+      env:
+        OCTOPUS_URL: ${{ inputs.samples_url }}
+        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
+        OCTOPUS_SPACE: Target - Argo
+      with:
+        packages: |
+          octopussamples/octopub-${{ inputs.service_directory }}
+          octopussolutionsengineering/octopub-${{ inputs.service_directory }}
+        version: ${{ env.PACKAGE_VERSION }}
+        overwrite_mode: OverwriteExisting
+
+    - name: Push build information to Octopus Deploy 🐙
+      uses: OctopusDeploy/push-build-information-action@v3
+      env:
+        OCTOPUS_URL: ${{ inputs.samples_url }}
+        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
+        OCTOPUS_SPACE: Target - Kubernetes
+      with:
+        packages: |
+          octopussamples/octopub-${{ inputs.service_directory }}
+          octopussolutionsengineering/octopub-${{ inputs.service_directory }}
+        version: ${{ env.PACKAGE_VERSION }}
+        overwrite_mode: OverwriteExisting
