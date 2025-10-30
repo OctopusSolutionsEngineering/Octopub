@@ -31,7 +31,7 @@ const Home: FC = (): ReactElement => {
             .then(data => setBooks(convertToObject(data)))
             .catch(() => setError("Failed to retrieve the list of books."
                 + (isBranchingEnabled() ? " Branching rules are enabled - double check they are valid, or disable them." : "")));
-    }, [context.settings.productEndpoint, setBooks, setError, context.partition]);
+    }, [context.settings.productEndpoint, setBooks, setError, context.partition, context.settings.mockBackend]);
 
     return (
         <>

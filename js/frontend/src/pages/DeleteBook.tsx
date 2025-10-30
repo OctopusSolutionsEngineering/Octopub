@@ -53,7 +53,7 @@ const DeleteBook: FC<{}> = (): ReactElement => {
                 setBook(null);
                 setDisabled(true);
             });
-    }, [setBook, setDisabled, context.partition, context.settings.productEndpoint, bookId]);
+    }, [setBook, setDisabled, context.partition, context.settings.productEndpoint, bookId, context.settings.mockBackend]);
 
     return (
         <>

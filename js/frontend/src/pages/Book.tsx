@@ -30,7 +30,7 @@ const Book: FC<{}> = (): ReactElement => {
 
         getJsonApi<Product>(context.settings.productEndpoint + "/" + bookId, context.partition)
             .then(data => setBook(convertToObject(data)))
-    }, [bookId, setBook, context.settings.productEndpoint, context.partition]);
+    }, [bookId, setBook, context.settings.productEndpoint, context.partition, context.settings.mockBackend]);
 
     return (
         <>

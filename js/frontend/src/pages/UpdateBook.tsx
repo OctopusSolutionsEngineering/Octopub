@@ -52,7 +52,7 @@ const UpdateBook: FC<{}> = (): ReactElement => {
                 setError("There was an error retrieving the resource.");
                 setBook(null);
             });
-    }, [setBook, setDisabled, context.partition, context.settings.productEndpoint, bookId]);
+    }, [setBook, setDisabled, context.partition, context.settings.productEndpoint, bookId, context.settings.mockBackend]);
 
     return (
         <>
