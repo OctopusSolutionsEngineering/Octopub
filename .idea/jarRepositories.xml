@@ -7,6 +7,11 @@
       <option name="url" value="https://repo.maven.apache.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="sales-maven" />
+      <option name="name" value="sales-maven" />
+      <option name="url" value="https://octopus-sales-public-maven-repo.s3-website-ap-southeast-2.amazonaws.com" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />

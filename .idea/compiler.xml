@@ -10,6 +10,7 @@
         <module name="products-microservice" />
         <module name="rsql-jpa" />
         <module name="audit-service" />
+        <module name="frontend" />
         <module name="microservice-utils" />
       </profile>
     </annotationProcessing>
