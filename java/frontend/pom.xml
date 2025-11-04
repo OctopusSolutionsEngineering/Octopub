@@ -44,7 +44,7 @@
                 <executions>
                     <execution>
                         <id>unpack</id>
-                        <phase>compile</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>unpack</goal>
                         </goals>
@@ -61,6 +61,31 @@
                             <outputDirectory>${project.build.directory}/${project.name}-${project.version}</outputDirectory>
                             <overWriteReleases>true</overWriteReleases>
                             <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-resource-one</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/${project.name}-${project.version}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/webapp</directory>
+                                    <includes>
+                                        <include>config.json</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                            <overwrite>true</overwrite>
                         </configuration>
                     </execution>
                 </executions>
