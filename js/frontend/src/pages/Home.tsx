@@ -20,7 +20,7 @@ const Home: FC = (): ReactElement => {
 
     useEffect(() => {
         if (context.settings.mockBackend) {
-            fetch('/mock/products.json')
+            fetch('mock/products.json')
                 .then(response => response.json())
                 .then(data => setBooks(convertToObject<Products>(data)))
                 .catch(() => setError("Failed to retrieve the list of books from the mock backend."));

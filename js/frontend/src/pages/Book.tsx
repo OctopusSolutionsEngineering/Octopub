@@ -22,7 +22,7 @@ const Book: FC<{}> = (): ReactElement => {
 
     useEffect(() => {
         if (context.settings.mockBackend) {
-            fetch('/mock/product-' + bookId + '.json')
+            fetch('mock/product-' + bookId + '.json')
                 .then(response => response.json())
                 .then(data => setBook(convertToObject<Product>(data)));
             return;
