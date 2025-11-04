@@ -53,7 +53,7 @@
                                 <artifactItem>
                                     <groupId>com.octopus</groupId>
                                     <artifactId>octopub-frontend</artifactId>
-                                    <version>20251030.455.1</version>
+                                    <version>20251104.459.1</version>
                                     <type>zip</type>
                                     <overWrite>true</overWrite>
                                 </artifactItem>
