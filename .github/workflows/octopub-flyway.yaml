@@ -13,6 +13,7 @@ permissions:
       - '!README.md'
       - '!python/**/*'
       - '!octopus/**/*'
+  cron: '0 9-17 * * 1-5' # For KubeCon           
 
 jobs:
   build:
