@@ -1,4 +1,4 @@
-FROM --platform=$TARGETPLATFORM node AS build
+FROM --platform=$TARGETPLATFORM node:24 AS build
 
 ARG TARGETOS
 ARG TARGETARCH
