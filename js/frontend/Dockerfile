@@ -1,3 +1,5 @@
+# Later versions of node may introduce this error:
+# SecurityError: Cannot initialize local storage without a `--localstorage-file`   path
 FROM --platform=$TARGETPLATFORM node:24 AS build
 
 ARG TARGETOS
