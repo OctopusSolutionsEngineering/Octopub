@@ -17,6 +17,8 @@ customSecondaryColor: ""
 customBackgroundColor: ""
 customPaperColor: ""
 
+mockBackend: false
+
 image:
   repository: octopussamples/octopub-frontend
   pullPolicy: IfNotPresent
