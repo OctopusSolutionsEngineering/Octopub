@@ -28,6 +28,12 @@ inputs:
   samples_apikey:
     description: 'The octopus samples apikey'
     required: true
+  github_token:
+    description: 'The github token'
+    required: true
+  github_actor:
+    description: 'The github actor'
+    required: true
 
 
 runs:
