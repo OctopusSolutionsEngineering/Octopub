@@ -11,6 +11,10 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Install CycloneDX
+      run: npm install --global @cyclonedx/cyclonedx-npm
+      shell: bash
+
     - name: Generate SBOM
       run: |
         cyclonedx-npm --ignore-npm-errors --output-file bom.json
