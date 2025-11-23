@@ -1,0 +1,21 @@
+name: Java SBOM Build
+description: Builds an SBOM for a Java project
+inputs:
+  path:
+    required: true
+    description: The path to the project
+  output_path:
+    required: true
+    description: The output path for the SBOM file
+
+
+runs:
+  using: "composite"
+  steps:
+    - name: Generate SBOM
+      run: |
+        ./mvnw cyclonedx:makeAggregateBom -DskipTests --no-transfer-progress --batch-mode
+        mkdir -p ${{ inputs.output_path }}
+        mv target/bom.json ${{ inputs.output_path }}/bom.json
+      shell: bash
+      working-directory: ${{ inputs.path }}

@@ -1,0 +1,68 @@
+name: Build SBOMs
+permissions:
+  contents: write
+  packages: write
+'on':
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*'
+      - '!.github/badges/*'
+      - '!README.md'
+      - '!python/**/*'
+      - '!octopus/**/*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build SBOM for products
+        uses: ./github/java-sbom
+        with:
+          path: java/products-microservice
+          output_path: sbom/products
+
+      - name: Build SBOM for audits
+        uses: ./github/java-sbom
+        with:
+          path: java/audits-microservice
+          output_path: sbom/audits
+
+      - name: Build SBOM for frontend
+        uses: ./github/js-sbom
+        with:
+          path: js/frontend
+          output_path: sbom/frontend
+
+      - name: Set Version
+        run: echo "PACKAGE_VERSION=$(date +'%Y%m%d').${{ github.run_number }}.${{ github.run_attempt }}" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Build SBOM package
+        run: zip octopub-sbom.zip ./*/bom.json
+        shell: bash
+        working-directory: sbom
+
+      - name: Configure Maven
+        uses: ./github/maven
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      # The SBOM package is pushed to the Octopus maven repo.
+      - name: Push SBOM Package
+        run: |
+          mvn deploy:deploy-file \
+            --batch-mode \
+            "-DgroupId=com.octopus" \
+            "-DartifactId=octopub-sbom" \
+            "-Dversion=${{ env.PACKAGE_VERSION }}" \
+            "-Dpackaging=zip" \
+            "-Dfile=sbom/octopub-sbom.zip" \
+            "-DrepositoryId=octopus-sales-public-snapshot" \
+            "-Durl=s3://octopus-sales-public-maven-repo/snapshot"
+        shell: bash
