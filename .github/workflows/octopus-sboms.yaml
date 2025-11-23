@@ -29,7 +29,7 @@ jobs:
       - name: Build SBOM for audits
         uses: ./github/java-sbom
         with:
-          path: java/audits-microservice
+          path: java/audit-microservice
           output_path: sbom/audits
 
       - name: Build SBOM for frontend
