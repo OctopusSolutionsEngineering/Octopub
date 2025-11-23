@@ -17,9 +17,10 @@ runs:
 
     - name: Generate SBOM
       run: |
+        pushd ${{ inputs.output_path }}
         yarn install
         cyclonedx-npm --ignore-npm-errors --output-file bom.json
+        popd
         mkdir -p ${{ inputs.output_path }}
-        mv bom.json ${{ inputs.output_path }}/bom.json
+        mv ${{ inputs.path }}/bom.json ${{ inputs.output_path }}/bom.json
       shell: bash
-      working-directory: ${{ inputs.path }}
