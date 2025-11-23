@@ -28,6 +28,7 @@ https://octopus-sales-public-maven-repo.s3.ap-southeast-2.amazonaws.com/snapshot
 * `com.octopus:audit-microservice-mysql-jar` - The audit microservice uber jar with MySQL
 * `com.octopus:audit-microservice-liquidbase` - The audit microservice Liquidbase database migration scripts. The changelog file is called `audit-changeLog.xml`.
 * `com.octopus:audit-microservice-sbom` - The audit microservice SBOM
+* `com.octopus:octopub-sbom` - A package containing the SBOMs for all Octopub components
 
 ## AWS Lambda Entry Points
 
