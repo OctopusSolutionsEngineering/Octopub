@@ -16,7 +16,7 @@ runs:
       run: |
         pushd ${{ inputs.path }}
         ./mvnw cyclonedx:makeAggregateBom -DskipTests --no-transfer-progress --batch-mode
-        popd ${{ inputs.path }}
+        popd
         mkdir -p ${{ inputs.output_path }}
         mv ${{ inputs.path }}/target/bom.json ${{ inputs.output_path }}/bom.json
       shell: bash
