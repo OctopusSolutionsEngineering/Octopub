@@ -17,7 +17,7 @@ runs:
 
     - name: Generate SBOM
       run: |
-        npm install
+        yarn install
         cyclonedx-npm --ignore-npm-errors --output-file bom.json
         mkdir -p ${{ inputs.output_path }}
         mv bom.json ${{ inputs.output_path }}/bom.json
