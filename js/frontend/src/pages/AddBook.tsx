@@ -7,6 +7,7 @@ import {postJsonApi} from "../utils/network";
 import {Button, FormLabel, Grid, TextField} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
+
 const AddBook: FC<{}> = (): ReactElement => {
     const history = useNavigate();
     const context = useContext(AppContext);
@@ -39,7 +40,7 @@ const AddBook: FC<{}> = (): ReactElement => {
                 </title>
             </Helmet>
             <Grid container={true}>
-                <Grid container={true} className={classes.cell} md={2} sm={12} xs={12}>
+                <Grid container={true} className={classes.cell} size={{md: 2, sm: 12, xs: 12}}>
                     <FormLabel className={classes.label}>Name</FormLabel>
                 </Grid>
                 <Grid container={true} className={classes.cell} item md={10} sm={12} xs={12}>
