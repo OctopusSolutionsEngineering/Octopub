@@ -1,5 +1,6 @@
 import React, {createContext, useReducer, useState} from "react";
-import {responsiveFontSizes, StyledEngineProvider, Theme, ThemeProvider,} from "@mui/material/styles";
+import { ThemeProvider } from '@mui/styles';
+import {responsiveFontSizes, StyledEngineProvider, Theme} from "@mui/material/styles";
 import {Helmet} from "react-helmet";
 import {darkTheme, lightTheme, createdColouredThemes} from "./theme/appTheme";
 import {RuntimeSettings} from "./config/runtimeConfig";
