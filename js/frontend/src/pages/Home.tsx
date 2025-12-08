@@ -47,9 +47,8 @@ const Home: FC = (): ReactElement => {
                 {!books && !error && <div>Loading...</div>}
                 {!books && error && <div>{error}</div>}
                 {books && books.data.map(b =>
-                    <Grid item
-                          key={b.id}
-                          md={4} sm={6} xs={12}
+                    <Grid key={b.id}
+                          size={{ xs: 12, sm: 6, md: 4 }}
                           className={classes.bookshelfImage}
                           container={true}
                           onClick={() => {

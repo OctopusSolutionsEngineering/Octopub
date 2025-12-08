@@ -21,10 +21,10 @@ const Settings: FC = (): ReactElement => {
                 </title>
             </Helmet>
             <Grid container={true} className={classes.container}>
-                <Grid className={classes.cell} item md={2} sm={12} xs={12}>
+                <Grid className={classes.cell} size={{ xs: 12, sm: 12, md: 2 }}>
                     <FormLabel className={classes.label}>Data Partition</FormLabel>
                 </Grid>
-                <Grid className={classes.cell} item md={10} sm={12} xs={12}>
+                <Grid className={classes.cell} size={{ xs: 12, sm: 12, md: 10 }}>
                     <TextField id="partition" fullWidth={true} variant="outlined" value={partition}
                                onChange={v => {
                                    setPartition(v.target.value);
@@ -41,10 +41,10 @@ const Settings: FC = (): ReactElement => {
                         </p>
                     </span>
                 </Grid>
-                <Grid container={true} className={classes.cell} item md={2} sm={12} xs={12}>
+                <Grid container={true} className={classes.cell} size={{ xs: 12, sm: 12, md: 2 }}>
 
                 </Grid>
-                <Grid container={true} className={classes.cell} item md={10} sm={12} xs={12}>
+                <Grid container={true} className={classes.cell} size={{ xs: 12, sm: 12, md: 10 }}>
                     <Button variant={"outlined"} onClick={_ => saveSettings()}>Save Settings</Button>
                 </Grid>
             </Grid>

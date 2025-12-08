@@ -1,7 +1,7 @@
 import {FC, ReactElement, useContext, useState} from "react";
 import {Helmet} from "react-helmet";
 import {AppContext} from "../../App";
-import {DataGrid, GridCellEditCommitParams, GridRowId} from "@mui/x-data-grid";
+import {DataGrid, GridCellParams, GridRowId} from "@mui/x-data-grid";
 import {styles} from "../../utils/styles";
 import {Button, Checkbox, FormLabel, Grid} from "@mui/material";
 import {getSavedBranchingRules} from "../../utils/network";
@@ -27,7 +27,7 @@ const Branching: FC = (): ReactElement => {
         {field: 'destination', headerName: 'Destination', editable: true, width: 600}
     ];
 
-    let selectedRows: GridRowId[] = [];
+    let selectedRows: Set<GridRowId> = new Set();
 
     return (
         <>
@@ -37,18 +37,23 @@ const Branching: FC = (): ReactElement => {
                 </title>
             </Helmet>
             <Grid container={true} className={classes.container}>
-                <Grid className={classes.cell} xs={12}>
+                <Grid className={classes.cell} size={{ xs: 12 }}>
                     <DataGrid
                         style={{height: "50vh"}}
                         rows={rules}
                         columns={columns}
-                        pageSize={10}
-                        rowsPerPageOptions={[10]}
-                        onSelectionModelChange={(selection) => selectedRows = selection}
-                        onCellEditCommit={onEdit}
+                        initialState={{
+                            pagination: {
+                                paginationModel: {
+                                    pageSize: 10,
+                                },
+                            },
+                        }}
+                        onRowSelectionModelChange={(selection) => selectedRows = selection.ids}
+                        onCellEditStop={onEdit}
                     />
                 </Grid>
-                <Grid container={true} className={classes.cell} xs={12}>
+                <Grid container={true} className={classes.cell} size={{ xs: 12 }}>
                     <p>
                         Branching rules allow for client directed routing, enabling feature and local branches to be
                         called as part of the microservice graph. You must be logged in and belong to the "Developer"
@@ -69,10 +74,10 @@ const Branching: FC = (): ReactElement => {
                         considered to be disabled. This allows you to save the details of a rule but not have it applied.
                     </p>
                 </Grid>
-                <Grid container={true} className={classes.cell} xs={4}>
+                <Grid container={true} className={classes.cell} size={{ xs: 4 }}>
                     <FormLabel className={classes.label}>Branching rules enabled</FormLabel>
                 </Grid>
-                <Grid container={true} className={classes.cell} item xs={8}>
+                <Grid container={true} className={classes.cell} size={{ xs: 8 }}>
                     <Checkbox
                         checked={rulesEnabled}
                         onChange={event => {
@@ -80,10 +85,10 @@ const Branching: FC = (): ReactElement => {
                             localStorage.setItem("branchingEnabled", event.target.checked.toString());
                         }}/>
                 </Grid>
-                <Grid container={true} className={classes.cell} sm={3} xs={12}>
+                <Grid container={true} className={classes.cell} size={{ xs: 12, sm: 3 }}>
                     <Button variant={"outlined"} onClick={_ => addRule()}>Add Rule</Button>
                 </Grid>
-                <Grid container={true} className={classes.cell} sm={3} xs={12}>
+                <Grid container={true} className={classes.cell} size={{ xs: 12, sm: 3 }}>
                     <Button variant={"outlined"} onClick={_ => deleteRule()}>Delete Rule</Button>
                 </Grid>
 
@@ -91,7 +96,7 @@ const Branching: FC = (): ReactElement => {
         </>
     );
 
-    function onEdit(params: GridCellEditCommitParams) {
+    function onEdit(params: GridCellParams) {
         for (let i = 0; i < rules.length; ++i) {
             if (rules[i].id === params.id) {
                 if (params.field === "path") {
@@ -114,7 +119,7 @@ const Branching: FC = (): ReactElement => {
     }
 
     function deleteRule() {
-        const newRules = rules.filter(r => !selectedRows.some(s => s === r.id));
+        const newRules = rules.filter(r => !selectedRows.has(r.id));
         localStorage.setItem("branching", JSON.stringify(newRules));
         setRules([...newRules])
     }

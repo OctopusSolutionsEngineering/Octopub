@@ -41,13 +41,13 @@ const Book: FC<{}> = (): ReactElement => {
             </Helmet>
             {!book && <div>Loading...</div>}
             {book && <Grid container={true} className={classes.content}>
-                <Grid item md={4} sm={12}>
+                <Grid size={{ md: 4, sm: 12 }}>
                     <img id="coverimage"
                          className={classes.image}
                          src={book.data.attributes.image || "https://via.placeholder.com/300x400"}
                          alt={book.data.attributes.name || ""}/>
                 </Grid>
-                <Grid  item md={8} sm={12}>
+                <Grid size={{ md: 8, sm: 12 }}>
                     <h1>{book.data.attributes.name}</h1>
                     <p>{book.data.attributes.description}</p>
                     <h2>Downloads</h2>
