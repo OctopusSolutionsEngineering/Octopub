@@ -21,5 +21,10 @@
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="sales-maven" />
+      <option name="name" value="sales-maven" />
+      <option name="url" value="https://octopus-sales-public-maven-repo.s3.amazonaws.com/snapshot" />
+    </remote-repository>
   </component>
 </project>

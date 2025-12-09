@@ -88,12 +88,20 @@ jobs:
           samples_url: ${{ secrets.OCTOPUS_SAMPLES_URL }}
           samples_apikey: ${{ secrets.OCTOPUS_SAMPLES_API_KEY }}          
 
-
       - name: Build Products Helm Chart
         uses: ./github/helm
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           chart_directory: octopub-products-mysql
+          octopus_url: ${{ secrets.DSC_OCTOPUS_URL }}
+          octopus_apikey: ${{ secrets.DSC_OCTOPUS_API }}
+
+      - name: Build Self-Contained Products Helm Chart
+        uses: ./github/helm
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          chart_directory: octopub-products
           octopus_url: ${{ secrets.DSC_OCTOPUS_URL }}
           octopus_apikey: ${{ secrets.DSC_OCTOPUS_API }}

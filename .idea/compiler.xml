@@ -12,6 +12,7 @@
         <module name="audit-service" />
         <module name="frontend" />
         <module name="microservice-utils" />
+        <module name="java-frontend" />
       </profile>
     </annotationProcessing>
   </component>
