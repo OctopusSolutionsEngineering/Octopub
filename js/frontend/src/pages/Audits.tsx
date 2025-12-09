@@ -60,8 +60,13 @@ const Audits: FC<{}> = (): ReactElement => {
                     dataPartition: a.attributes.dataPartition
                 }))}
                 columns={columns}
-                pageSize={5}
-                rowsPerPageOptions={[5]}
+                initialState={{
+                    pagination: {
+                        paginationModel: {
+                            pageSize: 5,
+                        },
+                    },
+                }}
             />}
 
         </>
