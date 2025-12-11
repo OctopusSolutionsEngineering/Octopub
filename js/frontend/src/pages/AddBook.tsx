@@ -1,7 +1,9 @@
-import {FC, ReactElement, useContext, useEffect, useState} from "react";
-import {Helmet} from "react-helmet";
+//import {FC, ReactElement, useContext, useEffect, useState} from "react";
+import type {FC, ReactElement} from "react";
+import {useContext, useEffect, useState} from "react";
+//import {Helmet} from "react-helmet";
 import {AppContext} from "../App";
-import {Product} from "../model/Product";
+import type {Product} from "../model/Product";
 import {styles} from "../utils/styles";
 import {postJsonApi} from "../utils/network";
 import {Button, FormLabel, Grid, TextField} from "@mui/material";
@@ -34,11 +36,11 @@ const AddBook: FC<{}> = (): ReactElement => {
 
     return (
         <>
-            <Helmet>
+            
                 <title>
                     {context.settings.title}
                 </title>
-            </Helmet>
+            
             <Grid container={true}>
                 <Grid container={true} className={classes.cell} size={{md: 2, sm: 12, xs: 12}}>
                     <FormLabel className={classes.label}>Name</FormLabel>

@@ -1,5 +1,7 @@
-import {FC, ReactElement, useContext, useEffect, useState} from "react";
-import {Helmet} from "react-helmet";
+//import {FC, ReactElement, useContext, useEffect, useState} from "react";
+import type {FC, ReactElement} from "react";
+import {useContext, useEffect, useState} from "react";
+//import {Helmet} from "react-helmet";
 import {AppContext} from "../App";
 import {getJsonApi, isBranchingEnabled} from "../utils/network";
 import {DataGrid} from "@mui/x-data-grid";
@@ -44,11 +46,11 @@ const Audits: FC<{}> = (): ReactElement => {
 
     return (
         <>
-            <Helmet>
+            
                 <title>
                     {context.settings.title}
                 </title>
-            </Helmet>
+            
             {!audits && !error && <div>Loading...</div>}
             {!audits && error && <div>{error}</div>}
             {audits && <DataGrid

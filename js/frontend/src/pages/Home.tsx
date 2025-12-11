@@ -1,9 +1,10 @@
-import React, {FC, ReactElement, useContext, useEffect, useState} from "react";
-import {Helmet} from "react-helmet";
+import React, {useContext, useEffect, useState} from "react";
+import type {FC, ReactElement} from "react";
+//import {Helmet} from "react-helmet";
 import {AppContext} from "../App";
 import {getJsonApi, isBranchingEnabled} from "../utils/network";
 import {Grid} from "@mui/material";
-import {Products} from "../model/Product";
+import type {Products} from "../model/Product";
 import {useNavigate} from "react-router-dom";
 import {styles} from "../utils/styles";
 import {convertToObject} from "../utils/parsing";
@@ -35,11 +36,11 @@ const Home: FC = (): ReactElement => {
 
     return (
         <>
-            <Helmet>
+            
                 <title>
                     {context.settings.title}
                 </title>
-            </Helmet>
+            
             <Grid
                 container={true}
                 className={classes.root}

@@ -1,8 +1,0 @@
-{
-  "root": "build/",
-  "headers": {
-    "/**": {
-      "Cache-Control": "no-store, no-cache"
-    }
-  }
-}

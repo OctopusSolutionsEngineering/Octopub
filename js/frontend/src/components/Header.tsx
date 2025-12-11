@@ -1,9 +1,12 @@
 import clsx from "clsx";
-import {AppBar, IconButton, Link, Theme, Toolbar, Tooltip, Typography} from "@mui/material";
+import type {Theme} from "@mui/material";
+import {AppBar, IconButton, Link, Toolbar, Tooltip, Typography} from "@mui/material";
 import {makeStyles} from '@mui/styles';
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
-import {FC, useContext} from "react";
+//import {FC, useContext} from "react";
+import type {FC} from "react";
+import {useContext} from "react";
 import {AppContext} from "../App";
 import {History, LocalHospital, SettingsApplications, Share} from "@mui/icons-material";
 import {useNavigate} from "react-router-dom";

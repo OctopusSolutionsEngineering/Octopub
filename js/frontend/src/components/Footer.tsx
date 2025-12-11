@@ -1,4 +1,6 @@
-import { IconButton, Link, Theme } from "@mui/material";
+//import { IconButton, Link, Theme } from "@mui/material";
+import { IconButton, Link} from "@mui/material";
+import type { Theme } from "@mui/material";
 import {makeStyles} from '@mui/styles';
 import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 import {useContext} from "react";
