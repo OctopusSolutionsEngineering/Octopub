@@ -1,6 +1,11 @@
-import React, {FC, useContext} from "react";
+//import React, {FC, useContext} from "react";
+import type {FC} from "react";
+import {useContext} from "react";
+import React from "react";
 import clsx from "clsx";
-import {CssBaseline, Theme} from "@mui/material";
+//import {CssBaseline, Theme} from "@mui/material";
+import {CssBaseline} from "@mui/material";
+import type {Theme} from "@mui/material";
 import {makeStyles} from '@mui/styles';
 
 // components

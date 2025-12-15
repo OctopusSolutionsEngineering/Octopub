@@ -1,6 +1,7 @@
-import {createTheme, Theme} from "@mui/material/styles";
+import {createTheme} from "@mui/material/styles";
+import type {Theme} from "@mui/material/styles";
 import {blue, indigo, green, lightGreen, pink, purple, deepOrange, orange} from '@mui/material/colors';
-import {RuntimeSettings} from "../config/runtimeConfig";
+import type {RuntimeSettings} from "../config/runtimeConfig";
 
 // define light theme colors
 export const lightTheme: Theme = createTheme({
