@@ -28,7 +28,10 @@ const useStyles = makeStyles((theme: Theme) => {
                 display: "flex",
                 flexGrow: 1,
                 padding: theme.spacing(3),
-                overflowY: "scroll"
+                //overflowY: "scroll",
+                overflowY: "auto",
+                //background: theme.palette.primary.main,
+                background: theme.palette.background.default,
             },
             toolbar: {
                 ...theme.mixins.toolbar,

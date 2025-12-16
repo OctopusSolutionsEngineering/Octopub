@@ -75,12 +75,15 @@ function App(settings: RuntimeSettings) {
         lightDarkTheme = useDefaultTheme ? lightTheme : darkTheme;
     }
     const customThemes = createdColouredThemes(settings);
+ 
     const theme: Theme = responsiveFontSizes(settings.overrideTheme
         ? Object.keys(customThemes)
             .filter((key) => key === settings.overrideTheme)
             .map(key => customThemes[key])
             .pop() ?? lightDarkTheme
         : lightDarkTheme);
+
+ 
     const [developerMode, setDeveloperMode] = useState<boolean>(localStorage.getItem("developerMode") === "true");
     const [partition, setPartition] = useState<string>(localStorage.getItem("partition") || "main");
     const [allBookId, setAllBookId] = useState<string>("");

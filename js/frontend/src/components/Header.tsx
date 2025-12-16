@@ -25,12 +25,13 @@ const useStyles = makeStyles((theme: Theme) => {
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
+                background: theme.palette.primary.main,
             },
             title: {
                 flex: 1,
                 display: "flex",
                 flexDirection: "row",
-                alignItems: "center"
+                alignItems: "center",
             },
             menuButton: {
                 marginRight: 36,
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) => {
                 display: "none",
             },
             heading: {
-                color: "white"
+                color: "white",
             }
         }
     }
