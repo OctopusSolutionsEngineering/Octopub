@@ -51,7 +51,7 @@ export const AppContext = createContext({
 
     const provider = new OctopusFeatureProvider ({ clientIdentifier: `${process.env.clientIdentifier}`});
     await OpenFeature.setProviderAndWait(provider);
-    await OpenFeature.setContext({ userid: "bob@octopus.com" });
+    //await OpenFeature.setContext({ userid: "bob@octopus.com" });
     const client = OpenFeature.getClient();
     darkModeDefault = client.getBooleanValue("dark-mode", false)
  }

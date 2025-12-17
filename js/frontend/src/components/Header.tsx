@@ -14,10 +14,12 @@ import {useNavigate} from "react-router-dom";
 const useStyles = makeStyles((theme: Theme) => {
         return {
             appBar: {
+                background: theme.palette.primary.main,
                 zIndex: theme.zIndex.drawer + 1,
                 transition: theme.transitions.create(["width", "margin"], {
                     easing: theme.transitions.easing.sharp,
                     duration: theme.transitions.duration.leavingScreen,
+                    
                 }),
             },
             toolbar: {
