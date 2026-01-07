@@ -45,6 +45,7 @@ export const AppContext = createContext({
   // Example of what the call would look like.  the darkModeFlagIdentifier is getting the value from an environment variable
   //const provider = new OctopusFeatureProvider ({ clientIdentifier: "eyJhbGciOiJFUzI1NiIsImtpZCI6IjRiZDJlZTY3NDlkMDRhZmE4ZDc1MjlhZDIyODAwM2M4IiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJzdWIiOiJOemxoWmpSa05HRXRaR00zWmkwME56bGpMV0l3WXpVdE9HSm1NekJqWWpCaE9ESTNPbEJ5YjJwbFkzUnpMVGMwTURFNlJXNTJhWEp2Ym0xbGJuUnpMVFV6T0RRPSJ9.Jvbu0vqgPUmn_UxPwJnBzwgIdvMZuu731M97_Ldd4R6Q-wYz0YdZSwMme6ESwi8BcOf2mARe2gvf_E3dZ1HdMA"});
   const darkModeFlagIdentifier =  `${process.env.clientIdentifier}`;
+  const darkModeFlagName = `${process.env.clientIdentifierName}`;
   let darkModeDefault = false;
 
   if (darkModeFlagIdentifier !== "undefined") {
@@ -53,7 +54,7 @@ export const AppContext = createContext({
     await OpenFeature.setProviderAndWait(provider);
     //await OpenFeature.setContext({ userid: "bob@octopus.com" });
     const client = OpenFeature.getClient();
-    darkModeDefault = client.getBooleanValue("dark-mode", false)
+    darkModeDefault = client.getBooleanValue(darkModeFlagName, false)
  }
 function App(settings: RuntimeSettings) {
     const [useDefaultTheme, toggle] = useReducer(
