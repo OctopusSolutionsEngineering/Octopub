@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => {
   return {
     define: {
       'process.env.clientIdentifier': JSON.stringify(env.clientIdentifier),
-      'process.env.clientIdentifierSlug': JSON.stringify(env.clientIdentifierSlug)
+      'process.env.featureToggleSlug': JSON.stringify(env.featureToggleSlug),
     },
     plugins: [react()],
   }
