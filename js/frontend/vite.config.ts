@@ -13,7 +13,8 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   return {
     define: {
-      'process.env': env
+      'process.env.clientIdentifier': JSON.stringify(env.clientIdentifier),
+      'process.env.clientIdentifierSlug': JSON.stringify(env.clientIdentifierSlug)
     },
     plugins: [react()],
   }
