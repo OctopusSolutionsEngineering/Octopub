@@ -15,7 +15,10 @@ import Branching from "./pages/developer/Branching";
 import Health from "./pages/developer/Health";
 import {OctopusFeatureProvider} from '@octopusdeploy/openfeature';
 import {OpenFeature} from '@openfeature/web-sdk';
-import * as dotenv from 'dotenv';
+import {loadConfig} from "./utils/dynamicConfig";
+//import { json } from "node:stream/consumers";
+//import * as dotenv from 'dotenv';
+
 //dotenv.config();
 
 declare module '@mui/styles/defaultTheme' {
@@ -44,13 +47,28 @@ export const AppContext = createContext({
 
   // Example of what the call would look like.  the darkModeFlagIdentifier is getting the value from an environment variable
   //const provider = new OctopusFeatureProvider ({ clientIdentifier: "eyJhbGciOiJFUzI1NiIsImtpZCI6IjRiZDJlZTY3NDlkMDRhZmE4ZDc1MjlhZDIyODAwM2M4IiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJzdWIiOiJOemxoWmpSa05HRXRaR00zWmkwME56bGpMV0l3WXpVdE9HSm1NekJqWWpCaE9ESTNPbEJ5YjJwbFkzUnpMVGMwTURFNlJXNTJhWEp2Ym0xbGJuUnpMVFV6T0RRPSJ9.Jvbu0vqgPUmn_UxPwJnBzwgIdvMZuu731M97_Ldd4R6Q-wYz0YdZSwMme6ESwi8BcOf2mARe2gvf_E3dZ1HdMA"});
-  const darkModeFlagIdentifier =  `${process.env.clientIdentifier}`;
-  const darkModeFlagSlug = `${process.env.featureToggleSlug}`;
-  let darkModeDefault = false;
+  let darkModeFlagIdentifier = "undefined";
+  let darkModeFlagSlug = "undefined";
 
+  async function getSettings() {
+    const settings = await loadConfig();
+  
+    return settings;
+  }
+
+  let jsonSettings = await getSettings();
+
+  darkModeFlagIdentifier =  jsonSettings.clientIdentifier;
+  darkModeFlagSlug = jsonSettings.featureToggleSlug;
+
+  //const darkModeFlagIdentifier =  `${process.env.clientIdentifier}`;
+  //const darkModeFlagSlug = `${process.env.featureToggleSlug}`;
+  
+  let darkModeDefault = false;
+  
   if (darkModeFlagIdentifier !== "undefined") {
 
-    const provider = new OctopusFeatureProvider ({ clientIdentifier: `${process.env.clientIdentifier}`});
+    const provider = new OctopusFeatureProvider ({ clientIdentifier: darkModeFlagIdentifier});
     await OpenFeature.setProviderAndWait(provider);
     //await OpenFeature.setContext({ userid: "bob@octopus.com" });
     const client = OpenFeature.getClient();

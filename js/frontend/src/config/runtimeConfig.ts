@@ -14,4 +14,6 @@ export interface RuntimeSettings {
     customBackgroundColor: string;
     customPaperColor: string;
     mockBackend: boolean;
+    clientIdentifier: string;
+    featureToggleSlug: string;
 }
