@@ -12,7 +12,7 @@ RG_NAME=${3:-"octopub-${ENVIRONMENT}-${RANDOM_SUFFIX}"}
 FUNCTION_NAME=${4:-"octopub-function-${ENVIRONMENT}-${RANDOM_SUFFIX}"}
 HOSTING_PLAN_NAME=${5:-"ASP-${FUNCTION_NAME}"}
 # Must be lowercase letters and number only, between 3 and 24 characters
-STORAGE_ACCOUNT_NAME=${6:-"octopubfunction${ENVIRONMENT}${RANDOM_SUFFIX}"}
+STORAGE_ACCOUNT_NAME=${6:-"${ENVIRONMENT}${RANDOM_SUFFIX}"}
 
 # Start by creating the resource group
 az deployment sub create \
