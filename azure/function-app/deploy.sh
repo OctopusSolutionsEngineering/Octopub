@@ -10,8 +10,8 @@ ENVIRONMENT=${1:-"development"}
 REGION=${2:-"australiaeast"}
 RG_NAME=${3:-"octopub-${ENVIRONMENT}-${RANDOM_SUFFIX}"}
 FUNCTION_NAME=${4:-"octopub-function-${ENVIRONMENT}-${RANDOM_SUFFIX}"}
-HOSTING_PLAN_NAME=${5:-"ASP-${WEBAPP_NAME}"}
-STORAGE_ACCOUNT_NAME=${5:-"Storage-${WEBAPP_NAME}"}
+HOSTING_PLAN_NAME=${5:-"ASP-${FUNCTION_NAME}"}
+STORAGE_ACCOUNT_NAME=${6:-"${FUNCTION_NAME}"}
 
 # Start by creating the resource group
 az deployment sub create \
@@ -32,4 +32,4 @@ az deployment group create \
   hostingPlanName="${HOSTING_PLAN_NAME}" \
   location="${REGION}" \
   storageAccountName="${STORAGE_ACCOUNT_NAME}" \
-  storageBlobContainerName="${WEBAPP_NAME}"
+  storageBlobContainerName="${FUNCTION_NAME}"
