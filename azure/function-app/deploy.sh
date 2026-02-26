@@ -19,23 +19,27 @@ HOSTING_PLAN_NAME=${6:-"ASP-${FUNCTION_NAME}"}
 # Must be lowercase letters and number only, between 3 and 24 characters
 STORAGE_ACCOUNT_NAME=${7:-"${ENVIRONMENT}${RANDOM_SUFFIX_SUPPLIED}"}
 
-# Start by creating the resource group
-az deployment sub create \
-  --location "${REGION}" \
-  --template-file ../resource-group/template.json \
-  --parameters ../resource-group/parameters.json \
-  --parameters rgName="${RG_NAME}"
+if az group exists --name "${RG_NAME}" | grep -q "false"; then
+  # Start by creating the resource group
+  az deployment sub create \
+    --location "${REGION}" \
+    --template-file ../resource-group/template.json \
+    --parameters ../resource-group/parameters.json \
+    --parameters rgName="${RG_NAME}"
 
-# Then deploy the web app and hosting plan into the resource group
-az deployment group create \
-  --resource-group "${RG_NAME}" \
-  --template-file template.json \
-  --parameters parameters.json \
-  --parameters \
-  environment="${ENVIRONMENT}" \
-  resourceGroup="${RG_NAME}" \
-  name="${FUNCTION_NAME}" \
-  hostingPlanName="${HOSTING_PLAN_NAME}" \
-  location="${REGION}" \
-  storageAccountName="${STORAGE_ACCOUNT_NAME}" \
-  storageBlobContainerName="${FUNCTION_NAME}"
+  # Then deploy the web app and hosting plan into the resource group
+  az deployment group create \
+    --resource-group "${RG_NAME}" \
+    --template-file template.json \
+    --parameters parameters.json \
+    --parameters \
+    environment="${ENVIRONMENT}" \
+    resourceGroup="${RG_NAME}" \
+    name="${FUNCTION_NAME}" \
+    hostingPlanName="${HOSTING_PLAN_NAME}" \
+    location="${REGION}" \
+    storageAccountName="${STORAGE_ACCOUNT_NAME}" \
+    storageBlobContainerName="${FUNCTION_NAME}"
+else
+  echo "Resource group ${RG_NAME} already exists. Skipping creation."
+fi

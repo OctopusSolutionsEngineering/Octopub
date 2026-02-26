@@ -17,16 +17,21 @@ RG_NAME=${4:-"octopub-${ENVIRONMENT}-${RANDOM_SUFFIX_SUPPLIED}"}
 WEBAPP_NAME=${5:-"octopub-webapp-${ENVIRONMENT}-${RANDOM_SUFFIX_SUPPLIED}"}
 HOSTING_PLAN_NAME=${6:-"ASP-${WEBAPP_NAME}"}
 
-# Start by creating the resource group
-az deployment sub create \
-  --location "${REGION}" \
-  --template-file ../resource-group/template.json \
-  --parameters ../resource-group/parameters.json \
-  --parameters rgName="${RG_NAME}"
+# Check if resource group exists, create it if it doesn't
+if az group exists --name "${RG_NAME}" | grep -q "false"; then
+  az deployment sub create \
+    --location "${REGION}" \
+    --template-file ../resource-group/template.json \
+    --parameters ../resource-group/parameters.json \
+    --parameters rgName="${RG_NAME}"
 
-# Then deploy the web app and hosting plan into the resource group
-az deployment group create \
-  --resource-group "${RG_NAME}" \
-  --template-file template.json \
-  --parameters parameters.json \
-  --parameters resourceGroupName="${RG_NAME}" name="${WEBAPP_NAME}" hostingPlanName="${HOSTING_PLAN_NAME}" location="${REGION}"
+  # Then deploy the web app and hosting plan into the resource group
+  az deployment group create \
+    --resource-group "${RG_NAME}" \
+    --template-file template.json \
+    --parameters parameters.json \
+    --parameters resourceGroupName="${RG_NAME}" name="${WEBAPP_NAME}" hostingPlanName="${HOSTING_PLAN_NAME}" location="${REGION}"
+else
+  echo "Resource group ${RG_NAME} already exists. Skipping creation."
+fi
+
