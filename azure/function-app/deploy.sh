@@ -11,12 +11,13 @@ RANDOM_SUFFIX=$(openssl rand -hex 5)
 # Set the variables for the deployment. You can override these by passing in parameters when you run the script,
 # or just let it generate unique names for you.
 ENVIRONMENT=${1:-"development"}
-REGION=${2:-"australiaeast"}
-RG_NAME=${3:-"octopub-${ENVIRONMENT}-${RANDOM_SUFFIX}"}
-FUNCTION_NAME=${4:-"octopub-function-${ENVIRONMENT}-${RANDOM_SUFFIX}"}
-HOSTING_PLAN_NAME=${5:-"ASP-${FUNCTION_NAME}"}
+RANDOM_SUFFIX_SUPPLIED=${2:-$RANDOM_SUFFIX}
+REGION=${3:-"australiaeast"}
+RG_NAME=${4:-"octopub-${ENVIRONMENT}-${RANDOM_SUFFIX_SUPPLIED}"}
+FUNCTION_NAME=${5:-"octopub-function-${ENVIRONMENT}-${RANDOM_SUFFIX_SUPPLIED}"}
+HOSTING_PLAN_NAME=${6:-"ASP-${FUNCTION_NAME}"}
 # Must be lowercase letters and number only, between 3 and 24 characters
-STORAGE_ACCOUNT_NAME=${6:-"${ENVIRONMENT}${RANDOM_SUFFIX}"}
+STORAGE_ACCOUNT_NAME=${7:-"${ENVIRONMENT}${RANDOM_SUFFIX_SUPPLIED}"}
 
 # Start by creating the resource group
 az deployment sub create \
