@@ -22,6 +22,6 @@ public class RootResource {
   @GET
   @Produces({Constants.JsonApi.JSONAPI_CONTENT_TYPE, MediaType.APPLICATION_JSON})
   public Response healthCollectionGet()  {
-    return Response.ok().build();
+    return Response.ok("OK").build();
   }
 }
