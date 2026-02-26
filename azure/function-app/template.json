@@ -41,7 +41,7 @@
         "hostingPlanName": {
             "type": "string"
         },
-        "serverFarmResourceGroup": {
+        "resourceGroup": {
             "type": "string"
         },
         "alwaysOn": {
@@ -109,7 +109,7 @@
                 },
                 "publicNetworkAccess": "Enabled",
                 "httpsOnly": true,
-                "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
+                "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('resourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
             },
             "resources": [
                 {
@@ -190,7 +190,7 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
             ],
-            "resourceGroup": "octopub-development-2e22fbf64f",
+            "resourceGroup": "[parameters('resourceGroup')]",
             "subscriptionId": "[parameters('subscriptionId')]",
             "properties": {
                 "mode": "Incremental",
