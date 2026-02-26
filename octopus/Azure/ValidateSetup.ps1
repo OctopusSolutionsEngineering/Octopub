@@ -52,7 +52,7 @@ try
 
   Write-Host "Checking to see if Project variables have been configured ..."
 
-  if ("#{Project.Octopus.Api.Key}" -eq "CHANGE ME")
+  if (-not ("#{Project.Octopus.Api.Key}" -like "API-*"))
   {
     $errorCollection += @(
       "The project variable Project.Octopus.Api.Key has not been configured.",
