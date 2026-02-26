@@ -14,14 +14,14 @@ HOSTING_PLAN_NAME=${5:-"ASP-${WEBAPP_NAME}"}
 
 # Start by creating the resource group
 az deployment sub create \
-  --location ${REGION} \
+  --location "${REGION}" \
   --template-file ../resource-group/template.json \
   --parameters ../resource-group/parameters.json \
-  --parameters rgName=${RG_NAME}
+  --parameters rgName="${RG_NAME}"
 
 # Then deploy the web app and hosting plan into the resource group
 az deployment group create \
-  --resource-group ${RG_NAME} \
+  --resource-group "${RG_NAME}" \
   --template-file template.json \
   --parameters parameters.json \
-  --parameters resourceGroupName=${RG_NAME} name=${WEBAPP_NAME} hostingPlanName=${HOSTING_PLAN_NAME} location=${REGION}
+  --parameters resourceGroupName="${RG_NAME}" name="${WEBAPP_NAME}" hostingPlanName="${HOSTING_PLAN_NAME}" location="${REGION}"
