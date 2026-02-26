@@ -27,7 +27,6 @@ az deployment group create \
   --parameters parameters.json \
   --parameters \
   environment="${ENVIRONMENT}" \
-  resourceGroupName="${RG_NAME}" \
   serverFarmResourceGroup="${RG_NAME}" \
   name="${FUNCTION_NAME}" \
   hostingPlanName="${HOSTING_PLAN_NAME}" \
