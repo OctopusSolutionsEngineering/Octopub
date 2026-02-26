@@ -60,41 +60,6 @@ try
     )
   }
 
-  if ($CheckForTargets)
-  {
-    Write-Host "Checking for deployment targets ..."
-
-    # Check to make sure targets have been created
-    if ([string]::IsNullOrWhitespace("#{Octopus.Web.ServerUri}"))
-    {
-      $octopusUrl = "#{Octopus.Web.BaseUrl}"
-    }
-    else
-    {
-      $octopusUrl = "#{Octopus.Web.ServerUri}"
-    }
-
-    $apiKey = "#{Project.Octopus.Api.Key}"
-    if (![string]::IsNullOrWhitespace($apiKey) -and $apiKey -ne "CHANGE ME")
-    {
-      $spaceId = "#{Octopus.Space.Id}"
-      $headers = @{"X-Octopus-ApiKey"="$apiKey"}
-
-      try
-      {
-        $roleTargets = Invoke-RestMethod -Method Get -Uri "$octopusUrl/api/$spaceId/machines?roles=$Role" -Headers $headers
-        if ($roleTargets.Items.Count -lt 1)
-        {
-          $errorCollection += @("Expected at least 1 target for role $Role, but found $($roleTargets.Items.Count).", "See the [Octopus documentation](https://octopus.com/docs/infrastructure/deployment-targets/azure/web-app-targets) for details on configuring an Azure Web App target.")
-        }
-      }
-      catch
-      {
-        $errorCollection += @("Failed to retrieve role targets: $($_.Exception.Message)")
-      }
-    }
-  }
-
   if ($errorCollection.Count -gt 0)
   {
     Write-Host "The project setup could not be validated.  Please check the following errors:"
