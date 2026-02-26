@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# This script creates a resource group and then creates an Azure Flex Consumption Function.
+# Call like this:
+# ./deploy.sh production
+
 # Web app names must be globally unique. Resource group names also need to be unique.
 # So we generate a random suffix to append to the names to avoid conflicts with existing resources in the subscription.
 RANDOM_SUFFIX=$(openssl rand -hex 5)
