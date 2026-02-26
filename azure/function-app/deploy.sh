@@ -40,6 +40,8 @@ if az group exists --name "${RG_NAME}" | grep -q "false"; then
     location="${REGION}" \
     storageAccountName="${STORAGE_ACCOUNT_NAME}" \
     storageBlobContainerName="${FUNCTION_NAME}"
+
+    echo "Resource group ${RG_NAME} created and function app ${FUNCTION_NAME} deployed successfully."
 else
   echo "Resource group ${RG_NAME} already exists. Skipping creation."
 fi

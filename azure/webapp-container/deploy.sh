@@ -31,6 +31,8 @@ if az group exists --name "${RG_NAME}" | grep -q "false"; then
     --template-file template.json \
     --parameters parameters.json \
     --parameters resourceGroupName="${RG_NAME}" name="${WEBAPP_NAME}" hostingPlanName="${HOSTING_PLAN_NAME}" location="${REGION}"
+
+  echo "Resource group ${RG_NAME} created and web app ${WEBAPP_NAME} deployed successfully."
 else
   echo "Resource group ${RG_NAME} already exists. Skipping creation."
 fi
