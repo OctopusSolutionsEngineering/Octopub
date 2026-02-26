@@ -50,7 +50,11 @@ try
     $errorCollection += @("See the [documentation](https://octopus.com/docs/infrastructure/accounts/azure#azure-service-principal) for details on configuring an Azure Service Principal")
   }
 
+  Set-OctopusVariable -Name AzureSetupValid -Value $azureConfigured
+
   Write-Host "Checking to see if Project variables have been configured ..."
+
+  $apiKeyConfigured = $true
 
   if (-not ("#{Project.Octopus.Api.Key}" -like "API-*"))
   {
@@ -58,6 +62,7 @@ try
       "The project variable Project.Octopus.Api.Key has not been configured.",
       "See the [Octopus documentation](https://octopus.com/docs/octopus-rest-api/how-to-create-an-api-key) for details on creating an API key."
     )
+    $apiKeyConfigured = $false
   }
 
   if ($errorCollection.Count -gt 0)
@@ -77,7 +82,9 @@ try
     Write-Host "Setup valid!"
   }
 
-  Set-OctopusVariable -Name SetupValid -Value $setupValid  
+  Set-OctopusVariable -Name ApiKeySetupValid -Value $apiKeyConfigured
+
+  Set-OctopusVariable -Name SetupValid -Value $setupValid
 
 }
 catch
