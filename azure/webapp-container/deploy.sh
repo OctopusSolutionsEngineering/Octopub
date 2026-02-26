@@ -7,7 +7,7 @@ RANDOM_SUFFIX=$(openssl rand -hex 5)
 # Set the variables for the deployment. You can override these by passing in parameters when you run the script,
 # or just let it generate unique names for you.
 REGION=${1:-"australiaeast"}
-RG_NAME=${2:-"octopub${RANDOM_SUFFIX}"}
+RG_NAME=${2:-"octopub-development-${RANDOM_SUFFIX}"}
 WEBAPP_NAME=${3:-"octopub-webapp-development-${RANDOM_SUFFIX}"}
 HOSTING_PLAN_NAME=${4:-"ASP-${WEBAPP_NAME}"}
 
