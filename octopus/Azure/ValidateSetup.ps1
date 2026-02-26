@@ -85,7 +85,7 @@ try
         $roleTargets = Invoke-RestMethod -Method Get -Uri "$octopusUrl/api/$spaceId/machines?roles=$Role" -Headers $headers
         if ($roleTargets.Items.Count -lt 1)
         {
-          $errorCollection += @("Expected at least 1 target for role $Role, but found $($roleTargets.Items.Count).  Have you run the Create Infrastructure runbook?")
+          $errorCollection += @("Expected at least 1 target for role $Role, but found $($roleTargets.Items.Count).", "See the [Octopus documentation](https://octopus.com/docs/infrastructure/deployment-targets/azure/web-app-targets) for details on configuring an Azure Web App target.")
         }
       }
       catch
