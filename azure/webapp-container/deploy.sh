@@ -4,19 +4,13 @@
 # Call like this:
 # ./deploy.sh production
 
-# Web app names must be globally unique. Resource group names also need to be unique.
-# So we generate a suffix based on the date of the previous Monday to append to the names.
-# This provides consistency for resources created in the same week.
-RANDOM_SUFFIX=$(date -d "last Monday" +%Y%m%d 2>/dev/null || date -v-Mon +%Y%m%d)
-
 # Set the variables for the deployment. You can override these by passing in parameters when you run the script,
 # or just let it generate unique names for you.
 ENVIRONMENT=${1:-"development"}
-RANDOM_SUFFIX_SUPPLIED=${2:-$RANDOM_SUFFIX}
-REGION=${3:-"australiaeast"}
-RG_NAME=${4:-"octopub-webapp-${ENVIRONMENT}-${RANDOM_SUFFIX_SUPPLIED}"}
-WEBAPP_NAME=${5:-"octopub-webapp-${ENVIRONMENT}-${RANDOM_SUFFIX_SUPPLIED}"}
-HOSTING_PLAN_NAME=${6:-"ASP-${WEBAPP_NAME}"}
+REGION=${2:-"australiaeast"}
+RG_NAME=${3:-"octopub-webapp-${ENVIRONMENT}"}
+WEBAPP_NAME=${4:-"octopub-webapp-${ENVIRONMENT}"}
+HOSTING_PLAN_NAME=${5:-"ASP-${WEBAPP_NAME}"}
 
 # Check if resource group exists, create it if it doesn't
 if az group exists --name "${RG_NAME}" | grep -q "false"; then
