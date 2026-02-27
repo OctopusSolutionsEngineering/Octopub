@@ -4,9 +4,10 @@
 # Call like this:
 # ./deploy.sh production
 
-# Web app names must be globally unique. Resource group names also need to be unique.
-# So we generate a random suffix to append to the names to avoid conflicts with existing resources in the subscription.
-RANDOM_SUFFIX=$(openssl rand -hex 5)
+# Function app names must be globally unique. Resource group names also need to be unique.
+# So we generate a suffix based on the date of the previous Monday to append to the names.
+# This provides consistency for resources created in the same week.
+RANDOM_SUFFIX=$(date -d "last Monday" +%Y%m%d 2>/dev/null || date -v-Mon +%Y%m%d)
 
 # Set the variables for the deployment. You can override these by passing in parameters when you run the script,
 # or just let it generate unique names for you.
