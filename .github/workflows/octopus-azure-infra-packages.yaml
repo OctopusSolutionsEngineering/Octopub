@@ -92,7 +92,6 @@ jobs:
         working-directory: java
 
       - name: Deploy serverless azure function package
-        if: ${{ inputs.azure_build == 'true' }}
         run: |
           mvn deploy:deploy-file \
             --batch-mode \
