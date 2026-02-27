@@ -14,7 +14,7 @@ RANDOM_SUFFIX=$(date -d "last Monday" +%Y%m%d 2>/dev/null || date -v-Mon +%Y%m%d
 ENVIRONMENT=${1:-"development"}
 RANDOM_SUFFIX_SUPPLIED=${2:-$RANDOM_SUFFIX}
 REGION=${3:-"australiaeast"}
-RG_NAME=${4:-"octopub-${ENVIRONMENT}-${RANDOM_SUFFIX_SUPPLIED}"}
+RG_NAME=${4:-"octopub-webapp-${ENVIRONMENT}-${RANDOM_SUFFIX_SUPPLIED}"}
 WEBAPP_NAME=${5:-"octopub-webapp-${ENVIRONMENT}-${RANDOM_SUFFIX_SUPPLIED}"}
 HOSTING_PLAN_NAME=${6:-"ASP-${WEBAPP_NAME}"}
 
