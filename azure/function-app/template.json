@@ -51,7 +51,7 @@
     "variables": {},
     "resources": [
         {
-            "apiVersion": "2022-03-01",
+            "apiVersion": "2023-12-01",
             "name": "[parameters('name')]",
             "type": "Microsoft.Web/sites",
             "kind": "functionapp,linux",
