@@ -4,21 +4,16 @@
 # Call like this:
 # ./deploy.sh production
 
-# Function app names must be globally unique. Resource group names also need to be unique.
-# So we generate a suffix based on the date of the previous Monday to append to the names.
-# This provides consistency for resources created in the same week.
-RANDOM_SUFFIX=$(date -d "last Monday" +%Y%m%d 2>/dev/null || date -v-Mon +%Y%m%d)
-
 # Set the variables for the deployment. You can override these by passing in parameters when you run the script,
 # or just let it generate unique names for you.
 ENVIRONMENT=${1:-"development"}
-RANDOM_SUFFIX_SUPPLIED=${2:-$RANDOM_SUFFIX}
-REGION=${3:-"australiaeast"}
-RG_NAME=${4:-"octopub-function-${ENVIRONMENT}-${RANDOM_SUFFIX_SUPPLIED}"}
-FUNCTION_NAME=${5:-"octopub-function-${ENVIRONMENT}-${RANDOM_SUFFIX_SUPPLIED}"}
-HOSTING_PLAN_NAME=${6:-"ASP-${FUNCTION_NAME}"}
+REGION=${2:-"australiaeast"}
+RG_NAME=${3:-"octopub-function-${ENVIRONMENT}"}
+FUNCTION_NAME=${4:-"octopub-function-${ENVIRONMENT}"}
+HOSTING_PLAN_NAME=${5:-"ASP-${FUNCTION_NAME}"}
 # Must be lowercase letters and number only, between 3 and 24 characters
-STORAGE_ACCOUNT_NAME=${7:-"${ENVIRONMENT}${RANDOM_SUFFIX_SUPPLIED}"}
+STORAGE_ACCOUNT_NAME=${6:-"octopubfunction${ENVIRONMENT}"}
+STORAGE_ACCOUNT_NAME="${STORAGE_ACCOUNT_NAME:0:24}"
 
 if az group exists --name "${RG_NAME}" | grep -q "false"; then
   # Start by creating the resource group

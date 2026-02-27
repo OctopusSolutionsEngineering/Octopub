@@ -9,9 +9,6 @@ param(
     [string]$Environment = "development",
 
     [Parameter(Mandatory=$false)]
-    [string]$RandomSuffixSupplied,
-
-    [Parameter(Mandatory=$false)]
     [string]$Region = "australiaeast",
 
     [Parameter(Mandatory=$false)]
@@ -24,44 +21,12 @@ param(
     [string]$HostingPlanName
 )
 
-# Web app names must be globally unique. Resource group names also need to be unique.
-# So we generate a suffix based on the date of the previous Monday to append to the names.
-# This provides consistency for resources created in the same week.
-function Get-PreviousMonday {
-    $today = Get-Date
-    $dayOfWeek = [int]$today.DayOfWeek
-
-    # Calculate days to subtract to get to previous Monday
-    # Sunday = 0, Monday = 1, etc.
-    if ($dayOfWeek -eq 0) {
-        # Sunday
-        $daysToSubtract = 6
-    } elseif ($dayOfWeek -eq 1) {
-        # Monday - get last Monday
-        $daysToSubtract = 7
-    } else {
-        # Tuesday-Saturday
-        $daysToSubtract = $dayOfWeek - 1
-    }
-
-    $previousMonday = $today.AddDays(-$daysToSubtract)
-    return $previousMonday.ToString("yyyyMMdd")
-}
-
-$RandomSuffix = Get-PreviousMonday
-
-# Set the variables for the deployment. You can override these by passing in parameters when you run the script,
-# or just let it generate unique names for you.
-if (-not $RandomSuffixSupplied) {
-    $RandomSuffixSupplied = $RandomSuffix
-}
-
 if (-not $RgName) {
-    $RgName = "octopub-webapp-${Environment}-${RandomSuffixSupplied}"
+    $RgName = "octopub-webapp-${Environment}"
 }
 
 if (-not $WebAppName) {
-    $WebAppName = "octopub-webapp-${Environment}-${RandomSuffixSupplied}"
+    $WebAppName = "octopub-webapp-${Environment}"
 }
 
 if (-not $HostingPlanName) {

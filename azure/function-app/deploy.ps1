@@ -9,9 +9,6 @@ param(
     [string]$Environment = "development",
 
     [Parameter(Mandatory=$false)]
-    [string]$RandomSuffixSupplied,
-
-    [Parameter(Mandatory=$false)]
     [string]$Region = "australiaeast",
 
     [Parameter(Mandatory=$false)]
@@ -27,32 +24,6 @@ param(
     [string]$StorageAccountName
 )
 
-# Function app names must be globally unique. Resource group names also need to be unique.
-# So we generate a suffix based on the date of the previous Monday to append to the names.
-# This provides consistency for resources created in the same week.
-function Get-PreviousMonday {
-    $today = Get-Date
-    $dayOfWeek = [int]$today.DayOfWeek
-
-    # Calculate days to subtract to get to previous Monday
-    # Sunday = 0, Monday = 1, etc.
-    if ($dayOfWeek -eq 0) {
-        # Sunday
-        $daysToSubtract = 6
-    } elseif ($dayOfWeek -eq 1) {
-        # Monday - get last Monday
-        $daysToSubtract = 7
-    } else {
-        # Tuesday-Saturday
-        $daysToSubtract = $dayOfWeek - 1
-    }
-
-    $previousMonday = $today.AddDays(-$daysToSubtract)
-    return $previousMonday.ToString("yyyyMMdd")
-}
-
-$RandomSuffix = Get-PreviousMonday
-
 # Set the variables for the deployment. You can override these by passing in parameters when you run the script,
 # or just let it generate unique names for you.
 if (-not $RandomSuffixSupplied) {
@@ -60,11 +31,11 @@ if (-not $RandomSuffixSupplied) {
 }
 
 if (-not $RgName) {
-    $RgName = "octopub-function-${Environment}-${RandomSuffixSupplied}"
+    $RgName = "octopub-function-${Environment}"
 }
 
 if (-not $FunctionName) {
-    $FunctionName = "octopub-function-${Environment}-${RandomSuffixSupplied}"
+    $FunctionName = "octopub-function-${Environment}"
 }
 
 if (-not $HostingPlanName) {
@@ -73,7 +44,7 @@ if (-not $HostingPlanName) {
 
 # Must be lowercase letters and number only, between 3 and 24 characters
 if (-not $StorageAccountName) {
-    $StorageAccountName = "${Environment}${RandomSuffixSupplied}".ToLower()
+    $StorageAccountName = "octopubfunction${Environment}".ToLower().SubString(0, 24)
 }
 
 # Check if resource group exists

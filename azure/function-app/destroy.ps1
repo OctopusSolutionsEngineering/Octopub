@@ -9,43 +9,11 @@ param(
     [string]$Environment = "development",
 
     [Parameter(Mandatory=$false)]
-    [string]$RandomSuffixSupplied,
-
-    [Parameter(Mandatory=$false)]
     [string]$RgName
 )
 
-# Function to get the previous Monday date
-function Get-PreviousMonday {
-    $today = Get-Date
-    $dayOfWeek = [int]$today.DayOfWeek
-
-    # Calculate days to subtract to get to previous Monday
-    # Sunday = 0, Monday = 1, etc.
-    if ($dayOfWeek -eq 0) {
-        # Sunday
-        $daysToSubtract = 6
-    } elseif ($dayOfWeek -eq 1) {
-        # Monday - get last Monday
-        $daysToSubtract = 7
-    } else {
-        # Tuesday-Saturday
-        $daysToSubtract = $dayOfWeek - 1
-    }
-
-    $previousMonday = $today.AddDays(-$daysToSubtract)
-    return $previousMonday.ToString("yyyyMMdd")
-}
-
-$RandomSuffix = Get-PreviousMonday
-
-# Set the variables to match what deploy.ps1 would have created
-if (-not $RandomSuffixSupplied) {
-    $RandomSuffixSupplied = $RandomSuffix
-}
-
 if (-not $RgName) {
-    $RgName = "octopub-function-${Environment}-${RandomSuffixSupplied}"
+    $RgName = "octopub-function-${Environment}"
 }
 
 # Check if resource group exists
