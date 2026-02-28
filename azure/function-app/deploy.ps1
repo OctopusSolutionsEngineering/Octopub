@@ -24,12 +24,6 @@ param(
     [string]$StorageAccountName
 )
 
-# Set the variables for the deployment. You can override these by passing in parameters when you run the script,
-# or just let it generate unique names for you.
-if (-not $RandomSuffixSupplied) {
-    $RandomSuffixSupplied = $RandomSuffix
-}
-
 if (-not $RgName) {
     $RgName = "octopub-function-${Environment}"
 }
@@ -59,7 +53,8 @@ if (-not $rgExists) {
         --location $Region `
         --template-file ../resource-group/template.json `
         --parameters ../resource-group/parameters.json `
-        --parameters rgName=$RgName
+        --parameters `
+        rgName=$RgName
 
     # Then deploy the function app and hosting plan into the resource group
     az deployment group create `

@@ -5,9 +5,6 @@
         "environment": {
             "value": "development"
         },
-        "subscriptionId": {
-            "value": "3b50dcf4-f74d-442e-93cb-301b13e1e2d5"
-        },
         "name": {
             "value": "octopus-function"
         },

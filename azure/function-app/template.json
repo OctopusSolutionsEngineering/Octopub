@@ -5,9 +5,6 @@
         "environment": {
             "type": "string"
         },
-        "subscriptionId": {
-            "type": "string"
-        },
         "name": {
             "type": "string"
         },
@@ -109,7 +106,7 @@
                 },
                 "publicNetworkAccess": "Enabled",
                 "httpsOnly": true,
-                "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('resourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
+                "serverFarmId": "[concat('/subscriptions/', subscription().subscriptionId,'/resourcegroups/', parameters('resourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
             },
             "resources": [
                 {
@@ -191,7 +188,7 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
             ],
             "resourceGroup": "[parameters('resourceGroup')]",
-            "subscriptionId": "[parameters('subscriptionId')]",
+            "subscriptionId": "[subscription().subscriptionId]",
             "properties": {
                 "mode": "Incremental",
                 "template": {
