@@ -44,7 +44,8 @@ if (-not $HostingPlanName) {
 
 # Must be lowercase letters and number only, between 3 and 24 characters
 if (-not $StorageAccountName) {
-    $StorageAccountName = "octopubfunction${Environment}".ToLower().SubString(0, 24)
+    $tempName = "octopubfunction${Environment}".ToLower()
+    $StorageAccountName = $tempName.SubString(0, [Math]::Min(24, $tempName.Length))
 }
 
 # Check if resource group exists
