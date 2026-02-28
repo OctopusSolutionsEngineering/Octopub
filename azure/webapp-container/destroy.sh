@@ -11,9 +11,6 @@ RG_NAME=${2:-"octopub-function-${ENVIRONMENT}"}
 # Check if resource group exists
 if az group exists --name "${RG_NAME}" | grep -q "true"; then
   echo "Resource group ${RG_NAME} exists. Deleting..."
-  echo "WARNING: This will delete all resources in the resource group ${RG_NAME}."
-  echo "Press Ctrl+C within 5 seconds to cancel..."
-  sleep 5
 
   az group delete --name "${RG_NAME}" --yes --no-wait
 

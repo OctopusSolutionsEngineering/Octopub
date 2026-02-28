@@ -21,7 +21,6 @@ $rgExists = az group exists --name $RgName | ConvertFrom-Json
 
 if ($rgExists) {
     Write-Host "Resource group ${RgName} exists. Deleting..."
-    Write-Warning "This will delete all resources in the resource group ${RgName}. Press Ctrl+C to cancel."
     Start-Sleep -Seconds 5
 
     az group delete --name $RgName --yes --no-wait
