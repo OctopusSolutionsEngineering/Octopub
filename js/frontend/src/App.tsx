@@ -42,9 +42,6 @@ export const AppContext = createContext({
     }
 });
 
-// Register your feature flag provider
-//{`${process.env.PUBLIC_URL}/index.html`}
-
   // Example of what the call would look like.  the darkModeFlagIdentifier is getting the value from an environment variable
   //const provider = new OctopusFeatureProvider ({ clientIdentifier: "eyJhbGciOiJFUzI1NiIsImtpZCI6IjRiZDJlZTY3NDlkMDRhZmE4ZDc1MjlhZDIyODAwM2M4IiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwczovL2RlbW8ub2N0b3B1cy5hcHAiLCJzdWIiOiJOemxoWmpSa05HRXRaR00zWmkwME56bGpMV0l3WXpVdE9HSm1NekJqWWpCaE9ESTNPbEJ5YjJwbFkzUnpMVGMwTURFNlJXNTJhWEp2Ym0xbGJuUnpMVFV6T0RRPSJ9.Jvbu0vqgPUmn_UxPwJnBzwgIdvMZuu731M97_Ldd4R6Q-wYz0YdZSwMme6ESwi8BcOf2mARe2gvf_E3dZ1HdMA"});
   let darkModeFlagIdentifier = "undefined";
@@ -61,20 +58,14 @@ export const AppContext = createContext({
   darkModeFlagIdentifier =  jsonSettings.clientIdentifier;
   darkModeFlagSlug = jsonSettings.featureToggleSlug;
 
-  //const darkModeFlagIdentifier =  `${process.env.clientIdentifier}`;
-  //const darkModeFlagSlug = `${process.env.featureToggleSlug}`;
-  
   let darkModeDefault = false;
   
   if (darkModeFlagIdentifier !== "undefined") {
 
     const provider = new OctopusFeatureProvider ({ clientIdentifier: darkModeFlagIdentifier});
     await OpenFeature.setProviderAndWait(provider);
-    //await OpenFeature.setContext({ userid: "bob@octopus.com" });
     const client = OpenFeature.getClient();
     darkModeDefault = client.getBooleanValue(darkModeFlagSlug, false)
-    //darkModeDefault = client.getBooleanValue("Dark Mode", false)
-    //darkModeDefault = client.getBooleanValue("dark-mode", false) //slug appears to be working
  }
 function App(settings: RuntimeSettings) {
     const [useDefaultTheme, toggle] = useReducer(
@@ -85,10 +76,8 @@ function App(settings: RuntimeSettings) {
         localStorage.getItem('defaultTheme') !== "false");
 
     // In the absence of a theme override, use either the light or dark theme
-    //const lightDarkTheme = useDefaultTheme ? lightTheme : darkTheme;
     let lightDarkTheme: Theme;
 
-    //const lightDarkTheme = darkModeDefault ? darkTheme : lightTheme;
     if (darkModeDefault) {
         lightDarkTheme = useDefaultTheme ? darkTheme : lightTheme;
     }
