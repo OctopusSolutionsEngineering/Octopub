@@ -123,6 +123,11 @@ runs:
     #   shell: bash
     #   working-directory: js/frontend
 
+    - name: Install modules
+      run: npm install
+      shell: bash
+      working-directory: js/frontend
+
     - name: Install CycloneDX
       run: npm install --global @cyclonedx/cyclonedx-npm
       shell: bash
