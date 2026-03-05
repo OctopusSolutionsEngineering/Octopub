@@ -9,6 +9,7 @@ RUN echo "Building for $TARGETOS/$TARGETARCH"
 
 WORKDIR /usr/src/app
 COPY package.json ./
+
 # Suggested fix from https://github.com/nodejs/docker-node/issues/1335 for ARM64
 #RUN yarn config set network-timeout 300000 && yarn install
 COPY . .
@@ -42,6 +43,11 @@ COPY --from=final /opt/udl /opt/udl
 COPY --from=final /usr/src/app/dist /usr/share/nginx/html/
 RUN chown -R nginx:nginx /usr/share/nginx/html
 COPY --from=build /bom.json /bom.json
+COPY startup.sh .
+RUN chmod +x startup.sh
+RUN ls /usr/share/nginx/html/
+RUN apt-get update && apt-get install -y jq
 USER 101
 ENTRYPOINT []
-CMD [  "/opt/udl", "nginx", "-g", "daemon off;" ]
+#CMD [  "/opt/udl", "nginx", "-g", "daemon off;" ]
+CMD [ "bash", "startup.sh" ]
