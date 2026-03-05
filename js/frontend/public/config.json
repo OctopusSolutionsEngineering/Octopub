@@ -12,5 +12,7 @@
   "customSecondaryColor": "#262626",
   "customBackgroundColor": "#fafafa",
   "customPaperColor": "#dd5900",
-  "mockBackend": true
+  "mockBackend": false,
+  "clientIdentifier": "",
+  "featureToggleSlug": ""
 }

@@ -1,9 +1,12 @@
 import clsx from "clsx";
-import {AppBar, IconButton, Link, Theme, Toolbar, Tooltip, Typography} from "@mui/material";
+import type {Theme} from "@mui/material";
+import {AppBar, IconButton, Link, Toolbar, Tooltip, Typography} from "@mui/material";
 import {makeStyles} from '@mui/styles';
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
-import {FC, useContext} from "react";
+//import {FC, useContext} from "react";
+import type {FC} from "react";
+import {useContext} from "react";
 import {AppContext} from "../App";
 import {History, LocalHospital, SettingsApplications, Share} from "@mui/icons-material";
 import {useNavigate} from "react-router-dom";
@@ -11,10 +14,12 @@ import {useNavigate} from "react-router-dom";
 const useStyles = makeStyles((theme: Theme) => {
         return {
             appBar: {
+                background: theme.palette.primary.main,
                 zIndex: theme.zIndex.drawer + 1,
                 transition: theme.transitions.create(["width", "margin"], {
                     easing: theme.transitions.easing.sharp,
                     duration: theme.transitions.duration.leavingScreen,
+                    
                 }),
             },
             toolbar: {
@@ -22,12 +27,13 @@ const useStyles = makeStyles((theme: Theme) => {
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
+                background: theme.palette.primary.main,
             },
             title: {
                 flex: 1,
                 display: "flex",
                 flexDirection: "row",
-                alignItems: "center"
+                alignItems: "center",
             },
             menuButton: {
                 marginRight: 36,
@@ -36,11 +42,12 @@ const useStyles = makeStyles((theme: Theme) => {
                 display: "none",
             },
             heading: {
-                color: "white"
+                color: "white",
             }
         }
     }
 );
+
 
 // define interface to represent component props
 interface HeaderProps {
@@ -65,7 +72,7 @@ const Header: FC<HeaderProps> = ({
         >
             <Toolbar className={classes.toolbar}>
                 <div className={classes.title}>
-                    <Link href={`${process.env.PUBLIC_URL}/index.html`} className={classes.heading}>
+                    <Link href={`${import.meta.env.PUBLIC_URL}/index.html`} className={classes.heading}>
                         <Typography variant="h6">
                             {context.settings.title}
                         </Typography>

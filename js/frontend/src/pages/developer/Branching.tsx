@@ -1,7 +1,11 @@
-import {FC, ReactElement, useContext, useState} from "react";
-import {Helmet} from "react-helmet";
+//import {FC, ReactElement, useContext, useState} from "react";
+import type {FC, ReactElement} from "react";
+import {useContext, useState} from "react";
+//import {Helmet} from "react-helmet";
 import {AppContext} from "../../App";
-import {DataGrid, GridCellParams, GridRowId} from "@mui/x-data-grid";
+//import {DataGrid, GridCellParams, GridRowId} from "@mui/x-data-grid";
+import {DataGrid} from "@mui/x-data-grid";
+import type {GridCellParams, GridRowId} from "@mui/x-data-grid";
 import {styles} from "../../utils/styles";
 import {Button, Checkbox, FormLabel, Grid} from "@mui/material";
 import {getSavedBranchingRules} from "../../utils/network";
@@ -31,11 +35,11 @@ const Branching: FC = (): ReactElement => {
 
     return (
         <>
-            <Helmet>
+
                 <title>
                     {context.settings.title}
                 </title>
-            </Helmet>
+
             <Grid container={true} className={classes.container}>
                 <Grid className={classes.cell} size={{ xs: 12 }}>
                     <DataGrid

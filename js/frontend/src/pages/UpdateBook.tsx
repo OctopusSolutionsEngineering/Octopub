@@ -1,7 +1,9 @@
-import {FC, ReactElement, useContext, useEffect, useState} from "react";
-import {Helmet} from "react-helmet";
+//import {FC, ReactElement, useContext, useEffect, useState} from "react";
+import type {FC, ReactElement} from "react";
+import {useContext, useEffect, useState} from "react";
+//import {Helmet} from "react-helmet";
 import {AppContext} from "../App";
-import {Errors, Product} from "../model/Product";
+import type {Errors, Product} from "../model/Product";
 import {useNavigate, useParams} from "react-router-dom";
 import {styles} from "../utils/styles";
 import {getJsonApi, isBranchingEnabled, patchJsonApi} from "../utils/network";
@@ -56,11 +58,11 @@ const UpdateBook: FC<{}> = (): ReactElement => {
 
     return (
         <>
-            <Helmet>
+            
                 <title>
                     {context.settings.title}
                 </title>
-            </Helmet>
+            
 
             <Grid container={true}>
                 {book && book.data && book.data.attributes &&
@@ -147,7 +149,7 @@ const UpdateBook: FC<{}> = (): ReactElement => {
 
     function saveBook() {
         setDisabled(true);
-        patchJsonApi(JSON.stringify(book, (key, value) => {
+        patchJsonApi(JSON.stringify(book, (_, value) => {
                 if (value !== null) return value
             }),
             context.settings.productEndpoint + "/" + bookId,

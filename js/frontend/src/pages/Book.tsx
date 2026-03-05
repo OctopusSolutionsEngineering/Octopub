@@ -1,7 +1,9 @@
-import {FC, ReactElement, useContext, useEffect, useState} from "react";
-import {Helmet} from "react-helmet";
+//import {FC, ReactElement, useContext, useEffect, useState} from "react";
+import type {FC, ReactElement} from "react";
+import {useContext, useEffect, useState} from "react";
+//import {Helmet} from "react-helmet";
 import {AppContext} from "../App";
-import {Product} from "../model/Product";
+import type {Product} from "../model/Product";
 import {useParams} from "react-router-dom";
 import {getJsonApi} from "../utils/network";
 import {Grid} from "@mui/material";
@@ -34,11 +36,11 @@ const Book: FC<{}> = (): ReactElement => {
 
     return (
         <>
-            <Helmet>
+            
                 <title>
                     {context.settings.title}
                 </title>
-            </Helmet>
+            
             {!book && <div>Loading...</div>}
             {book && <Grid container={true} className={classes.content}>
                 <Grid size={{ md: 4, sm: 12 }}>
