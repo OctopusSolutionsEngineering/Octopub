@@ -118,10 +118,10 @@ runs:
       run: echo "PACKAGE_VERSION=$(date +'%Y%m%d').${{ github.run_number }}.${{ github.run_attempt }}-${{ steps.branch-name.outputs.current_branch }}" >> $GITHUB_ENV
       shell: bash
 
-    - name: Install modules
-      run: yarn install
-      shell: bash
-      working-directory: js/frontend
+    # - name: Install modules
+    #   run: yarn install
+    #   shell: bash
+    #   working-directory: js/frontend
 
     - name: Install CycloneDX
       run: npm install --global @cyclonedx/cyclonedx-npm
@@ -168,8 +168,13 @@ runs:
       shell: bash
       working-directory: js/frontend/public
 
+    # - name: Build App
+    #   run: yarn run build
+    #   shell: bash
+    #   working-directory: js/frontend1
+
     - name: Build App
-      run: yarn run build
+      run: npm run build
       shell: bash
       working-directory: js/frontend
 
