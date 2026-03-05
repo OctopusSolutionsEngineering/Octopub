@@ -27,6 +27,10 @@ declare module '@mui/styles/defaultTheme' {
     }
 }
 
+function isNullOrWhitespace(str: string | null | undefined): boolean {
+  return !str || str.trim().length === 0;
+}
+
 // define app context
 export const AppContext = createContext({
     settings: {} as RuntimeSettings,
@@ -55,8 +59,12 @@ export const AppContext = createContext({
 
   let jsonSettings = await getSettings();
 
-  darkModeFlagIdentifier =  jsonSettings.clientIdentifier;
-  darkModeFlagSlug = jsonSettings.featureToggleSlug;
+  if (Object.hasOwn(jsonSettings, "clientIdentifier") && Object.hasOwn(jsonSettings, "featureToggleSlug")) {
+    if (!isNullOrWhitespace(jsonSettings.clientIdentifier) && !isNullOrWhitespace(jsonSettings.featureToggleSlug)) {
+        darkModeFlagIdentifier =  jsonSettings.clientIdentifier;
+        darkModeFlagSlug = jsonSettings.featureToggleSlug;
+    }
+  }
 
   let darkModeDefault = false;
   
