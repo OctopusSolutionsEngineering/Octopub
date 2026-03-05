@@ -96,7 +96,7 @@ runs:
       with:
         node-version: 19
         cache: 'npm'
-        cache-dependency-path: js/frontend/yarn.lock
+        #cache-dependency-path: js/frontend/yarn.lock
 
     - name: Install Octopus CLI 🐙
       uses: OctopusDeploy/install-octopus-cli-action@v3
