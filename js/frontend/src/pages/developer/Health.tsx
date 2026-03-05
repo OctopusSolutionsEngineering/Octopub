@@ -6,23 +6,20 @@ import {AppContext} from "../../App";
 import {getJson} from "../../utils/network";
 import {Clear, Done} from "@mui/icons-material";
 import {makeStyles} from '@mui/styles';
-import type {Theme} from "@mui/material";
+//import type {Theme} from "@mui/material";
 
 const newHealth: { [key: string]: boolean } = {};
 
-const useStyles = makeStyles((theme: Theme) => {
-        return {
-            table: {
-                height: "fit-content",
-                marginRight: "auto",
-                marginLeft: "auto"
-            },
-            cell: {
-                padding: "8px"
-            }
-        }
+const useStyles = makeStyles(() => ({
+    table: {
+        height: "fit-content",
+        marginRight: "auto",
+        marginLeft: "auto"
+    },
+    cell: {
+        padding: "8px"
     }
-);
+}));
 
 const Book: FC = (): ReactElement => {
 

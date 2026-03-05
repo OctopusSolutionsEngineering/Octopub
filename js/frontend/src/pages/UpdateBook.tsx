@@ -149,7 +149,7 @@ const UpdateBook: FC<{}> = (): ReactElement => {
 
     function saveBook() {
         setDisabled(true);
-        patchJsonApi(JSON.stringify(book, (key, value) => {
+        patchJsonApi(JSON.stringify(book, (_, value) => {
                 if (value !== null) return value
             }),
             context.settings.productEndpoint + "/" + bookId,

@@ -30,15 +30,15 @@ declare module '@mui/styles/defaultTheme' {
 // define app context
 export const AppContext = createContext({
     settings: {} as RuntimeSettings,
-    setDeveloperMode: (mode: boolean) => {
+    setDeveloperMode: (_: boolean) => {
     },
     developerMode: false,
     useDefaultTheme: true,
     partition: "",
-    setPartition: (mode: string) => {
+    setPartition: (_: string) => {
     },
     allBookId: "",
-    setAllBookId: (bookId: string) => {
+    setAllBookId: (_: string) => {
     }
 });
 

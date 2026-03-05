@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme: Theme) => {
     }
 );
 
+
 // define interface to represent component props
 interface HeaderProps {
     toggleTheme: () => void;
@@ -71,7 +72,7 @@ const Header: FC<HeaderProps> = ({
         >
             <Toolbar className={classes.toolbar}>
                 <div className={classes.title}>
-                    <Link href={`${process.env.PUBLIC_URL}/index.html`} className={classes.heading}>
+                    <Link href={`${import.meta.env.PUBLIC_URL}/index.html`} className={classes.heading}>
                         <Typography variant="h6">
                             {context.settings.title}
                         </Typography>

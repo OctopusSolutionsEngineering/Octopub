@@ -117,7 +117,7 @@ const AddBook: FC<{}> = (): ReactElement => {
         }
 
         setDisabled(true);
-        postJsonApi(JSON.stringify(book, (key, value) => {
+        postJsonApi(JSON.stringify(book, (_, value) => {
                 if (value !== null) return value
             }),
             context.settings.productEndpoint,

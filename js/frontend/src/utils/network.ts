@@ -1,5 +1,5 @@
-import {RedirectRule} from "../pages/developer/Branching";
-import {RuntimeSettings} from "../config/runtimeConfig";
+import type {RedirectRule} from "../pages/developer/Branching";
+import type {RuntimeSettings} from "../config/runtimeConfig";
 
 const GET_RETRIES = 5;
 const JSON_TYPES = ["application/vnd.api+json", "application/json"];

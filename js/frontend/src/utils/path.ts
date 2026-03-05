@@ -1,4 +1,4 @@
-import {RuntimeSettings} from "../config/runtimeConfig";
+import type {RuntimeSettings} from "../config/runtimeConfig";
 
 export const DEFAULT_BRANCH = "main";
 

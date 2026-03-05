@@ -10,11 +10,15 @@ RUN echo "Building for $TARGETOS/$TARGETARCH"
 WORKDIR /usr/src/app
 COPY package.json ./
 # Suggested fix from https://github.com/nodejs/docker-node/issues/1335 for ARM64
-RUN yarn config set network-timeout 300000 && yarn install
+#RUN yarn config set network-timeout 300000 && yarn install
 COPY . .
 #RUN yarn add --dev @types/react-helmet
-RUN yarn build
+RUN npm install vite
+#RUN yarn build
+RUN npm run build
+#RUN pwd && ls -F
 RUN npm install --global @cyclonedx/cyclonedx-npm
+
 RUN cyclonedx-npm --ignore-npm-errors --output-file /bom.json
 
 FROM build AS build-with-tools
@@ -34,7 +38,8 @@ FROM nginxinc/nginx-unprivileged:latest
 USER root
 
 COPY --from=final /opt/udl /opt/udl
-COPY --from=final /usr/src/app/build /usr/share/nginx/html/
+#COPY --from=final /usr/src/app/build /usr/share/nginx/html/
+COPY --from=final /usr/src/app/dist /usr/share/nginx/html/
 RUN chown -R nginx:nginx /usr/share/nginx/html
 COPY --from=build /bom.json /bom.json
 USER 101
