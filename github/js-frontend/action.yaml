@@ -94,7 +94,7 @@ runs:
 
     - uses: actions/setup-node@v3
       with:
-        node-version: 19
+        node-version: 22
         cache: 'npm'
         #cache-dependency-path: js/frontend/yarn.lock
         cache-dependency-path: js/frontend/package-lock.json
@@ -253,7 +253,8 @@ runs:
 
     - name: Build and push static web package
       run: |
-        pushd js/frontend/build
+        #pushd js/frontend/build
+        pushd js/frontend/dist
         #zip -r ../octopub-frontend.${{ env.PACKAGE_VERSION }}.zip .
         zip -r ../octopub-frontend.${{ env.PACKAGE_VERSION }}.zip .
         popd
