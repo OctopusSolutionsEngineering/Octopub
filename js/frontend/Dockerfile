@@ -45,7 +45,7 @@ RUN chown -R nginx:nginx /usr/share/nginx/html
 COPY --from=build /bom.json /bom.json
 COPY startup.sh .
 RUN chmod +x startup.sh
-RUN ls /usr/share/nginx/html/
+
 RUN apt-get update && apt-get install -y jq
 USER 101
 ENTRYPOINT []
