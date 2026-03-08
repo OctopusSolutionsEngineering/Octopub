@@ -40,10 +40,24 @@ if (-not $rgExists) {
     Write-Host "Resource group ${RgName} does not exist. Creating..."
 
     az deployment sub create `
+        --name ${RgName}-deployment `
         --location $Region `
         --template-file ../resource-group/template.json `
         --parameters ../resource-group/parameters.json `
         --parameters rgName=$RgName
+
+    for ($i = 0; $i -lt 10; $i++) {
+        Write-Host "Waiting for resource group deployment to complete..."
+        Start-Sleep -Seconds 10
+
+        # Check if resource group deployment is complete
+        $rgDeploymentState = az deployment sub show --name ${RgName}-deployment --query properties.provisioningState -o tsv
+
+        if ($rgDeploymentState -eq "Succeeded") {
+            Write-Host "Resource group ${RgName} created successfully."
+            break
+        }
+    }
 
     # Then deploy the web app and hosting plan into the resource group
     az deployment group create `
