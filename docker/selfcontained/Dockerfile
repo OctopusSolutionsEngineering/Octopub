@@ -21,7 +21,6 @@ ADD js/frontend /js
 RUN cd /js; npm install; npm run build
 RUN cd /js; npm install --global @cyclonedx/cyclonedx-npm
 RUN cd /js; cyclonedx-npm --ignore-npm-errors --output-file /js/bom.json
-RUN ls /js
 
 FROM nginxinc/nginx-unprivileged
 USER root
@@ -32,7 +31,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
 
 #COPY --from=builder /js/build /usr/share/nginx/html/
 
-COPY --from=builder /js/src/app/dist /usr/share/nginx/html/
+COPY --from=builder /js/dist /usr/share/nginx/html/
 COPY --from=builder /java/products-microservice/target/products-microservice-runner.jar /opt
 
 # Copy the sbom files
