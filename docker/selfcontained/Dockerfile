@@ -21,6 +21,7 @@ ADD js/frontend /js
 RUN cd /js; npm install; npm run build
 RUN cd /js; npm install --global @cyclonedx/cyclonedx-npm
 RUN cd /js; cyclonedx-npm --ignore-npm-errors --output-file /js/bom.json
+RUN ls /js
 
 FROM nginxinc/nginx-unprivileged
 USER root
