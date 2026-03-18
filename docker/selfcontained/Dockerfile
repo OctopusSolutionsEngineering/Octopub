@@ -30,7 +30,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
       && rm -rf /var/lib/apt/lists/*
 
 #COPY --from=builder /js/build /usr/share/nginx/html/
-COPY --from=builder /usr/src/app/dist /usr/share/nginx/html/
+COPY --from=builder /js/src/app/dist /usr/share/nginx/html/
 COPY --from=builder /java/products-microservice/target/products-microservice-runner.jar /opt
 
 # Copy the sbom files
