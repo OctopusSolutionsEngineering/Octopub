@@ -17,7 +17,8 @@ RUN apt-get update; apt-get install nodejs -y
 RUN npm install --global yarn
 
 ADD js/frontend /js
-RUN cd /js; yarn install; yarn build
+#RUN cd /js; yarn install; yarn build
+RUN cd /js; npm install; npm run build
 RUN cd /js; npm install --global @cyclonedx/cyclonedx-npm
 RUN cd /js; cyclonedx-npm --ignore-npm-errors --output-file /js/bom.json
 
