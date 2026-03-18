@@ -14,10 +14,11 @@ RUN apt-get update; apt-get install -y ca-certificates curl gnupg; mkdir -p /etc
 RUN echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
 RUN apt-get update; apt-get install nodejs -y
 
-RUN npm install --global yarn
+#RUN npm install --global yarn
 
 ADD js/frontend /js
-RUN cd /js; yarn install; yarn build
+#RUN cd /js; yarn install; yarn build
+RUN cd /js; npm install; npm run build
 RUN cd /js; npm install --global @cyclonedx/cyclonedx-npm
 RUN cd /js; cyclonedx-npm --ignore-npm-errors --output-file /js/bom.json
 
@@ -28,7 +29,9 @@ RUN DEBIAN_FRONTEND=noninteractive \
       && apt-get install -y supervisor default-jdk \
       && rm -rf /var/lib/apt/lists/*
 
-COPY --from=builder /js/build /usr/share/nginx/html/
+#COPY --from=builder /js/build /usr/share/nginx/html/
+
+COPY --from=builder /js/dist /usr/share/nginx/html/
 COPY --from=builder /java/products-microservice/target/products-microservice-runner.jar /opt
 
 # Copy the sbom files
