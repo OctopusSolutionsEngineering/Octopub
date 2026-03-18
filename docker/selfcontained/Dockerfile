@@ -30,7 +30,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
       && rm -rf /var/lib/apt/lists/*
 
 #COPY --from=builder /js/build /usr/share/nginx/html/
-RUN ls
+RUN --from=builder ls
 COPY --from=builder /js/src/app/dist /usr/share/nginx/html/
 COPY --from=builder /java/products-microservice/target/products-microservice-runner.jar /opt
 
