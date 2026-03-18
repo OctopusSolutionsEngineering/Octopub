@@ -1,5 +1,7 @@
-import {FC, ReactElement, useContext, useState} from "react";
-import {Helmet} from "react-helmet";
+//import {FC, ReactElement, useContext, useState} from "react";
+import type {FC, ReactElement} from "react";
+import {useContext, useState} from "react";
+//import {Helmet} from "react-helmet";
 import {Button, FormLabel, Grid, TextField} from "@mui/material";
 import {AppContext} from "../../App";
 import {styles} from "../../utils/styles";
@@ -15,11 +17,11 @@ const Settings: FC = (): ReactElement => {
 
     return (
         <>
-            <Helmet>
+            
                 <title>
                     {context.settings.title}
                 </title>
-            </Helmet>
+            
             <Grid container={true} className={classes.container}>
                 <Grid className={classes.cell} size={{ xs: 12, sm: 12, md: 2 }}>
                     <FormLabel className={classes.label}>Data Partition</FormLabel>

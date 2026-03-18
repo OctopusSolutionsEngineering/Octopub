@@ -1,26 +1,25 @@
-import {FC, ReactElement, useContext, useEffect, useMemo, useState} from "react";
-import {Helmet} from "react-helmet";
+//import {FC, ReactElement, useContext, useEffect, useMemo, useState} from "react";
+import type {FC, ReactElement} from "react";
+import {useContext, useEffect, useMemo, useState} from "react";
+//import {Helmet} from "react-helmet";
 import {AppContext} from "../../App";
 import {getJson} from "../../utils/network";
 import {Clear, Done} from "@mui/icons-material";
 import {makeStyles} from '@mui/styles';
-import {Theme} from "@mui/material";
+//import type {Theme} from "@mui/material";
 
 const newHealth: { [key: string]: boolean } = {};
 
-const useStyles = makeStyles((theme: Theme) => {
-        return {
-            table: {
-                height: "fit-content",
-                marginRight: "auto",
-                marginLeft: "auto"
-            },
-            cell: {
-                padding: "8px"
-            }
-        }
+const useStyles = makeStyles(() => ({
+    table: {
+        height: "fit-content",
+        marginRight: "auto",
+        marginLeft: "auto"
+    },
+    cell: {
+        padding: "8px"
     }
-);
+}));
 
 const Book: FC = (): ReactElement => {
 
@@ -47,11 +46,11 @@ const Book: FC = (): ReactElement => {
 
     return (
         <>
-            <Helmet>
+            
                 <title>
                     {context.settings.title} - Health
                 </title>
-            </Helmet>
+            
             <table className={classes.table}>
                 <tr>
                     <td className={classes.cell}>Endpoint</td>

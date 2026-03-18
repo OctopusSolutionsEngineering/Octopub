@@ -1,6 +1,6 @@
 import {makeStyles} from '@mui/styles';
-import {SxProps} from "@mui/system";
-import {Theme} from "@mui/material/styles";
+import type {SxProps} from "@mui/system";
+import type {Theme} from "@mui/material/styles";
 
 export const styles = makeStyles((theme) => {
         return {
@@ -61,7 +61,7 @@ export const styles = makeStyles((theme) => {
     }
 );
 
-export const journeyContainer = makeStyles((theme) => {
+export const journeyContainer = makeStyles(() => {
     return {
         root: {
             flex: 1,

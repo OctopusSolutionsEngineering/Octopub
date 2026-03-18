@@ -1,7 +1,9 @@
-import {FC, ReactElement, useContext, useEffect, useState} from "react";
-import {Helmet} from "react-helmet";
+//import {FC, ReactElement, useContext, useEffect, useState} from "react";
+import type {FC, ReactElement} from "react";
+import {useContext, useEffect, useState} from "react";
+//import {Helmet} from "react-helmet";
 import {AppContext} from "../App";
-import {Errors, Product} from "../model/Product";
+import type {Errors, Product} from "../model/Product";
 import {useNavigate, useParams} from "react-router-dom";
 import {styles} from "../utils/styles";
 import {deleteJsonApi, getJsonApi, isBranchingEnabled} from "../utils/network";
@@ -57,11 +59,11 @@ const DeleteBook: FC<{}> = (): ReactElement => {
 
     return (
         <>
-            <Helmet>
+            
                 <title>
                     {context.settings.title}
                 </title>
-            </Helmet>
+            
 
             <Grid container={true}>
                 {book && book.data && book.data.attributes &&
