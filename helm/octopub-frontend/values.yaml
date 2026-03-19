@@ -17,6 +17,10 @@ customSecondaryColor: ""
 customBackgroundColor: ""
 customPaperColor: ""
 
+# Feature toggle settings
+clientIdentifier: ""
+featureToggleSlug: ""
+
 mockBackend: false
 
 image:
