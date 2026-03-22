@@ -302,28 +302,28 @@ runs:
           "-Durl=s3://octopus-sales-public-maven-repo/snapshot"
       shell: bash
 
-    - name: Push build information to Octopus Deploy 🐙
-      uses: OctopusDeploy/push-build-information-action@v3
-      env:
-        OCTOPUS_URL: ${{ inputs.samples_url }}
-        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
-        OCTOPUS_SPACE: Target - Argo
-      with:
-        packages: |
-          octopussamples/octopub-frontend
-          octopussolutionsengineering/octopub-frontend
-        version: ${{ env.PACKAGE_VERSION }}
-        overwrite_mode: OverwriteExisting
-
-    - name: Push build information to Octopus Deploy 🐙
-      uses: OctopusDeploy/push-build-information-action@v3
-      env:
-        OCTOPUS_URL: ${{ inputs.samples_url }}
-        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
-        OCTOPUS_SPACE: Target - Kubernetes
-      with:
-        packages: |
-          octopussamples/octopub-frontend
-          octopussolutionsengineering/octopub-frontend
-        version: ${{ env.PACKAGE_VERSION }}
-        overwrite_mode: OverwriteExisting
+#    - name: Push build information to Octopus Deploy 🐙
+#      uses: OctopusDeploy/push-build-information-action@v3
+#      env:
+#        OCTOPUS_URL: ${{ inputs.samples_url }}
+#        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
+#        OCTOPUS_SPACE: Target - Argo
+#      with:
+#        packages: |
+#          octopussamples/octopub-frontend
+#          octopussolutionsengineering/octopub-frontend
+#        version: ${{ env.PACKAGE_VERSION }}
+#        overwrite_mode: OverwriteExisting
+#
+#    - name: Push build information to Octopus Deploy 🐙
+#      uses: OctopusDeploy/push-build-information-action@v3
+#      env:
+#        OCTOPUS_URL: ${{ inputs.samples_url }}
+#        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
+#        OCTOPUS_SPACE: Target - Kubernetes
+#      with:
+#        packages: |
+#          octopussamples/octopub-frontend
+#          octopussolutionsengineering/octopub-frontend
+#        version: ${{ env.PACKAGE_VERSION }}
+#        overwrite_mode: OverwriteExisting
