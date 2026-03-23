@@ -657,16 +657,16 @@ runs:
         fi
       shell: bash
 
-    - name: Push build information to Octopus Deploy 🐙
-      uses: OctopusDeploy/push-build-information-action@v3
-      env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
-        OCTOPUS_SPACE: Matthew Casperson
-      with:
-        packages: com.octopus:${{ inputs.service_directory }}-lambda
-        version: ${{ env.PACKAGE_VERSION }}
-        overwrite_mode: OverwriteExisting
+    # - name: Push build information to Octopus Deploy 🐙
+    #   uses: OctopusDeploy/push-build-information-action@v3
+    #   env:
+    #     OCTOPUS_URL: ${{ inputs.octopus_url }}
+    #     OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+    #     OCTOPUS_SPACE: Matthew Casperson
+    #   with:
+    #     packages: com.octopus:${{ inputs.service_directory }}-lambda
+    #     version: ${{ env.PACKAGE_VERSION }}
+    #     overwrite_mode: OverwriteExisting
 
     - name: Push build information to Octopus Deploy 🐙
       uses: OctopusDeploy/push-build-information-action@v3
