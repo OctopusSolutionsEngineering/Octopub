@@ -284,8 +284,8 @@ runs:
     # We capture the SBOM, which is found in the file bom.xml, as a versioned ZIP package.
     - name: Build SBOM package
       env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+        OCTOPUS_URL: "http://example.org"
+        OCTOPUS_API_KEY: "API-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       run: >
         octopus package zip create
         --id ${{ inputs.service_directory }}-sbom
@@ -313,8 +313,8 @@ runs:
     - name: Build Postman package
       if: ${{ inputs.postman_build == 'true' }}
       env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+        OCTOPUS_URL: "http://example.org"
+        OCTOPUS_API_KEY: "API-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       run: |
         if [[ -d "${{ inputs.service_directory }}-postman" ]]
         then
@@ -528,8 +528,8 @@ runs:
     - name: Package the SAM template
       if: ${{ inputs.lambda_build == 'true' }}
       env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+        OCTOPUS_URL: "http://example.org"
+        OCTOPUS_API_KEY: "API-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       run: |
           echo "      FunctionUrlConfig:
                   AuthType: NONE
@@ -568,8 +568,8 @@ runs:
     - name: Build Liquibase package
       if: ${{ inputs.liquibase_build == 'true' }}
       env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+        OCTOPUS_URL: "http://example.org"
+        OCTOPUS_API_KEY: "API-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       run: |
         if [[ -d "${{ inputs.service_directory }}/src/main/resources/db" ]]
         then
