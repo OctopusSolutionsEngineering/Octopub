@@ -284,8 +284,8 @@ runs:
     # We capture the SBOM, which is found in the file bom.xml, as a versioned ZIP package.
     - name: Build SBOM package
       env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+        OCTOPUS_URL: "http://example.org"
+        OCTOPUS_API_KEY: "API-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       run: >
         octopus package zip create
         --id ${{ inputs.service_directory }}-sbom
@@ -313,8 +313,8 @@ runs:
     - name: Build Postman package
       if: ${{ inputs.postman_build == 'true' }}
       env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+        OCTOPUS_URL: "http://example.org"
+        OCTOPUS_API_KEY: "API-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       run: |
         if [[ -d "${{ inputs.service_directory }}-postman" ]]
         then
@@ -381,19 +381,6 @@ runs:
       shell: bash
       working-directory: systemd/${{ inputs.service_directory }}
 
-    # # The Docker image is built and pushed.
-    # - name: Build, tag, and push image to Dockerhub
-    #   if: ${{ inputs.docker_build == 'true' }}
-    #   run: |
-    #     ls -la
-    #     ls -la target
-    #     docker build -f src/main/docker/Dockerfile.legacy-jar -t octopussamples/octopub-${{ inputs.service_directory }}:${{ env.PACKAGE_VERSION }} .
-    #     docker push octopussamples/octopub-${{ inputs.service_directory }}:${{ env.PACKAGE_VERSION }}
-    #     docker tag  octopussamples/octopub-${{ inputs.service_directory }}:${{ env.PACKAGE_VERSION }} octopussamples/octopub-${{ inputs.service_directory }}:latest
-    #     docker push octopussamples/octopub-${{ inputs.service_directory }}:latest
-    #   shell: bash
-    #   working-directory: java/${{ inputs.service_directory }}
-
     # The non-MySQL Docker image is built and pushed.
     - name: Build, tag, and push image to Dockerhub
       if: ${{ inputs.docker_build == 'true' }}
@@ -409,18 +396,6 @@ runs:
         registry: https://ghcr.io
         username: ${{ inputs.github_actor }}
         password: ${{ inputs.github_token }}
-
-    # - name: Build, tag, and push image to GHCR
-    #   if: ${{ inputs.docker_build == 'true' }}
-    #   run: |
-    #     ls -la
-    #     ls -la target
-    #     docker build -f src/main/docker/Dockerfile.legacy-jar -t ghcr.io/octopussolutionsengineering/octopub-${{ inputs.service_directory }}:${{ env.PACKAGE_VERSION }} .
-    #     docker push ghcr.io/octopussolutionsengineering/octopub-${{ inputs.service_directory }}:${{ env.PACKAGE_VERSION }}
-    #     docker tag  ghcr.io/octopussolutionsengineering/octopub-${{ inputs.service_directory }}:${{ env.PACKAGE_VERSION }} ghcr.io/octopussolutionsengineering/octopub-${{ inputs.service_directory }}:latest
-    #     docker push ghcr.io/octopussolutionsengineering/octopub-${{ inputs.service_directory }}:latest
-    #   shell: bash
-    #   working-directory: java/${{ inputs.service_directory }}    
 
     # The non-MySQL Docker image is built and pushed.
     - name: Build, tag, and push image to Dockerhub
@@ -453,17 +428,6 @@ runs:
         fi
       shell: bash
 
-    # The MySQL Docker image is built and pushed.
-    # - name: Build, tag, and push image to Dockerhub
-    #   if: ${{ inputs.docker_build == 'true' }}
-    #   run: |
-    #     docker build -f src/main/docker/Dockerfile.legacy-jar -t octopussamples/octopub-${{ inputs.service_directory }}-mysql:${{ env.PACKAGE_VERSION }} .
-    #     docker push octopussamples/octopub-${{ inputs.service_directory }}-mysql:${{ env.PACKAGE_VERSION }}
-    #     docker tag  octopussamples/octopub-${{ inputs.service_directory }}-mysql:${{ env.PACKAGE_VERSION }} octopussamples/octopub-${{ inputs.service_directory }}-mysql:latest
-    #     docker push octopussamples/octopub-${{ inputs.service_directory }}-mysql:latest
-    #   shell: bash
-    #   working-directory: java/${{ inputs.service_directory }}
-
     - name: Login to DockerHub MySQL
       if: ${{ inputs.docker_build == 'true' }}
       uses: docker/login-action@v2
@@ -480,35 +444,12 @@ runs:
       shell: bash
       working-directory: java/${{ inputs.service_directory }}
 
-
-    # - name: Build and push Dockerhub
-    #   uses: docker/build-push-action@v6
-    #   with:
-    #     platform: linux/amd64,linux/arm64
-    #     push: true
-    #     tags: |
-    #       octopussamples/octopub-${{ inputs.service_directory }}-mysql:${{ env.PACKAGE_VERSION }}
-    #       octopussamples/octopub-${{ inputs.service_directory }}-mysql:latest
-    #     context: .
-    #     file: java/${{ inputs.service_directory }}/src/main/docker/Dockerfile.legacy-jar
-
     - name: Login to GHCR MySQL
       uses: docker/login-action@v3
       with:
         registry: https://ghcr.io
         username: ${{ inputs.github_actor }}
         password: ${{ inputs.github_token }}
-
-
-    # - name: Build, tag, and push image to Dockerhub
-    #   if: ${{ inputs.docker_build == 'true' }}
-    #   run: |
-    #     docker build -f src/main/docker/Dockerfile.legacy-jar -t ghcr.io/octopussolutionsengineering/octopub-${{ inputs.service_directory }}-mysql:${{ env.PACKAGE_VERSION }} .
-    #     docker push ghcr.io/octopussolutionsengineering/octopub-${{ inputs.service_directory }}-mysql:${{ env.PACKAGE_VERSION }}
-    #     docker tag  ghcr.io/octopussolutionsengineering/octopub-${{ inputs.service_directory }}-mysql:${{ env.PACKAGE_VERSION }} ghcr.io/octopussolutionsengineering/octopub-${{ inputs.service_directory }}-mysql:latest
-    #     docker push ghcr.io/octopussolutionsengineering/octopub-${{ inputs.service_directory }}-mysql:latest
-    #   shell: bash
-    #   working-directory: java/${{ inputs.service_directory }}
 
     # The MySQL Docker image is built and pushed.
     - name: Build, tag, and push image to Dockerhub
@@ -587,8 +528,8 @@ runs:
     - name: Package the SAM template
       if: ${{ inputs.lambda_build == 'true' }}
       env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+        OCTOPUS_URL: "http://example.org"
+        OCTOPUS_API_KEY: "API-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       run: |
           echo "      FunctionUrlConfig:
                   AuthType: NONE
@@ -627,8 +568,8 @@ runs:
     - name: Build Liquibase package
       if: ${{ inputs.liquibase_build == 'true' }}
       env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+        OCTOPUS_URL: "http://example.org"
+        OCTOPUS_API_KEY: "API-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       run: |
         if [[ -d "${{ inputs.service_directory }}/src/main/resources/db" ]]
         then

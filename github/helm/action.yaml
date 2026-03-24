@@ -82,13 +82,13 @@ runs:
       shell: bash
       working-directory: helm/${{ inputs.chart_directory }}
 
-    - name: Push build information to Octopus Deploy 🐙
-      uses: OctopusDeploy/push-build-information-action@v3
-      env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
-        OCTOPUS_SPACE: Matthew Casperson
-      with:
-        packages: ${{ inputs.chart_directory }}
-        version: ${{ env.PACKAGE_VERSION }}
-        overwrite_mode: OverwriteExisting
+#    - name: Push build information to Octopus Deploy 🐙
+#      uses: OctopusDeploy/push-build-information-action@v3
+#      env:
+#        OCTOPUS_URL: ${{ inputs.octopus_url }}
+#        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+#        OCTOPUS_SPACE: Matthew Casperson
+#      with:
+#        packages: ${{ inputs.chart_directory }}
+#        version: ${{ env.PACKAGE_VERSION }}
+#        overwrite_mode: OverwriteExisting

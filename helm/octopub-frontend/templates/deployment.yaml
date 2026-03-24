@@ -75,6 +75,14 @@ spec:
             - name: UDL_SKIPEMPTY_SETVALUE_9
               value: "[/usr/share/nginx/html/config.json][mockBackend]{{ .Values.mockBackend }}"
             {{- end }}
+            {{- if .Values.clientIdentifier }}
+            - name: clientIdentifier
+              value: "{{ .Values.clientIdentifier }}"
+            {{- end }}
+            {{- if .Values.featureToggleSlug }}
+            - name: featureToggleSlug
+              value: "{{ .Values.featureToggleSlug }}"
+            {{- end }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http

@@ -142,8 +142,8 @@ runs:
     # We capture the SBOM, which is found in the file bom.xml, as a versioned ZIP package.
     - name: Build SBOM package
       env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+        OCTOPUS_URL: "http://example.org"
+        OCTOPUS_API_KEY: "API-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       run: >
         octopus package zip create
         --id javascript-frontend-sbom
@@ -278,8 +278,8 @@ runs:
      # End-to-end tests are performed with Cypress.
     - name: Build Cypress package
       env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+        OCTOPUS_URL: "http://example.org"
+        OCTOPUS_API_KEY: "API-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       run: >
         octopus package zip create
         --id octopub-frontend-cypress
@@ -302,28 +302,28 @@ runs:
           "-Durl=s3://octopus-sales-public-maven-repo/snapshot"
       shell: bash
 
-    - name: Push build information to Octopus Deploy 🐙
-      uses: OctopusDeploy/push-build-information-action@v3
-      env:
-        OCTOPUS_URL: ${{ inputs.samples_url }}
-        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
-        OCTOPUS_SPACE: Target - Argo
-      with:
-        packages: |
-          octopussamples/octopub-frontend
-          octopussolutionsengineering/octopub-frontend
-        version: ${{ env.PACKAGE_VERSION }}
-        overwrite_mode: OverwriteExisting
-
-    - name: Push build information to Octopus Deploy 🐙
-      uses: OctopusDeploy/push-build-information-action@v3
-      env:
-        OCTOPUS_URL: ${{ inputs.samples_url }}
-        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
-        OCTOPUS_SPACE: Target - Kubernetes
-      with:
-        packages: |
-          octopussamples/octopub-frontend
-          octopussolutionsengineering/octopub-frontend
-        version: ${{ env.PACKAGE_VERSION }}
-        overwrite_mode: OverwriteExisting
+#    - name: Push build information to Octopus Deploy 🐙
+#      uses: OctopusDeploy/push-build-information-action@v3
+#      env:
+#        OCTOPUS_URL: ${{ inputs.samples_url }}
+#        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
+#        OCTOPUS_SPACE: Target - Argo
+#      with:
+#        packages: |
+#          octopussamples/octopub-frontend
+#          octopussolutionsengineering/octopub-frontend
+#        version: ${{ env.PACKAGE_VERSION }}
+#        overwrite_mode: OverwriteExisting
+#
+#    - name: Push build information to Octopus Deploy 🐙
+#      uses: OctopusDeploy/push-build-information-action@v3
+#      env:
+#        OCTOPUS_URL: ${{ inputs.samples_url }}
+#        OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
+#        OCTOPUS_SPACE: Target - Kubernetes
+#      with:
+#        packages: |
+#          octopussamples/octopub-frontend
+#          octopussolutionsengineering/octopub-frontend
+#        version: ${{ env.PACKAGE_VERSION }}
+#        overwrite_mode: OverwriteExisting

@@ -102,8 +102,8 @@ runs:
     # Package the script up as a zip file
     - name: Build script package
       env:
-        OCTOPUS_URL: ${{ inputs.octopus_url }}
-        OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+        OCTOPUS_URL: "http://example.org"
+        OCTOPUS_API_KEY: "API-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       run: >
         octopus package zip create
         --id ${{ inputs.script_directory }}
