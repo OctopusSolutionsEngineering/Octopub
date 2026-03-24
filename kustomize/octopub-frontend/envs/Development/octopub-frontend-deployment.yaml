@@ -3,9 +3,9 @@
   value: #{Project.Frontend.ContainerPort}
 
 - op: replace
-  path: /spec/template/spec/containers/0/env/0/name
+  path: /spec/template/spec/containers/0/env/0/value
   value: #{Project.Frontend.ClientIdentifier}
 
 - op: replace
-  path: /spec/template/spec/containers/0/env/1/name
+  path: /spec/template/spec/containers/0/env/1/value
   value: #{Project.Frontend.FeatureToggleSlug}
