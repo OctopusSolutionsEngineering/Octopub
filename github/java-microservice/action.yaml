@@ -597,3 +597,40 @@ runs:
             "-Durl=s3://octopus-sales-public-maven-repo/snapshot"
         fi
       shell: bash
+
+    # - name: Push build information to Octopus Deploy 🐙
+    #   uses: OctopusDeploy/push-build-information-action@v3
+    #   env:
+    #     OCTOPUS_URL: ${{ inputs.octopus_url }}
+    #     OCTOPUS_API_KEY: ${{ inputs.octopus_apikey }}
+    #     OCTOPUS_SPACE: Matthew Casperson
+    #   with:
+    #     packages: com.octopus:${{ inputs.service_directory }}-lambda
+    #     version: ${{ env.PACKAGE_VERSION }}
+    #     overwrite_mode: OverwriteExisting
+
+    # - name: Push build information to Octopus Deploy 🐙
+    #   uses: OctopusDeploy/push-build-information-action@v3
+    #   env:
+    #     OCTOPUS_URL: ${{ inputs.samples_url }}
+    #     OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
+    #     OCTOPUS_SPACE: Target - Argo
+    #   with:
+    #     packages: |
+    #       octopussamples/octopub-${{ inputs.service_directory }}
+    #       octopussolutionsengineering/octopub-${{ inputs.service_directory }}
+    #     version: ${{ env.PACKAGE_VERSION }}
+    #     overwrite_mode: OverwriteExisting
+
+    # - name: Push build information to Octopus Deploy 🐙
+    #   uses: OctopusDeploy/push-build-information-action@v3
+    #   env:
+    #     OCTOPUS_URL: ${{ inputs.samples_url }}
+    #     OCTOPUS_API_KEY: ${{ inputs.samples_apikey }}
+    #     OCTOPUS_SPACE: Target - Kubernetes
+    #   with:
+    #     packages: |
+    #       octopussamples/octopub-${{ inputs.service_directory }}
+    #       octopussolutionsengineering/octopub-${{ inputs.service_directory }}
+    #     version: ${{ env.PACKAGE_VERSION }}
+    #     overwrite_mode: OverwriteExisting
