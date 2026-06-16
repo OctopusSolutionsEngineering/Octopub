@@ -106,6 +106,20 @@ runs:
         distribution: adopt
         cache: 'maven'
 
+# Claude suggestion
+
+    - name: Set up MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: Set up GraalVM
+      uses: graalvm/setup-graalvm@v1
+      with:
+        java-version: '17'
+        distribution: 'graalvm'
+        # add this to get 23.1+ instead of 23.0:
+        graalvm-version: '23.1.2'        
+# End of Claude suggestion        
+
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
       with:
