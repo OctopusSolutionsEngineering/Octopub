@@ -52,10 +52,24 @@ runs:
         distribution: adopt
         cache: 'maven'
 
-    - uses: graalvm/setup-graalvm@v1
+#    - uses: graalvm/setup-graalvm@v1
+#      with:
+#        java-version: '17'
+#        distribution: 'graalvm'
+
+# Claude suggestion
+
+    - name: Set up MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: Set up GraalVM
+      uses: graalvm/setup-graalvm@v1
       with:
         java-version: '17'
         distribution: 'graalvm'
+        # add this to get 23.1+ instead of 23.0:
+        graalvm-version: '23.1.2'        
+# End of Claude suggestion                
 
     # These are the dependencies that need to be manually installed to support https://github.com/ehsaniara/maven-repository-aws-s3
     # Typically the deployment of artifacts is configured in a pom.xml file and executed as part of an application's build.
