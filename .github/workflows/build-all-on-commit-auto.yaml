@@ -1,0 +1,77 @@
+name: Build Octopub
+permissions:
+  contents: write
+  packages: write
+on:
+  workflow_dispatch:
+  push: 
+    branches:
+      - main
+    paths:
+      - 'update-file.txt'
+
+jobs:
+  build-audits:
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Build Audit Microservice
+        uses: ./github/java-microservice
+        with:
+          run_number: ${{ github.run_number }}
+          github_repo: ${{ github.repository }}
+          github_token: ${{ github.token }}
+          dockerhub_username: ${{ secrets.DOCKER_USERNAME }}
+          dockerhub_password: ${{ secrets.DOCKER_PASSWORD }}
+          service_directory: audit-microservice
+          github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
+          codefresh_token: ${{ secrets.USER_TOKEN }}
+          octopus_server_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
+          octopus_api_key: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
+          #octopus_space: ${{ secrets.OCTOPUS_SPACE }}
+          octopus_space: "Administration"
+  build-frontend:
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Build Javascript Frontend
+        uses: ./github/js-frontend
+        with:
+          run_number: ${{ github.run_number }}
+          dockerhub_username: ${{ secrets.DOCKER_USERNAME }}
+          dockerhub_password: ${{ secrets.DOCKER_PASSWORD }}
+          github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
+          codefresh_token: ${{ secrets.USER_TOKEN }}
+          octopus_server_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
+          octopus_api_key: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
+          octopus_space: "Administration"          
+  build-products:
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Build Product Microservice
+        uses: ./github/java-microservice
+        with:
+          run_number: ${{ github.run_number }}
+          github_repo: ${{ github.repository }}
+          github_token: ${{ github.token }}
+          dockerhub_username: ${{ secrets.DOCKER_USERNAME }}
+          dockerhub_password: ${{ secrets.DOCKER_PASSWORD }}
+          service_directory: products-microservice
+          github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
+          codefresh_token: ${{ secrets.USER_TOKEN }}
+          octopus_server_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
+          octopus_api_key: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
+          octopus_space: "Administration"
