@@ -62,10 +62,10 @@ inputs:
     description: 'Whether to run tests'
     required: true
     default: true
-  samples_url:
+  demo_url:
     description: 'The octopus samples server'
     required: true
-  samples_apikey:
+  demo_apikey:
     description: 'The octopus samples apikey'
     required: true
 
@@ -599,6 +599,18 @@ runs:
             "-Durl=s3://octopus-sales-public-maven-repo/snapshot"
         fi
       shell: bash
+
+     - name: Push build information to Octopus Deploy 🐙
+       uses: OctopusDeploy/push-build-information-action@v3
+       env:
+         OCTOPUS_URL: ${{ inputs.demo_url }}
+         OCTOPUS_API_KEY: ${{ inputs.demo_apikey }}
+         OCTOPUS_SPACE: "Administration"
+       with:
+         packages: octopussolutionsengineering/octopub-${{ inputs.service_directory }}
+         version: ${{ env.PACKAGE_VERSION }}
+         overwrite_mode: OverwriteExisting
+
 
     # - name: Push build information to Octopus Deploy 🐙
     #   uses: OctopusDeploy/push-build-information-action@v3

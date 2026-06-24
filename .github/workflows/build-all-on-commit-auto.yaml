@@ -30,8 +30,8 @@ jobs:
           service_directory: audit-microservice
           github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
           codefresh_token: ${{ secrets.USER_TOKEN }}
-          octopus_server_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
-          octopus_api_key: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
+          demo_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
+          demo_apikey: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
           #octopus_space: ${{ secrets.OCTOPUS_SPACE }}
           octopus_space: "Administration"
   build-frontend:
@@ -50,8 +50,8 @@ jobs:
           dockerhub_password: ${{ secrets.DOCKER_PASSWORD }}
           github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
           codefresh_token: ${{ secrets.USER_TOKEN }}
-          octopus_server_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
-          octopus_api_key: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
+          demo_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
+          demo_apikey: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
           octopus_space: "Administration"          
   build-products:
     #runs-on: ubuntu-latest
@@ -72,6 +72,6 @@ jobs:
           service_directory: products-microservice
           github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
           codefresh_token: ${{ secrets.USER_TOKEN }}
-          octopus_server_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
-          octopus_api_key: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
+          demo_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
+          demo_apikey: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
           octopus_space: "Administration"

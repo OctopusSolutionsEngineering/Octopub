@@ -22,10 +22,10 @@ inputs:
   dockerhub_password:
     description: 'The dockerhub password'
     required: true
-  samples_url:
+  demo_url:
     description: 'The octopus samples server'
     required: true
-  samples_apikey:
+  demo_apikey:
     description: 'The octopus samples apikey'
     required: true
   github_token:
@@ -327,3 +327,16 @@ runs:
 #          octopussolutionsengineering/octopub-frontend
 #        version: ${{ env.PACKAGE_VERSION }}
 #        overwrite_mode: OverwriteExisting
+
+    - name: Push build information to Octopus Deploy 🐙
+      uses: OctopusDeploy/push-build-information-action@v3
+      env:
+        OCTOPUS_URL: ${{ inputs.demo_url }}
+        OCTOPUS_API_KEY: ${{ inputs.demo_apikey }}
+        OCTOPUS_SPACE: Target - Kubernetes
+      with:
+        packages: |
+          octopussamples/octopub-frontend
+#          octopussolutionsengineering/octopub-frontend
+        version: ${{ env.PACKAGE_VERSION }}
+        overwrite_mode: OverwriteExisting
