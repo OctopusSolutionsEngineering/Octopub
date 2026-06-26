@@ -609,6 +609,7 @@ runs:
       with:
         packages: |
           octopussamples/octopub-${{ inputs.service_directory }}
+          octopussamples/octopub-${{ inputs.service_directory }}-mysql
         version: ${{ env.PACKAGE_VERSION }}
         overwrite_mode: OverwriteExisting
 
