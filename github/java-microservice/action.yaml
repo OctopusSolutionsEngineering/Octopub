@@ -608,7 +608,6 @@ runs:
         OCTOPUS_SPACE: "Demo Template"
       with:
         packages: |
-          #octopussolutionsengineering/octopub-${{ inputs.service_directory }}
           octopussamples/octopub-${{ inputs.service_directory }}
         version: ${{ env.PACKAGE_VERSION }}
         overwrite_mode: OverwriteExisting
