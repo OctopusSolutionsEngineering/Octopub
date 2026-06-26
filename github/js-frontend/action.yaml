@@ -333,7 +333,7 @@ runs:
       env:
         OCTOPUS_URL: ${{ inputs.demo_url }}
         OCTOPUS_API_KEY: ${{ inputs.demo_apikey }}
-        OCTOPUS_SPACE: Administration
+        OCTOPUS_SPACE: "Demo Template"
       with:
         packages: |
           octopussamples/octopub-frontend
