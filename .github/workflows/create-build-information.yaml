@@ -55,7 +55,7 @@ jobs:
 
             # 33 chance of prepending a ticket number
             if (( RANDOM % 3 == 0 )); then
-              TICKET="[OC-$(( RANDOM % 3 + 1 ))] "
+              TICKET="[OCP-$(( RANDOM % 3 + 1 ))] "
             else
               TICKET=""
             fi
