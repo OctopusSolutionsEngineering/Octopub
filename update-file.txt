@@ -1,3 +1,3 @@
 
-[OCP-2] Reverse-engineered the compiler to appease the CI gods
-[OCP-2] Fixed a rubber duck while crying softly
+Tweaked the compiler and it worked somehow
+Tweaked a rubber duck while crying softly
