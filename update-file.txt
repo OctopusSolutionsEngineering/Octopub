@@ -1,3 +1,2 @@
 
-Tweaked the compiler and it worked somehow
-Tweaked a rubber duck while crying softly
+[OCP-2] Stared menacingly at the void for the last time
