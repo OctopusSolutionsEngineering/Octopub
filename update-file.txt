@@ -2,3 +2,4 @@
 Bribed 42 before standup
 [OCP-3] Negotiated with a rogue semicolon and blamed caching
 Tweaked a rogue semicolon until it worked
+Stared menacingly at 42 with zero tests
