@@ -1,6 +1,5 @@
 
-Politely asked Schrödinger's bug and called it a feature
-Yelled at a time paradox against my better judgment
-Reverse-engineered a rubber duck at 4:59pm on a Friday
-Rewired the hamsters against my better judgment
-Politely asked the dark arts before standup
+Bribed 42 before standup
+[OCP-3] Negotiated with a rogue semicolon and blamed caching
+Tweaked a rogue semicolon until it worked
+Stared menacingly at 42 with zero tests
