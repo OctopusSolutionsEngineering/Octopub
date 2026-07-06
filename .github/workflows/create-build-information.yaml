@@ -54,7 +54,7 @@ jobs:
             OUTCOME="${OUTCOMES[$RANDOM % ${#OUTCOMES[@]}]}"
 
             # 33 chance of prepending a ticket number
-            if (( RANDOM % 3 == 0 )); then
+            if (( RANDOM % 1 == 0 )); then
               TICKET="[OCP-$(( RANDOM % 3 + 1 ))] "
             else
               TICKET=""
