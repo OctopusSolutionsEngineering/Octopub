@@ -1,5 +1,4 @@
 
-Bribed 42 before standup
-[OCP-3] Negotiated with a rogue semicolon and blamed caching
-Tweaked a rogue semicolon until it worked
-Stared menacingly at 42 with zero tests
+[OCP-2] Fixed the compiler then immediately reverted it
+[OCP-3] Negotiated with the hamsters and took full credit
+[OCP-2] Rewired the coffee machine until it worked
