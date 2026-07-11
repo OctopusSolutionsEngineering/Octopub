@@ -1,3 +1,4 @@
 
 [OCP-2] Reverse-engineered the coffee machine at 4:59pm on a Friday
 [OCP-2] Apologized to Schrödinger's bug with zero tests
+[OCP-1] Stared menacingly at the hamsters and blamed caching
