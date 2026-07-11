@@ -1,4 +1,6 @@
 
-[OCP-1] Apologized to the intern against my better judgment
-[OCP-1] Fixed a rubber duck and blamed caching
-[OCP-2] Reverse-engineered the dark arts with zero tests
+[OCP-2] Reverse-engineered the coffee machine at 4:59pm on a Friday
+[OCP-2] Apologized to Schrödinger's bug with zero tests
+[OCP-1] Stared menacingly at the hamsters and blamed caching
+[OCP-2] Refactored the dark arts with a spoon
+[OCP-3] Rewired a time paradox before standup
