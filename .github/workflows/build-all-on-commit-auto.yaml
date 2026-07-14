@@ -34,6 +34,9 @@ jobs:
           demo_apikey: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
           #octopus_space: ${{ secrets.OCTOPUS_SPACE }}
           octopus_space: "Administration"
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
   build-frontend:
     #runs-on: ubuntu-latest
     runs-on: ubuntu-latest
@@ -52,7 +55,9 @@ jobs:
           codefresh_token: ${{ secrets.USER_TOKEN }}
           demo_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
           demo_apikey: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
-          octopus_space: "Administration"          
+          octopus_space: "Administration"
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   build-products:
     #runs-on: ubuntu-latest
     runs-on: ubuntu-latest
@@ -75,3 +80,5 @@ jobs:
           demo_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
           demo_apikey: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
           octopus_space: "Administration"
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
