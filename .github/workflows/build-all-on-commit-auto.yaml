@@ -25,8 +25,8 @@ jobs:
           run_number: ${{ github.run_number }}
           github_repo: ${{ github.repository }}
           github_token: ${{ github.token }}
-          dockerhub_username: ${{ secrets.DOCKER_USERNAME }}
-          dockerhub_password: ${{ secrets.DOCKER_PASSWORD }}
+          dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+          dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
           service_directory: audit-microservice
           github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
           codefresh_token: ${{ secrets.USER_TOKEN }}
@@ -49,8 +49,8 @@ jobs:
         uses: ./github/js-frontend
         with:
           run_number: ${{ github.run_number }}
-          dockerhub_username: ${{ secrets.DOCKER_USERNAME }}
-          dockerhub_password: ${{ secrets.DOCKER_PASSWORD }}
+          dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+          dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
           github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
           codefresh_token: ${{ secrets.USER_TOKEN }}
           demo_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
@@ -72,8 +72,8 @@ jobs:
           run_number: ${{ github.run_number }}
           github_repo: ${{ github.repository }}
           github_token: ${{ github.token }}
-          dockerhub_username: ${{ secrets.DOCKER_USERNAME }}
-          dockerhub_password: ${{ secrets.DOCKER_PASSWORD }}
+          dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+          dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
           service_directory: products-microservice
           github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
           codefresh_token: ${{ secrets.USER_TOKEN }}
