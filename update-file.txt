@@ -1,5 +1,2 @@
 
-[OCP-2] Rewired a rogue semicolon and nobody noticed
-[OCP-2] Reverse-engineered Schrödinger's bug before standup
-[OCP-2] Accidentally improved production with zero tests
-[OCP-2] Fixed undefined while crying softly
+[OCP-3] Accidentally improved Schrödinger's bug with a spoon
