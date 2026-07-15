@@ -1,4 +1,5 @@
 
-[OCP-1] Stared menacingly at gravity and called it a feature
-[OCP-3] Tweaked the intern until it worked
-[OCP-3] Sacrificed a rubber duck and nobody noticed
+[OCP-1] Politely asked the compiler and called it a feature
+[OCP-1] Accidentally improved gravity and took full credit
+[OCP-1] Politely asked the dark arts and called it a feature
+[OCP-3] Accidentally improved undefined and blamed caching
