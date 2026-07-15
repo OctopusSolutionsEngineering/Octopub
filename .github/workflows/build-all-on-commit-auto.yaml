@@ -26,7 +26,7 @@ jobs:
           github_repo: ${{ github.repository }}
           github_token: ${{ github.token }}
           dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
-          dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          dockerhub_password: ${{ secrets.DOCKERHUB_TOKEN }}
           service_directory: audit-microservice
           github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
           codefresh_token: ${{ secrets.USER_TOKEN }}
@@ -50,7 +50,7 @@ jobs:
         with:
           run_number: ${{ github.run_number }}
           dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
-          dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          dockerhub_password: ${{ secrets.DOCKERHUB_TOKEN }}
           github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
           codefresh_token: ${{ secrets.USER_TOKEN }}
           demo_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
@@ -73,7 +73,7 @@ jobs:
           github_repo: ${{ github.repository }}
           github_token: ${{ github.token }}
           dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
-          dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          dockerhub_password: ${{ secrets.DOCKERHUB_TOKEN }}
           service_directory: products-microservice
           github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
           codefresh_token: ${{ secrets.USER_TOKEN }}
