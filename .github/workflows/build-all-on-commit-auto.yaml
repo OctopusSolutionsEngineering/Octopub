@@ -25,6 +25,7 @@ jobs:
           run_number: ${{ github.run_number }}
           github_repo: ${{ github.repository }}
           github_token: ${{ github.token }}
+          github_actor: ${{ github.actor }}          
           dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
           dockerhub_password: ${{ secrets.DOCKERHUB_TOKEN }}
           service_directory: audit-microservice
@@ -51,13 +52,14 @@ jobs:
           run_number: ${{ github.run_number }}
           dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
           dockerhub_password: ${{ secrets.DOCKERHUB_TOKEN }}
-          github_codefresh_token: ${{ secrets.CF_GITHUB_TOKEN }}
-          codefresh_token: ${{ secrets.USER_TOKEN }}
+          github_token: ${{ github.token }}
+          github_actor: ${{ github.actor }}
           demo_url: ${{ secrets.DEMO_OCTOPUS_SERVER_URL }}
           demo_apikey: ${{ secrets.DEMO_OCTOPUS_API_KEY }}
           octopus_space: "Administration"
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          
   build-products:
     #runs-on: ubuntu-latest
     runs-on: ubuntu-latest
@@ -72,6 +74,7 @@ jobs:
           run_number: ${{ github.run_number }}
           github_repo: ${{ github.repository }}
           github_token: ${{ github.token }}
+          github_actor: ${{ github.actor }}          
           dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
           dockerhub_password: ${{ secrets.DOCKERHUB_TOKEN }}
           service_directory: products-microservice
