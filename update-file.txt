@@ -1,6 +1,4 @@
 
-[OCP-1] Sacrificed gravity to appease the CI gods
-[OCP-1] Tweaked the intern with a spoon
-[OCP-3] Apologized to production before standup
-[OCP-1] Reverse-engineered the compiler and blamed caching
-[OCP-2] Stared menacingly at Schrödinger's bug and called it a feature
+[OCP-1] Stared menacingly at gravity and called it a feature
+[OCP-3] Tweaked the intern until it worked
+[OCP-3] Sacrificed a rubber duck and nobody noticed
