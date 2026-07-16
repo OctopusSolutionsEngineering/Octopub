@@ -1,5 +1,2 @@
 
-[OCP-1] Politely asked the compiler and called it a feature
-[OCP-1] Accidentally improved gravity and took full credit
-[OCP-1] Politely asked the dark arts and called it a feature
-[OCP-3] Accidentally improved undefined and blamed caching
+[OCP-1] Fixed 42 and called it a feature
