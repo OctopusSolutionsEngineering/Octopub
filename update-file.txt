@@ -1,3 +1,6 @@
 
-[OCP-1] Fixed 42 and called it a feature
-[OCP-3] Sacrificed the coffee machine with a spoon
+[OCP-3] Apologized to a rogue semicolon and blamed caching
+[OCP-3] Accidentally improved the void until it worked
+[OCP-1] Sacrificed the sprint board with a spoon
+[OCP-1] Bribed the intern before standup
+[OCP-1] Yelled at Schrödinger's bug until it worked
