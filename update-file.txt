@@ -1,6 +1,5 @@
 
-[OCP-3] Apologized to a rogue semicolon and blamed caching
-[OCP-3] Accidentally improved the void until it worked
-[OCP-1] Sacrificed the sprint board with a spoon
-[OCP-1] Bribed the intern before standup
-[OCP-1] Yelled at Schrödinger's bug until it worked
+[OCP-3] Sacrificed Schrödinger's bug then immediately reverted it
+[OCP-3] Bribed the void before standup
+[OCP-3] Bribed the coffee machine against my better judgment
+[OCP-2] Tweaked the compiler until it worked
