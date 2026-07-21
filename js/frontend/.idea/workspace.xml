@@ -7,14 +7,9 @@
     <option name="selectedModelId" value="auto" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="313eb968-51f0-40c7-8b93-7d681db26720" name="Changes" comment="Update project configuration files and versioning">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    <list default="true" id="313eb968-51f0-40c7-8b93-7d681db26720" name="Changes" comment="Enhance URL safety and update footer links for improved security">
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Book.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Book.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/network.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/network.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +184,7 @@
       <workItem from="1769638681253" duration="678000" />
       <workItem from="1769980987981" duration="67000" />
       <workItem from="1784601150490" duration="140000" />
-      <workItem from="1784601300563" duration="5497000" />
+      <workItem from="1784601300563" duration="5814000" />
     </task>
     <task id="LOCAL-00001" summary="Implement mock backend checks for book operations and add mock data files">
       <option name="closed" value="true" />
@@ -231,11 +226,55 @@
       <option name="project" value="LOCAL" />
       <updated>1784601893262</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Enhance URL safety and update footer links for improved security">
+      <option name="closed" value="true" />
+      <created>1784610177115</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1784610177115</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="bdd33ae4-6b24-486f-ac2f-8352dfb2c1d8" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="bdd33ae4-6b24-486f-ac2f-8352dfb2c1d8">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/matthewcasperson/Code/Octopub/js/frontend" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implement mock backend checks for book operations and add mock data files" />
@@ -243,7 +282,8 @@
     <MESSAGE value="Refactor Grid component usage for consistent size prop across multiple files" />
     <MESSAGE value="Fixed theming" />
     <MESSAGE value="Update project configuration files and versioning" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update project configuration files and versioning" />
+    <MESSAGE value="Enhance URL safety and update footer links for improved security" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enhance URL safety and update footer links for improved security" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
