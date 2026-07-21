@@ -3,8 +3,15 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BackgroundAgentGlobalSettings">
+    <option name="selectedModelId" value="auto" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="313eb968-51f0-40c7-8b93-7d681db26720" name="Changes" comment="Fixed theming" />
+    <list default="true" id="313eb968-51f0-40c7-8b93-7d681db26720" name="Changes" comment="Fixed theming">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,8 +19,13 @@
   </component>
   <component name="CopilotPersistence">
     <persistenceIdMap>
+      <entry key="_/Users/matthewcasperson/Code/Octopub/js/frontend" value="3GnIx5eCaUGjgTE8KxGNeCXAPEn" />
       <entry key="_/home/matthew/Code/Octopub/js/frontend" value="34lUZBIlEo1nweU8ds7esNDlmmU" />
     </persistenceIdMap>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="70" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -32,9 +44,72 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/OctopusSolutionsEngineering/Octopub.git&quot;,
-    &quot;accountId&quot;: &quot;1f9de8ce-9320-447e-b4f7-f494f3469223&quot;
+    &quot;accountId&quot;: &quot;1d2aed9a-6eb4-461e-af1c-967866664689&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000000000000002" />
+      <entry key="S2" value="1.0001047690346543" />
+      <entry key="S5" value="1.0255913488480044" />
+      <entry key="S10" value="1.1599732201172266" />
+      <entry key="S30" value="1.5542071203875976" />
+      <entry key="S60" value="2.1989781479920696" />
+      <entry key="M2" value="5.936678724038913" />
+      <entry key="M5" value="18.0445752394937" />
+      <entry key="M10" value="27.62422032391633" />
+      <entry key="M15" value="31.963749017164698" />
+      <entry key="M30" value="37.046058905477636" />
+      <entry key="H1" value="39.90518534041945" />
+      <entry key="H2" value="41.42194040731434" />
+      <entry key="H4" value="42.203152927272185" />
+      <entry key="D1" value="42.866093078302235" />
+      <entry key="W1" value="42.98084334786732" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="9.171317415178682E-179" />
+      <entry key="S2" value="3.0946242976777376E-45" />
+      <entry key="S5" value="1.5712423363250193E-18" />
+      <entry key="S10" value="1.2534920567458812E-9" />
+      <entry key="S30" value="0.0010782195334338713" />
+      <entry key="S60" value="0.03283625334038388" />
+      <entry key="M2" value="0.18120776291424126" />
+      <entry key="M5" value="0.5049759786638777" />
+      <entry key="M10" value="0.7106166186234865" />
+      <entry key="M15" value="0.7963247975173761" />
+      <entry key="M30" value="0.8923703253231677" />
+      <entry key="H1" value="0.9446535477746156" />
+      <entry key="H2" value="0.9719328926292264" />
+      <entry key="H4" value="0.9858665693841264" />
+      <entry key="D1" value="0.9976304354101406" />
+      <entry key="W1" value="0.9996611465022711" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.06983044612951374" />
+      <entry key="MS500" value="0.5872309856068268" />
+      <entry key="S2" value="0.8754958448657174" />
+      <entry key="S5" value="0.9737249255761251" />
+      <entry key="S10" value="1.1336298700788814" />
+      <entry key="S30" value="1.5462876786311763" />
+      <entry key="S60" value="2.226494055083837" />
+      <entry key="M2" value="6.11338454106216" />
+      <entry key="M5" value="18.546003928672516" />
+      <entry key="M10" value="28.332467180164716" />
+      <entry key="M15" value="32.75832295004141" />
+      <entry key="M30" value="37.93745623707618" />
+      <entry key="H1" value="40.84932546783716" />
+      <entry key="H2" value="42.39360951583044" />
+      <entry key="H4" value="43.188885791468195" />
+      <entry key="D1" value="43.863700973816" />
+      <entry key="W1" value="43.98050126807131" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -42,33 +117,55 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectSessionTemplates">
+    <option name="panelTemplate">
+      <template>
+        <option name="modeId" value="Agent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_id" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="BACKGROUND" />
+        <option name="worktreeMode" value="WORKSPACE" />
+      </template>
+    </option>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/matthew/Code/Library&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/matthew/Code/Octopub/js/frontend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/matthewcasperson/Code/Octopub/js/frontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/Users/matthewcasperson/Code/Octopub/js/frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.8665.259" />
       </set>
     </attachedChunks>
   </component>
@@ -87,6 +184,8 @@
       <workItem from="1769567694280" duration="11000" />
       <workItem from="1769638681253" duration="678000" />
       <workItem from="1769980987981" duration="67000" />
+      <workItem from="1784601150490" duration="140000" />
+      <workItem from="1784601300563" duration="540000" />
     </task>
     <task id="LOCAL-00001" summary="Implement mock backend checks for book operations and add mock data files">
       <option name="closed" value="true" />
