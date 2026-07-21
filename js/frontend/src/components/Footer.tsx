@@ -40,8 +40,9 @@ const Footer = () => {
     return (
         <div className={classes.root}>
             <Link
-                href={"http://octopus.com"}
+                href={"https://octopus.com"}
                 target="_blank"
+                rel="noopener noreferrer"
                 className={classes.footer}
             >
                 {FOOTER_TEXT}

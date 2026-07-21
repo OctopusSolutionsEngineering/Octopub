@@ -9,6 +9,7 @@ import {getJsonApi} from "../utils/network";
 import {Grid} from "@mui/material";
 import {styles} from "../utils/styles";
 import {convertToObject} from "../utils/parsing";
+import {sanitizeUrl} from "../utils/urlsafety";
 
 const Book: FC<{}> = (): ReactElement => {
 
@@ -46,7 +47,7 @@ const Book: FC<{}> = (): ReactElement => {
                 <Grid size={{ md: 4, sm: 12 }}>
                     <img id="coverimage"
                          className={classes.image}
-                         src={book.data.attributes.image || "https://via.placeholder.com/300x400"}
+                         src={sanitizeUrl(book.data.attributes.image) || "https://via.placeholder.com/300x400"}
                          alt={book.data.attributes.name || ""}/>
                 </Grid>
                 <Grid size={{ md: 8, sm: 12 }}>
@@ -54,9 +55,9 @@ const Book: FC<{}> = (): ReactElement => {
                     <p>{book.data.attributes.description}</p>
                     <h2>Downloads</h2>
                     <ul>
-                        {book.data.attributes.pdf && <li><a href={book.data.attributes.pdf}>PDF</a></li>}
-                        {book.data.attributes.epub && <li><a href={book.data.attributes.epub}>EPUB</a></li>}
-                        {book.data.attributes.web && <li><a href={book.data.attributes.web}>Link</a></li>}
+                        {sanitizeUrl(book.data.attributes.pdf) && <li><a href={sanitizeUrl(book.data.attributes.pdf)} rel="noopener noreferrer">PDF</a></li>}
+                        {sanitizeUrl(book.data.attributes.epub) && <li><a href={sanitizeUrl(book.data.attributes.epub)} rel="noopener noreferrer">EPUB</a></li>}
+                        {sanitizeUrl(book.data.attributes.web) && <li><a href={sanitizeUrl(book.data.attributes.web)} rel="noopener noreferrer">Link</a></li>}
                     </ul>
                 </Grid>
             </Grid>}

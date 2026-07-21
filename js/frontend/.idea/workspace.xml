@@ -7,10 +7,14 @@
     <option name="selectedModelId" value="auto" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="313eb968-51f0-40c7-8b93-7d681db26720" name="Changes" comment="Fixed theming">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="313eb968-51f0-40c7-8b93-7d681db26720" name="Changes" comment="Update project configuration files and versioning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Book.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Book.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/network.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/network.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,60 +58,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000000000000002" />
-      <entry key="S2" value="1.0001047690346543" />
-      <entry key="S5" value="1.0255913488480044" />
-      <entry key="S10" value="1.1599732201172266" />
-      <entry key="S30" value="1.5542071203875976" />
-      <entry key="S60" value="2.1989781479920696" />
-      <entry key="M2" value="5.936678724038913" />
-      <entry key="M5" value="18.0445752394937" />
-      <entry key="M10" value="27.62422032391633" />
-      <entry key="M15" value="31.963749017164698" />
-      <entry key="M30" value="37.046058905477636" />
-      <entry key="H1" value="39.90518534041945" />
-      <entry key="H2" value="41.42194040731434" />
-      <entry key="H4" value="42.203152927272185" />
-      <entry key="D1" value="42.866093078302235" />
-      <entry key="W1" value="42.98084334786732" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0000038301971097" />
+      <entry key="S60" value="1.005177713625683" />
+      <entry key="M2" value="1.1903762057320335" />
+      <entry key="M5" value="2.6553987715646006" />
+      <entry key="M10" value="4.40599991167484" />
+      <entry key="M15" value="5.382765695397538" />
+      <entry key="M30" value="8.027088746315481" />
+      <entry key="H1" value="15.297020196187727" />
+      <entry key="H2" value="26.241793987350135" />
+      <entry key="H4" value="36.111245643108006" />
+      <entry key="D1" value="48.0733663339841" />
+      <entry key="W1" value="50.56947078222768" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="9.171317415178682E-179" />
-      <entry key="S2" value="3.0946242976777376E-45" />
-      <entry key="S5" value="1.5712423363250193E-18" />
-      <entry key="S10" value="1.2534920567458812E-9" />
-      <entry key="S30" value="0.0010782195334338713" />
-      <entry key="S60" value="0.03283625334038388" />
-      <entry key="M2" value="0.18120776291424126" />
-      <entry key="M5" value="0.5049759786638777" />
-      <entry key="M10" value="0.7106166186234865" />
-      <entry key="M15" value="0.7963247975173761" />
-      <entry key="M30" value="0.8923703253231677" />
-      <entry key="H1" value="0.9446535477746156" />
-      <entry key="H2" value="0.9719328926292264" />
-      <entry key="H4" value="0.9858665693841264" />
-      <entry key="D1" value="0.9976304354101406" />
-      <entry key="W1" value="0.9996611465022711" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="3.803892764646579E-259" />
+      <entry key="S30" value="7.245628924208064E-87" />
+      <entry key="S60" value="8.512126011877442E-44" />
+      <entry key="M2" value="2.917554800149851E-22" />
+      <entry key="M5" value="2.432246621676998E-9" />
+      <entry key="M10" value="4.931781241779684E-5" />
+      <entry key="M15" value="0.0013448356182013692" />
+      <entry key="M30" value="0.03667200046631447" />
+      <entry key="H1" value="0.19149934847490863" />
+      <entry key="H2" value="0.4376063853223678" />
+      <entry key="H4" value="0.6615182426225052" />
+      <entry key="D1" value="0.9334483754321975" />
+      <entry key="W1" value="0.9902097227780462" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.06983044612951374" />
-      <entry key="MS500" value="0.5872309856068268" />
-      <entry key="S2" value="0.8754958448657174" />
-      <entry key="S5" value="0.9737249255761251" />
-      <entry key="S10" value="1.1336298700788814" />
-      <entry key="S30" value="1.5462876786311763" />
-      <entry key="S60" value="2.226494055083837" />
-      <entry key="M2" value="6.11338454106216" />
-      <entry key="M5" value="18.546003928672516" />
-      <entry key="M10" value="28.332467180164716" />
-      <entry key="M15" value="32.75832295004141" />
-      <entry key="M30" value="37.93745623707618" />
-      <entry key="H1" value="40.84932546783716" />
-      <entry key="H2" value="42.39360951583044" />
-      <entry key="H4" value="43.188885791468195" />
-      <entry key="D1" value="43.863700973816" />
-      <entry key="W1" value="43.98050126807131" />
+      <entry key="MS100" value="0.08900313722481698" />
+      <entry key="MS500" value="0.6164261627319033" />
+      <entry key="S2" value="0.8860745559339646" />
+      <entry key="S5" value="0.9527700708668041" />
+      <entry key="S10" value="0.9760994164872777" />
+      <entry key="S30" value="0.9919726269399862" />
+      <entry key="S60" value="1.0011441717106824" />
+      <entry key="M2" value="1.1881823826779507" />
+      <entry key="M5" value="2.653969300325008" />
+      <entry key="M10" value="4.405005804051749" />
+      <entry key="M15" value="5.383296355377436" />
+      <entry key="M30" value="8.06324161489026" />
+      <entry key="H1" value="15.488153923215073" />
+      <entry key="H2" value="26.679144828791305" />
+      <entry key="H4" value="36.77260421046507" />
+      <entry key="D1" value="49.00678173561499" />
+      <entry key="W1" value="51.55967560592572" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -185,7 +189,7 @@
       <workItem from="1769638681253" duration="678000" />
       <workItem from="1769980987981" duration="67000" />
       <workItem from="1784601150490" duration="140000" />
-      <workItem from="1784601300563" duration="540000" />
+      <workItem from="1784601300563" duration="5497000" />
     </task>
     <task id="LOCAL-00001" summary="Implement mock backend checks for book operations and add mock data files">
       <option name="closed" value="true" />
@@ -219,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765238326340</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update project configuration files and versioning">
+      <option name="closed" value="true" />
+      <created>1784601893262</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1784601893262</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +242,8 @@
     <MESSAGE value="Add mockBackend option to dependency arrays in book-related components" />
     <MESSAGE value="Refactor Grid component usage for consistent size prop across multiple files" />
     <MESSAGE value="Fixed theming" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed theming" />
+    <MESSAGE value="Update project configuration files and versioning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update project configuration files and versioning" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

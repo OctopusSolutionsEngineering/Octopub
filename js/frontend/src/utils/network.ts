@@ -20,11 +20,23 @@ export function isBranchingEnabled() {
     return (localStorage.getItem("branchingEnabled") || "").toLowerCase() === "true";
 }
 
+/**
+ * Strip control characters (including CR/LF) that could be used to inject
+ * additional HTTP headers by breaking out of the "Routing" header value.
+ * The "[", "]", "=" and ";" characters are intentionally preserved because
+ * they are part of the legitimate routing grammar (e.g. "_url[https://...]").
+ */
+function sanitizeRoutingValue(value: string) {
+    // eslint-disable-next-line no-control-regex
+    return value.replace(/[\x00-\x1f\x7f]/g, "").trim();
+}
+
 export function getBranchingRules() {
     if (isBranchingEnabled()) {
         const rules: RedirectRule[] = JSON.parse(getSavedBranchingRules() || "[]")
         return rules
-            .filter(r => r.path.trim() && r.destination.trim())
+            .map(r => ({path: sanitizeRoutingValue(r.path), destination: sanitizeRoutingValue(r.destination)}))
+            .filter(r => r.path && r.destination)
             .map(r => "route[" + r.path + "]=" + r.destination).join(";")
     }
 
