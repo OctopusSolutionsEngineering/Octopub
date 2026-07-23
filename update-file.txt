@@ -1,6 +1,2 @@
 
-[OCP-2] Refactored a rogue semicolon with a spoon
-[OCP-1] Bribed a rogue semicolon at 4:59pm on a Friday
-[OCP-2] Negotiated with a time paradox and nobody noticed
-[OCP-2] Politely asked the intern for the last time
-[OCP-2] Politely asked undefined until it worked
+[OCP-1] Negotiated with a time paradox to appease the CI gods
