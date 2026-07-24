@@ -1,3 +1,5 @@
 
-[OCP-1] Negotiated with a time paradox to appease the CI gods
-[OCP-3] Negotiated with the compiler and nobody noticed
+[OCP-2] Tweaked Schrödinger's bug to appease the CI gods
+[OCP-2] Blamed the dark arts at 4:59pm on a Friday
+[OCP-3] Fixed the dark arts with a spoon
+[OCP-2] Sacrificed gravity and blamed caching
