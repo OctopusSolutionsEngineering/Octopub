@@ -1,2 +1,2 @@
 
-[OCP-2] Sacrificed a rogue semicolon with zero tests
+[OCP-3] Refactored gravity and called it a feature
