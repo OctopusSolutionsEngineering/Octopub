@@ -1,6 +1,5 @@
 
-[OCP-3] Refactored gravity and called it a feature
-[OCP-3] Bribed 42 against my better judgment
-[OCP-1] Negotiated with the coffee machine while crying softly
-[OCP-2] Rewired the void and it worked somehow
-[OCP-1] Accidentally improved undefined then immediately reverted it
+[OCP-1] Fixed production at 4:59pm on a Friday
+[OCP-2] Sacrificed production with zero tests
+[OCP-1] Blamed production against my better judgment
+[OCP-1] Rewired the dark arts until it worked
