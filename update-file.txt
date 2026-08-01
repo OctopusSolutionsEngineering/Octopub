@@ -1,3 +1,2 @@
 
-[OCP-2] Accidentally improved the sprint board and nobody noticed
-[OCP-2] Yelled at the intern and blamed caching
+[OCP-2] Accidentally improved a rogue semicolon before standup
