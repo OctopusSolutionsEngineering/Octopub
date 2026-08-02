@@ -1,4 +1,2 @@
 
-[OCP-2] Accidentally improved a rogue semicolon before standup
-[OCP-3] Yelled at undefined to appease the CI gods
-[OCP-2] Apologized to production and took full credit
+[OCP-2] Accidentally improved gravity at 4:59pm on a Friday
