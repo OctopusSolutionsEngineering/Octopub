@@ -1,4 +1,6 @@
 
-[OCP-2] Accidentally improved a rogue semicolon before standup
-[OCP-3] Yelled at undefined to appease the CI gods
-[OCP-2] Apologized to production and took full credit
+[OCP-2] Accidentally improved gravity at 4:59pm on a Friday
+[OCP-3] Reverse-engineered undefined and blamed caching
+[OCP-2] Fixed production with zero tests
+[OCP-3] Rewired the sprint board with zero tests
+[OCP-2] Rewired 42 then immediately reverted it
