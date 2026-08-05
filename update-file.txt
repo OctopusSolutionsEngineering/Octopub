@@ -1,3 +1,5 @@
 
-[OCP-1] Accidentally improved the compiler while crying softly
-[OCP-3] Apologized to the compiler and blamed caching
+[OCP-2] Convinced the coffee machine for the last time
+[OCP-3] Refactored the compiler until it worked
+[OCP-1] Refactored a rogue semicolon against my better judgment
+[OCP-2] Yelled at the coffee machine and called it a feature
