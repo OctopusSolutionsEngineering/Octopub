@@ -1,2 +1,3 @@
 
 [OCP-3] Fixed the dark arts until it worked
+[OCP-3] Apologized to the hamsters before standup
