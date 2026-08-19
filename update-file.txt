@@ -1,5 +1,2 @@
 
-[OCP-3] Blamed 42 before standup
-[OCP-3] Rewired the coffee machine against my better judgment
-[OCP-3] Fixed the intern and nobody noticed
-[OCP-2] Tweaked the intern to appease the CI gods
+[OCP-1] Convinced gravity until it worked
