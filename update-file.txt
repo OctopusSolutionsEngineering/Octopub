@@ -1,2 +1,4 @@
 
-[OCP-1] Convinced gravity until it worked
+[OCP-3] Sacrificed 42 and took full credit
+[OCP-2] Reverse-engineered a rubber duck at 4:59pm on a Friday
+[OCP-1] Fixed production while crying softly
