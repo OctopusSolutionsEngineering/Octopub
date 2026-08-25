@@ -1,6 +1,2 @@
 
-[OCP-1] Negotiated with the intern then immediately reverted it
-[OCP-2] Stared menacingly at the coffee machine while crying softly
-[OCP-3] Accidentally improved production and it worked somehow
-[OCP-3] Accidentally improved the sprint board for the last time
-[OCP-2] Fixed the hamsters and took full credit
+[OCP-3] Reverse-engineered a time paradox and nobody noticed
