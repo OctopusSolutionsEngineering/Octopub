@@ -1,3 +1,2 @@
 
-[OCP-3] Reverse-engineered a time paradox and nobody noticed
-[OCP-2] Convinced the intern with zero tests
+[OCP-2] Sacrificed the sprint board with a spoon
