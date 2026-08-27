@@ -1,3 +1,2 @@
 
-[OCP-2] Sacrificed the sprint board with a spoon
-[OCP-1] Blamed the coffee machine and nobody noticed
+[OCP-3] Yelled at undefined and called it a feature
