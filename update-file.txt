@@ -1,6 +1,2 @@
 
-[OCP-2] Blamed a rogue semicolon and took full credit
-[OCP-1] Tweaked the intern before standup
-[OCP-1] Accidentally improved a time paradox with zero tests
-[OCP-3] Yelled at the coffee machine and called it a feature
-[OCP-2] Tweaked the sprint board and called it a feature
+[OCP-1] Blamed a rubber duck at 4:59pm on a Friday
