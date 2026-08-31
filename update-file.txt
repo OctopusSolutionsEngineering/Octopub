@@ -1,3 +1,4 @@
 
-[OCP-1] Blamed a rubber duck at 4:59pm on a Friday
-[OCP-2] Refactored the compiler and called it a feature
+[OCP-1] Yelled at the hamsters with zero tests
+[OCP-1] Stared menacingly at the compiler and nobody noticed
+[OCP-3] Stared menacingly at undefined then immediately reverted it
