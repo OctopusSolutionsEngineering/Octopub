@@ -1,4 +1,6 @@
 
-[OCP-1] Yelled at the hamsters with zero tests
-[OCP-1] Stared menacingly at the compiler and nobody noticed
-[OCP-3] Stared menacingly at undefined then immediately reverted it
+[OCP-1] Accidentally improved production and blamed caching
+[OCP-1] Fixed the compiler and blamed caching
+[OCP-3] Tweaked a rogue semicolon for the last time
+[OCP-1] Rewired undefined and it worked somehow
+[OCP-2] Blamed a rubber duck and took full credit
