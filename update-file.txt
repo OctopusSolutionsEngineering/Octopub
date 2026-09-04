@@ -2,3 +2,4 @@
 [OCP-3] Refactored the compiler then immediately reverted it
 [OCP-2] Apologized to the void and blamed caching
 [OCP-1] Politely asked the compiler against my better judgment
+[OCP-2] Fixed a rogue semicolon before standup
