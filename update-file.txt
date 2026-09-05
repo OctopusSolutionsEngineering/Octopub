@@ -1,6 +1,2 @@
 
-[OCP-3] Refactored the compiler then immediately reverted it
-[OCP-2] Apologized to the void and blamed caching
-[OCP-1] Politely asked the compiler against my better judgment
-[OCP-2] Fixed a rogue semicolon before standup
-[OCP-2] Politely asked undefined until it worked
+[OCP-3] Apologized to the void then immediately reverted it
