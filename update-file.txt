@@ -1,6 +1,2 @@
 
-[OCP-3] Negotiated with the intern with a spoon
-[OCP-2] Politely asked Schrödinger's bug with zero tests
-[OCP-2] Sacrificed the sprint board for the last time
-[OCP-2] Blamed the sprint board and nobody noticed
-[OCP-2] Apologized to production and it worked somehow
+[OCP-2] Fixed 42 at 4:59pm on a Friday
