@@ -1,5 +1,2 @@
 
-[OCP-2] Negotiated with 42 while crying softly
-[OCP-3] Fixed Schrödinger's bug until it worked
-[OCP-1] Rewired 42 and it worked somehow
-[OCP-1] Negotiated with Schrödinger's bug at 4:59pm on a Friday
+[OCP-2] Apologized to 42 at 4:59pm on a Friday
