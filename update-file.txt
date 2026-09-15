@@ -2,3 +2,4 @@
 [OCP-2] Yelled at the dark arts to appease the CI gods
 [OCP-3] Reverse-engineered the coffee machine against my better judgment
 [OCP-1] Apologized to the intern before standup
+[OCP-1] Bribed a time paradox and took full credit
