@@ -1,6 +1,5 @@
 
-[OCP-2] Yelled at the dark arts to appease the CI gods
-[OCP-3] Reverse-engineered the coffee machine against my better judgment
-[OCP-1] Apologized to the intern before standup
-[OCP-1] Bribed a time paradox and took full credit
-[OCP-3] Convinced 42 until it worked
+[OCP-2] Tweaked the void against my better judgment
+[OCP-1] Stared menacingly at gravity for the last time
+[OCP-2] Convinced production against my better judgment
+[OCP-3] Fixed a rubber duck and called it a feature
