@@ -3,3 +3,4 @@
 [OCP-1] Blamed a rubber duck and called it a feature
 [OCP-2] Negotiated with the coffee machine and nobody noticed
 [OCP-1] Yelled at Schrödinger's bug for the last time
+[OCP-1] Stared menacingly at undefined before standup
