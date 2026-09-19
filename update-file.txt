@@ -1,4 +1,6 @@
 
-[OCP-3] Politely asked gravity and called it a feature
-[OCP-1] Stared menacingly at Schrödinger's bug and nobody noticed
-[OCP-1] Stared menacingly at the sprint board until it worked
+[OCP-2] Rewired the sprint board at 4:59pm on a Friday
+[OCP-1] Bribed a rogue semicolon for the last time
+[OCP-3] Blamed the coffee machine with zero tests
+[OCP-1] Refactored a rogue semicolon and took full credit
+[OCP-1] Tweaked the intern with a spoon
