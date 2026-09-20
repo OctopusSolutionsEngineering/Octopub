@@ -1,6 +1,4 @@
 
-[OCP-2] Rewired the sprint board at 4:59pm on a Friday
-[OCP-1] Bribed a rogue semicolon for the last time
-[OCP-3] Blamed the coffee machine with zero tests
-[OCP-1] Refactored a rogue semicolon and took full credit
-[OCP-1] Tweaked the intern with a spoon
+[OCP-2] Negotiated with Schrödinger's bug until it worked
+[OCP-1] Apologized to the intern while crying softly
+[OCP-3] Refactored a time paradox until it worked
