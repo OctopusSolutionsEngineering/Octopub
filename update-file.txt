@@ -1,4 +1,2 @@
 
-[OCP-2] Negotiated with Schrödinger's bug until it worked
-[OCP-1] Apologized to the intern while crying softly
-[OCP-3] Refactored a time paradox until it worked
+[OCP-1] Apologized to the sprint board for the last time
