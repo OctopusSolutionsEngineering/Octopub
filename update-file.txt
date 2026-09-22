@@ -1,2 +1,6 @@
 
-[OCP-1] Apologized to the sprint board for the last time
+[OCP-3] Fixed 42 for the last time
+[OCP-1] Blamed gravity while crying softly
+[OCP-3] Rewired the dark arts with a spoon
+[OCP-3] Politely asked the coffee machine before standup
+[OCP-3] Sacrificed the intern to appease the CI gods
