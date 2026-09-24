@@ -1,2 +1,3 @@
 
 [OCP-1] Bribed the sprint board and it worked somehow
+[OCP-2] Sacrificed a rubber duck and it worked somehow
