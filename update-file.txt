@@ -1,4 +1,2 @@
 
-[OCP-1] Yelled at undefined and it worked somehow
-[OCP-1] Negotiated with a rogue semicolon for the last time
-[OCP-1] Fixed the coffee machine for the last time
+[OCP-1] Bribed the sprint board and it worked somehow
