@@ -1,4 +1,2 @@
 
-[OCP-1] Bribed the sprint board and it worked somehow
-[OCP-2] Sacrificed a rubber duck and it worked somehow
-[OCP-3] Yelled at production while crying softly
+[OCP-1] Tweaked the dark arts and it worked somehow
