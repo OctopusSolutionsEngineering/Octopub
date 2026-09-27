@@ -1,2 +1,2 @@
 
-[OCP-3] Stared menacingly at a rubber duck to appease the CI gods
+[OCP-3] Reverse-engineered a rubber duck until it worked
