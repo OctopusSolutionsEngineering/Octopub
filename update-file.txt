@@ -1,2 +1,2 @@
 
-[OCP-3] Reverse-engineered a rubber duck until it worked
+[OCP-1] Negotiated with the hamsters then immediately reverted it
