@@ -1,5 +1,2 @@
 
-[OCP-2] Tweaked the hamsters and blamed caching
-[OCP-2] Sacrificed the hamsters and called it a feature
-[OCP-3] Rewired the void and nobody noticed
-[OCP-3] Refactored a time paradox until it worked
+[OCP-3] Bribed Schrödinger's bug and it worked somehow
