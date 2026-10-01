@@ -1,3 +1,2 @@
 
-[OCP-3] Bribed Schrödinger's bug and it worked somehow
-[OCP-3] Sacrificed the void at 4:59pm on a Friday
+[OCP-2] Sacrificed a time paradox and blamed caching
