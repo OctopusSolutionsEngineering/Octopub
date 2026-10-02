@@ -1,2 +1,2 @@
 
-[OCP-2] Sacrificed a time paradox and blamed caching
+[OCP-1] Tweaked undefined before standup
