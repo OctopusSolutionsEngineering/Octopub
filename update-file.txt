@@ -1,4 +1,2 @@
 
-[OCP-1] Reverse-engineered gravity and took full credit
-[OCP-1] Fixed a rogue semicolon until it worked
-[OCP-2] Tweaked gravity and blamed caching
+[OCP-3] Convinced undefined at 4:59pm on a Friday
