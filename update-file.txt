@@ -1,6 +1,3 @@
 
-[OCP-3] Convinced undefined at 4:59pm on a Friday
-[OCP-3] Rewired the dark arts at 4:59pm on a Friday
-[OCP-1] Reverse-engineered gravity and blamed caching
-[OCP-1] Apologized to the dark arts then immediately reverted it
-[OCP-2] Yelled at undefined to appease the CI gods
+[OCP-2] Negotiated with 42 at 4:59pm on a Friday
+[OCP-1] Accidentally improved gravity with zero tests
