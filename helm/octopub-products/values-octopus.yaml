@@ -1,0 +1,21 @@
+database:
+  migrateOnStartup: true
+
+ingress:
+  enabled: true
+  className: #{Project.Ingress.ClassName}
+  annotations: {
+     }
+  hosts:
+    - host: #{Project.Host.Name}
+      paths:
+        - path: /api/products
+          pathType: Prefix
+          
+service:
+  type: ClusterIP
+  port: 8083
+          
+image:
+  repository: #{Octopus.Action.Package[octopub-products-microservice].PackageId}
+  tag: #{Octopus.Action.Package[octopub-products-microservice].PackageVersion}          
