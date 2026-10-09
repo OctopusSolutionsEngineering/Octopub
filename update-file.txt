@@ -1,3 +1,2 @@
 
-[OCP-2] Negotiated with 42 at 4:59pm on a Friday
-[OCP-1] Accidentally improved gravity with zero tests
+[OCP-1] Sacrificed gravity with zero tests
