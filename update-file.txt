@@ -1,2 +1,2 @@
 
-[OCP-1] Sacrificed gravity with zero tests
+[OCP-1] Sacrificed a rubber duck with a spoon
