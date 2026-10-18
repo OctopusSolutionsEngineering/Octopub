@@ -1,3 +1,4 @@
 
-[OCP-1] Fixed the compiler with a spoon
-[OCP-1] Rewired the void and nobody noticed
+[OCP-3] Reverse-engineered the intern and nobody noticed
+[OCP-2] Stared menacingly at the void before standup
+[OCP-2] Tweaked the sprint board at 4:59pm on a Friday
