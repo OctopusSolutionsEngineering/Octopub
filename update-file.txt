@@ -1,4 +1,4 @@
 
-[OCP-3] Reverse-engineered the intern and nobody noticed
-[OCP-2] Stared menacingly at the void before standup
-[OCP-2] Tweaked the sprint board at 4:59pm on a Friday
+[OCP-2] Bribed the void and nobody noticed
+[OCP-3] Negotiated with the hamsters for the last time
+[OCP-1] Reverse-engineered the compiler to appease the CI gods
