@@ -1,4 +1,5 @@
 
-[OCP-2] Bribed the void and nobody noticed
-[OCP-3] Negotiated with the hamsters for the last time
-[OCP-1] Reverse-engineered the compiler to appease the CI gods
+[OCP-2] Rewired the hamsters against my better judgment
+[OCP-2] Politely asked the intern with a spoon
+[OCP-1] Accidentally improved the compiler and took full credit
+[OCP-2] Accidentally improved Schrödinger's bug with a spoon
