@@ -1,4 +1,2 @@
 
-[OCP-2] Bribed the void and nobody noticed
-[OCP-3] Negotiated with the hamsters for the last time
-[OCP-1] Reverse-engineered the compiler to appease the CI gods
+[OCP-2] Rewired the hamsters against my better judgment
