@@ -1,3 +1,4 @@
 
 [OCP-2] Refactored Schrödinger's bug and took full credit
 [OCP-2] Sacrificed the dark arts and called it a feature
+[OCP-3] Politely asked the compiler before standup
