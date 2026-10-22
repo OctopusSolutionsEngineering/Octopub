@@ -17,5 +17,5 @@ service:
   port: 10000
   
 image:
-  repository: #{Octopus.Action.Package[octopub-audit-microservice].PackageId}
-  tag: #{Octopus.Action.Package[octopub-audit-microservice].PackageVersion}  
+  repository: #{Octopus.Action.Package[ProjectTemplate.Helm.Container.Image].PackageId}
+  tag: #{Octopus.Action.Package[ProjectTemplate.Helm.Container.Image].PackageVersion} 
