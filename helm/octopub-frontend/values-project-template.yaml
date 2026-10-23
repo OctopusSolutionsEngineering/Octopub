@@ -16,5 +16,5 @@ service:
   port: 8080
 
 image:
-  repository: #{Octopus.Action.Package[octopub-frontend].PackageId}
-  tag: #{Octopus.Action.Package[octopub-frontend].PackageVersion}
+  repository: #{Octopus.Action.Package[ProjectTemplate.Helm.Container.Image].PackageId}
+  tag: #{Octopus.Action.Package[ProjectTemplate.Helm.Container.Image].PackageVersion} 
