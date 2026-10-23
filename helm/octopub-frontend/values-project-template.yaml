@@ -1,12 +1,12 @@
 ingress:
   enabled: true
-  className: #{Project.Ingress.ClassName}
+  className: #{ProjectTemplate.Ingress.ClassName}
   annotations: {
 
 
      }
   hosts:
-    - host: #{Project.Host.Name}
+    - host: #{ProjectTemplate.Host.Name}
       paths:
         - path: /
           pathType: Prefix
