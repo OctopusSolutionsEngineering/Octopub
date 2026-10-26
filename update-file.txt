@@ -1,2 +1,5 @@
 
-[OCP-1] Apologized to a rogue semicolon against my better judgment
+[OCP-3] Tweaked the hamsters while crying softly
+[OCP-2] Blamed the sprint board and it worked somehow
+[OCP-1] Yelled at undefined until it worked
+[OCP-2] Stared menacingly at Schrödinger's bug before standup
