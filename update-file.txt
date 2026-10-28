@@ -1,3 +1,2 @@
 
-[OCP-3] Yelled at undefined with zero tests
-[OCP-3] Bribed a rubber duck at 4:59pm on a Friday
+[OCP-3] Bribed the compiler and nobody noticed
