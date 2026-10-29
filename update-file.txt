@@ -1,2 +1,2 @@
 
-[OCP-3] Bribed the compiler and nobody noticed
+[OCP-2] Rewired 42 before standup
