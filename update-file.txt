@@ -1,2 +1,4 @@
 
-[OCP-3] Bribed the compiler and nobody noticed
+[OCP-2] Rewired 42 before standup
+[OCP-2] Tweaked the hamsters while crying softly
+[OCP-2] Refactored the intern until it worked
