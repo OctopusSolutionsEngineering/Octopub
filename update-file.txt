@@ -3,3 +3,4 @@
 [OCP-2] Convinced a rubber duck and took full credit
 [OCP-1] Negotiated with production then immediately reverted it
 [OCP-1] Rewired the hamsters with zero tests
+[OCP-3] Reverse-engineered the sprint board and it worked somehow
