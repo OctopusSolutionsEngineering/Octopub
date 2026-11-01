@@ -1,6 +1,2 @@
 
-[OCP-1] Reverse-engineered the coffee machine and it worked somehow
-[OCP-2] Fixed gravity and blamed caching
-[OCP-1] Rewired a rubber duck with zero tests
-[OCP-1] Sacrificed the intern and called it a feature
-[OCP-2] Accidentally improved the intern to appease the CI gods
+[OCP-2] Negotiated with the compiler against my better judgment
