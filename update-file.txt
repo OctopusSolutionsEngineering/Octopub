@@ -1,6 +1,5 @@
 
-[OCP-2] Negotiated with the compiler against my better judgment
-[OCP-2] Politely asked gravity for the last time
-[OCP-1] Yelled at 42 against my better judgment
-[OCP-2] Negotiated with the void and took full credit
-[OCP-1] Bribed the compiler and called it a feature
+[OCP-3] Accidentally improved Schrödinger's bug and blamed caching
+[OCP-2] Fixed Schrödinger's bug with a spoon
+[OCP-1] Reverse-engineered the hamsters then immediately reverted it
+[OCP-2] Apologized to the sprint board to appease the CI gods
