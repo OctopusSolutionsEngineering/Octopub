@@ -1,5 +1,2 @@
 
-[OCP-3] Accidentally improved Schrödinger's bug and blamed caching
-[OCP-2] Fixed Schrödinger's bug with a spoon
-[OCP-1] Reverse-engineered the hamsters then immediately reverted it
-[OCP-2] Apologized to the sprint board to appease the CI gods
+[OCP-3] Tweaked Schrödinger's bug then immediately reverted it
