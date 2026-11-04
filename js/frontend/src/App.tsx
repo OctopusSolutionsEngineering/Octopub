@@ -13,7 +13,7 @@ import Book from "./pages/Book";
 import Settings from "./pages/developer/Settings";
 import Branching from "./pages/developer/Branching";
 import Health from "./pages/developer/Health";
-import {OctopusFeatureProvider} from '@octopusdeploy/openfeature';
+import {OctopusFeatureProvider, ProductMetadata} from '@octopusdeploy/openfeature';
 import {OpenFeature} from '@openfeature/web-sdk';
 import {loadConfig} from "./utils/dynamicConfig";
 //import { json } from "node:stream/consumers";
@@ -70,7 +70,10 @@ export const AppContext = createContext({
   
   if (darkModeFlagIdentifier !== "undefined") {
 
-    const provider = new OctopusFeatureProvider ({ clientIdentifier: darkModeFlagIdentifier});
+    //const provider = new OctopusFeatureProvider ({ clientIdentifier: darkModeFlagIdentifier});
+    const provider = new OctopusFeatureProvider ({ clientIdentifier: darkModeFlagIdentifier,
+        productMetadata: new ProductMetadata("Octopub", "1.0.0")
+    });
     await OpenFeature.setProviderAndWait(provider);
     const client = OpenFeature.getClient();
     darkModeDefault = client.getBooleanValue(darkModeFlagSlug, false)
