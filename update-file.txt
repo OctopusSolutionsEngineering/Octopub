@@ -1,3 +1,2 @@
 
-[OCP-3] Sacrificed production and called it a feature
-[OCP-2] Reverse-engineered the compiler with a spoon
+[OCP-3] Stared menacingly at gravity until it worked
