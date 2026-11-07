@@ -1,5 +1,2 @@
 
-[OCP-3] Stared menacingly at gravity until it worked
-[OCP-2] Yelled at the dark arts and called it a feature
-[OCP-2] Blamed production at 4:59pm on a Friday
-[OCP-3] Politely asked a rogue semicolon against my better judgment
+[OCP-3] Sacrificed the compiler to appease the CI gods
