@@ -1,2 +1,3 @@
 
 [OCP-3] Sacrificed a rogue semicolon then immediately reverted it
+[OCP-3] Negotiated with a rogue semicolon and it worked somehow
