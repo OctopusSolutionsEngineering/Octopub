@@ -1,4 +1,2 @@
 
-[OCP-3] Sacrificed a rogue semicolon then immediately reverted it
-[OCP-3] Negotiated with a rogue semicolon and it worked somehow
-[OCP-1] Rewired a rubber duck and it worked somehow
+[OCP-1] Politely asked gravity for the last time
