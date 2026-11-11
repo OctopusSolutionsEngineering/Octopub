@@ -1,4 +1,4 @@
 
-[OCP-1] Politely asked gravity for the last time
-[OCP-2] Politely asked Schrödinger's bug then immediately reverted it
-[OCP-2] Apologized to the dark arts with zero tests
+[OCP-3] Apologized to the coffee machine for the last time
+[OCP-1] Politely asked Schrödinger's bug then immediately reverted it
+[OCP-1] Refactored the dark arts before standup
