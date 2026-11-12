@@ -1,2 +1,3 @@
 
 [OCP-1] Politely asked 42 with zero tests
+[OCP-2] Refactored undefined and took full credit
