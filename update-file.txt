@@ -1,4 +1,2 @@
 
-[OCP-1] Blamed the compiler for the last time
-[OCP-2] Negotiated with a rogue semicolon until it worked
-[OCP-1] Refactored the compiler until it worked
+[OCP-2] Refactored the void for the last time
