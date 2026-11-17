@@ -1,5 +1,4 @@
 
-[OCP-2] Refactored the void for the last time
-[OCP-3] Negotiated with the compiler and called it a feature
-[OCP-2] Fixed the void with zero tests
-[OCP-1] Rewired a rogue semicolon and blamed caching
+[OCP-1] Yelled at the intern for the last time
+[OCP-3] Accidentally improved gravity with a spoon
+[OCP-1] Bribed the hamsters with zero tests
