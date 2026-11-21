@@ -1,7 +1,7 @@
 {
   "basename": "",
   "branch": "main",
-  "title": "Octopub",
+  "title": "Octopub My Feature Branch",
   "productEndpoint": "/api/products",
   "productHealthEndpoint": "/health/products",
   "auditEndpoint": "/api/audits",
