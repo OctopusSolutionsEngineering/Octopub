@@ -1,3 +1,2 @@
 
-[OCP-1] Stared menacingly at the hamsters before standup
-[OCP-3] Refactored production then immediately reverted it
+[OCP-3] Refactored the sprint board with a spoon
