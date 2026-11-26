@@ -1,3 +1,2 @@
 
-[OCP-1] Politely asked the dark arts while crying softly
-[OCP-3] Apologized to the coffee machine and nobody noticed
+[OCP-3] Politely asked the sprint board before standup
